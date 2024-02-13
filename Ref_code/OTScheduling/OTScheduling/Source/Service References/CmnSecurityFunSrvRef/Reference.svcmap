@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="ed5f69ab-50a0-4d3e-a649-adc046ba5f84" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://LOCALHOST/CWWEBWCFSPLIT/CommonSecurityFunc/CmnSecurityFun.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="CmnSecurityFun1.wsdl" MetadataType="Wsdl" ID="0999b704-a9e1-48e4-9eee-6ff94be0dbbb" SourceId="1" SourceUrl="http://localhost/CWWEBWCFSPLIT/CommonSecurityFunc/CmnSecurityFun.svc?wsdl" />
+    <MetadataFile FileName="CmnSecurityFun7.xsd" MetadataType="Schema" ID="46a8ae38-5d1e-4f04-acdd-2f8c739e1998" SourceId="1" SourceUrl="http://localhost/CWWEBWCFSPLIT/CommonSecurityFunc/CmnSecurityFun.svc?xsd=xsd5" />
+    <MetadataFile FileName="CmnSecurityFun71.xsd" MetadataType="Schema" ID="6e9894db-60b8-4c3f-bce5-0b4b494a5243" SourceId="1" SourceUrl="http://localhost/CWWEBWCFSPLIT/CommonSecurityFunc/CmnSecurityFun.svc?xsd=xsd1" />
+    <MetadataFile FileName="CmnSecurityFun72.xsd" MetadataType="Schema" ID="8d38fca8-15c0-409b-a1ee-6e8ef9be2eeb" SourceId="1" SourceUrl="http://localhost/CWWEBWCFSPLIT/CommonSecurityFunc/CmnSecurityFun.svc?xsd=xsd0" />
+    <MetadataFile FileName="CmnSecurityFun73.xsd" MetadataType="Schema" ID="1a4a65bb-f442-4ea0-8508-374616020df3" SourceId="1" SourceUrl="http://localhost/CWWEBWCFSPLIT/CommonSecurityFunc/CmnSecurityFun.svc?xsd=xsd3" />
+    <MetadataFile FileName="CmnSecurityFun74.xsd" MetadataType="Schema" ID="11119de8-9b1e-4edb-8562-2354fb8149c7" SourceId="1" SourceUrl="http://localhost/CWWEBWCFSPLIT/CommonSecurityFunc/CmnSecurityFun.svc?xsd=xsd2" />
+    <MetadataFile FileName="CmnSecurityFun75.xsd" MetadataType="Schema" ID="26b698aa-ae89-44ac-b437-1aee5144e7d0" SourceId="1" SourceUrl="http://localhost/CWWEBWCFSPLIT/CommonSecurityFunc/CmnSecurityFun.svc?xsd=xsd4" />
+    <MetadataFile FileName="CmnSecurityFun76.xsd" MetadataType="Schema" ID="e95e9dfe-96ee-4046-8f94-5c877951066d" SourceId="1" SourceUrl="http://localhost/CWWEBWCFSPLIT/CommonSecurityFunc/CmnSecurityFun.svc?xsd=xsd6" />
+    <MetadataFile FileName="CmnSecurityFun1.disco" MetadataType="Disco" ID="8c1c6f69-cbf1-4a37-b560-026044180fae" SourceId="1" SourceUrl="http://localhost/CWWEBWCFSPLIT/CommonSecurityFunc/CmnSecurityFun.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

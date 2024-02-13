@@ -1,0 +1,1454 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="bclsIpPostVoucher" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:50875/IpPostVoucher.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:50875/IpPostVoucher.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:50875/IpPostVoucher.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:50875/IpPostVoucher.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv" />
+      <xsd:import schemaLocation="http://localhost:50875/IpPostVoucher.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv.IpTransactions" />
+      <xsd:import schemaLocation="http://localhost:50875/IpPostVoucher.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv.PostVoucher" />
+      <xsd:import schemaLocation="http://localhost:50875/IpPostVoucher.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/SofCommon" />
+      <xsd:import schemaLocation="http://localhost:50875/IpPostVoucher.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
+      <xsd:import schemaLocation="http://localhost:50875/IpPostVoucher.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/System" />
+      <xsd:import schemaLocation="http://localhost:50875/IpPostVoucher.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv.CommonModule" />
+      <xsd:import schemaLocation="http://localhost:50875/IpPostVoucher.svc?xsd=xsd10" namespace="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv.ChargeMaster" />
+      <xsd:import schemaLocation="http://localhost:50875/IpPostVoucher.svc?xsd=xsd11" namespace="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv.PatientVisitAndBilInsTrn" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="iIpPostVoucher_GetIpICUEquipLinkPostList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIpICUEquipLinkPostList" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetIpICUEquipLinkPostList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIpICUEquipLinkPostListResponse" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_SaveAttachEquipment_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveAttachEquipment" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_SaveAttachEquipment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveAttachEquipmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_CancelAttachEquipment_InputMessage">
+    <wsdl:part name="parameters" element="tns:CancelAttachEquipment" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_CancelAttachEquipment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CancelAttachEquipmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetTechSrvList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTechSrvList" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetTechSrvList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTechSrvListResponse" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_Fn_GetDocDeductionPerc_InputMessage">
+    <wsdl:part name="parameters" element="tns:Fn_GetDocDeductionPerc" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_Fn_GetDocDeductionPerc_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Fn_GetDocDeductionPercResponse" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_Fn_IsArMstNoEmgSrv_InputMessage">
+    <wsdl:part name="parameters" element="tns:Fn_IsArMstNoEmgSrv" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_Fn_IsArMstNoEmgSrv_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Fn_IsArMstNoEmgSrvResponse" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_PostIPServiceFromLIS_InputMessage">
+    <wsdl:part name="parameters" element="tns:PostIPServiceFromLIS" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_PostIPServiceFromLIS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PostIPServiceFromLISResponse" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_SaveDbReqForCreateIpVch_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveDbReqForCreateIpVch" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_SaveDbReqForCreateIpVch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveDbReqForCreateIpVchResponse" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_FnGetReferralDocNm_InputMessage">
+    <wsdl:part name="parameters" element="tns:FnGetReferralDocNm" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_FnGetReferralDocNm_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FnGetReferralDocNmResponse" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetReferralDocLstMst_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetReferralDocLstMst" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetReferralDocLstMst_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetReferralDocLstMstResponse" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetReferralDocLst_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetReferralDocLst" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetReferralDocLst_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetReferralDocLstResponse" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetListOfNstTstOrdReqDtl_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListOfNstTstOrdReqDtl" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetListOfNstTstOrdReqDtl_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListOfNstTstOrdReqDtlResponse" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetCalRate_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCalRate" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetCalRate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCalRateResponse" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetSharerServiceList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSharerServiceList" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetSharerServiceList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSharerServiceListResponse" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetCalShare_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCalShare" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetCalShare_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCalShareResponse" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_SaveRecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveRecord" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_SaveRecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_Validate_InputMessage">
+    <wsdl:part name="parameters" element="tns:Validate" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_Validate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateResponse" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetInpatientDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInpatientDetails" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetInpatientDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInpatientDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetChrgMst_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetChrgMst" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetChrgMst_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetChrgMstResponse" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetSrvMstDtl_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSrvMstDtl" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetSrvMstDtl_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSrvMstDtlResponse" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetServiceList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetServiceList" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetServiceList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetServiceListResponse" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetListChrgMStForUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListChrgMStForUser" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetListChrgMStForUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListChrgMStForUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetInPtnListByNameDocWard_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInPtnListByNameDocWard" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetInPtnListByNameDocWard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInPtnListByNameDocWardResponse" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_WardDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:WardDetails" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_WardDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:WardDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetDoctorList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDoctorList" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetDoctorList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDoctorListResponse" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_DoctorSpeciality_InputMessage">
+    <wsdl:part name="parameters" element="tns:DoctorSpeciality" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_DoctorSpeciality_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DoctorSpecialityResponse" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetDoctor_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDoctor" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetDoctor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDoctorResponse" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetPtnClsDtlByCd_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPtnClsDtlByCd" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetPtnClsDtlByCd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPtnClsDtlByCdResponse" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetCmpntShrDtl_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCmpntShrDtl" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetCmpntShrDtl_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCmpntShrDtlResponse" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetIpBilInsTrnByIpNo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIpBilInsTrnByIpNo" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetIpBilInsTrnByIpNo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIpBilInsTrnByIpNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetSrvLstBySrvTypSexFlgUserNstTstOrdAllow_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSrvLstBySrvTypSexFlgUserNstTstOrdAllow" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetSrvLstBySrvTypSexFlgUserNstTstOrdAllow_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSrvLstBySrvTypSexFlgUserNstTstOrdAllowResponse" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetSrvLstByModSubModCdPrefix_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSrvLstByModSubModCdPrefix" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetSrvLstByModSubModCdPrefix_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSrvLstByModSubModCdPrefixResponse" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetChrgMstListByUserIdModSubModCd_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetChrgMstListByUserIdModSubModCd" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetChrgMstListByUserIdModSubModCd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetChrgMstListByUserIdModSubModCdResponse" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetSrvLstByUserIdModSubModCd_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSrvLstByUserIdModSubModCd" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetSrvLstByUserIdModSubModCd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSrvLstByUserIdModSubModCdResponse" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetSrvMstDtlByUserIdModSubmodcd_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSrvMstDtlByUserIdModSubmodcd" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetSrvMstDtlByUserIdModSubmodcd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSrvMstDtlByUserIdModSubmodcdResponse" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetChrgMstDtlByUserIdModSubModCd_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetChrgMstDtlByUserIdModSubModCd" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetChrgMstDtlByUserIdModSubModCd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetChrgMstDtlByUserIdModSubModCdResponse" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetUserBasicDtl_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserBasicDtl" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetUserBasicDtl_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserBasicDtlResponse" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetChargeMstWithchrgstlflg_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetChargeMstWithchrgstlflg" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetChargeMstWithchrgstlflg_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetChargeMstWithchrgstlflgResponse" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetSrvCdWithDesc_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSrvCdWithDesc" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetSrvCdWithDesc_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSrvCdWithDescResponse" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetDocListWithTypWithDocStsCd_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDocListWithTypWithDocStsCd" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetDocListWithTypWithDocStsCd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDocListWithTypWithDocStsCdResponse" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetPtnClassDtl_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPtnClassDtl" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetPtnClassDtl_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPtnClassDtlResponse" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetEmpIDList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmpIDList" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetEmpIDList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmpIDListResponse" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetNetIdParamDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNetIdParamDetails" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetNetIdParamDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNetIdParamDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetIpPatientHelpMst_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIpPatientHelpMst" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetIpPatientHelpMst_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIpPatientHelpMstResponse" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_PopulatePager_InputMessage">
+    <wsdl:part name="parameters" element="tns:PopulatePager" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_PopulatePager_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PopulatePagerResponse" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetPrntRptViewerRule8013_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPrntRptViewerRule8013" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetPrntRptViewerRule8013_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPrntRptViewerRule8013Response" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetPrntRptViewerRule8013OnlyPdfPrint_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPrntRptViewerRule8013OnlyPdfPrint" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetPrntRptViewerRule8013OnlyPdfPrint_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPrntRptViewerRule8013OnlyPdfPrintResponse" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetInpatientDetailsForPrint_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInpatientDetailsForPrint" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetInpatientDetailsForPrint_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInpatientDetailsForPrintResponse" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_FnIsChkSrvHrs_InputMessage">
+    <wsdl:part name="parameters" element="tns:FnIsChkSrvHrs" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_FnIsChkSrvHrs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FnIsChkSrvHrsResponse" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetRuleMstDtls_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRuleMstDtls" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetRuleMstDtls_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRuleMstDtlsResponse" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetRuleMstDtlsList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRuleMstDtlsList" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetRuleMstDtlsList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRuleMstDtlsListResponse" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetRuleMstDtlsModuleWs_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRuleMstDtlsModuleWs" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetRuleMstDtlsModuleWs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRuleMstDtlsModuleWsResponse" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_FILLSEPSRV_InputMessage">
+    <wsdl:part name="parameters" element="tns:FILLSEPSRV" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_FILLSEPSRV_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FILLSEPSRVResponse" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_getOpServiceBlock_InputMessage">
+    <wsdl:part name="parameters" element="tns:getOpServiceBlock" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_getOpServiceBlock_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getOpServiceBlockResponse" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_getBalanceDtls_InputMessage">
+    <wsdl:part name="parameters" element="tns:getBalanceDtls" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_getBalanceDtls_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getBalanceDtlsResponse" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetEmergencyDyDtFlg_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmergencyDyDtFlg" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetEmergencyDyDtFlg_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmergencyDyDtFlgResponse" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_CheckBedTransReq_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckBedTransReq" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_CheckBedTransReq_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckBedTransReqResponse" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetArCdContractDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetArCdContractDetails" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetArCdContractDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetArCdContractDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetAreEmpMstData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAreEmpMstData" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetAreEmpMstData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAreEmpMstDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetInPatientCompDlt_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInPatientCompDlt" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetInPatientCompDlt_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInPatientCompDltResponse" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_getInPtnlstforPrnt_InputMessage">
+    <wsdl:part name="parameters" element="tns:getInPtnlstforPrnt" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_getInPtnlstforPrnt_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getInPtnlstforPrntResponse" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetSrvLstByModSubModCdPrefixWithRt_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSrvLstByModSubModCdPrefixWithRt" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetSrvLstByModSubModCdPrefixWithRt_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSrvLstByModSubModCdPrefixWithRtResponse" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetListOfOutsdTstNstTstOrdReqDtl_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListOfOutsdTstNstTstOrdReqDtl" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetListOfOutsdTstNstTstOrdReqDtl_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListOfOutsdTstNstTstOrdReqDtlResponse" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetIpVchDtlForSameSrv_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIpVchDtlForSameSrv" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetIpVchDtlForSameSrv_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIpVchDtlForSameSrvResponse" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetExPtnIPList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetExPtnIPList" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetExPtnIPList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetExPtnIPListResponse" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetUserWsModFnList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserWsModFnList" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetUserWsModFnList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserWsModFnListResponse" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetIPInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIPInfo" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetIPInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIPInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetArMstForAutoHelp_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetArMstForAutoHelp" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetArMstForAutoHelp_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetArMstForAutoHelpResponse" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_FnChkIsSeniorCitizen_InputMessage">
+    <wsdl:part name="parameters" element="tns:FnChkIsSeniorCitizen" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_FnChkIsSeniorCitizen_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FnChkIsSeniorCitizenResponse" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetPtnTypeMst_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPtnTypeMst" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetPtnTypeMst_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPtnTypeMstResponse" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetPtnTypeMstByTypCd_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPtnTypeMstByTypCd" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetPtnTypeMstByTypCd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPtnTypeMstByTypCdResponse" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetSrvBlockSts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSrvBlockSts" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetSrvBlockSts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSrvBlockStsResponse" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetIpICUEquipMstList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIpICUEquipMstList" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetIpICUEquipMstList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIpICUEquipMstListResponse" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetIpICUEquipMstDtl_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIpICUEquipMstDtl" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetIpICUEquipMstDtl_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIpICUEquipMstDtlResponse" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetIpICUEquipLinkViewHistory_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIpICUEquipLinkViewHistory" />
+  </wsdl:message>
+  <wsdl:message name="iIpPostVoucher_GetIpICUEquipLinkViewHistory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIpICUEquipLinkViewHistoryResponse" />
+  </wsdl:message>
+  <wsdl:portType name="iIpPostVoucher">
+    <wsdl:operation name="GetIpICUEquipLinkPostList">
+      <wsdl:input wsaw:Action="http://tempuri.org/iIpPostVoucher/GetIpICUEquipLinkPostList" message="tns:iIpPostVoucher_GetIpICUEquipLinkPostList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iIpPostVoucher/GetIpICUEquipLinkPostListResponse" message="tns:iIpPostVoucher_GetIpICUEquipLinkPostList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveAttachEquipment">
+      <wsdl:input wsaw:Action="http://tempuri.org/iIpPostVoucher/SaveAttachEquipment" message="tns:iIpPostVoucher_SaveAttachEquipment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iIpPostVoucher/SaveAttachEquipmentResponse" message="tns:iIpPostVoucher_SaveAttachEquipment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelAttachEquipment">
+      <wsdl:input wsaw:Action="http://tempuri.org/iIpPostVoucher/CancelAttachEquipment" message="tns:iIpPostVoucher_CancelAttachEquipment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iIpPostVoucher/CancelAttachEquipmentResponse" message="tns:iIpPostVoucher_CancelAttachEquipment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTechSrvList">
+      <wsdl:input wsaw:Action="http://tempuri.org/iIpPostVoucher/GetTechSrvList" message="tns:iIpPostVoucher_GetTechSrvList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iIpPostVoucher/GetTechSrvListResponse" message="tns:iIpPostVoucher_GetTechSrvList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Fn_GetDocDeductionPerc">
+      <wsdl:input wsaw:Action="http://tempuri.org/iIpPostVoucher/Fn_GetDocDeductionPerc" message="tns:iIpPostVoucher_Fn_GetDocDeductionPerc_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iIpPostVoucher/Fn_GetDocDeductionPercResponse" message="tns:iIpPostVoucher_Fn_GetDocDeductionPerc_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Fn_IsArMstNoEmgSrv">
+      <wsdl:input wsaw:Action="http://tempuri.org/iIpPostVoucher/Fn_IsArMstNoEmgSrv" message="tns:iIpPostVoucher_Fn_IsArMstNoEmgSrv_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iIpPostVoucher/Fn_IsArMstNoEmgSrvResponse" message="tns:iIpPostVoucher_Fn_IsArMstNoEmgSrv_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PostIPServiceFromLIS">
+      <wsdl:input wsaw:Action="http://tempuri.org/iIpPostVoucher/PostIPServiceFromLIS" message="tns:iIpPostVoucher_PostIPServiceFromLIS_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iIpPostVoucher/PostIPServiceFromLISResponse" message="tns:iIpPostVoucher_PostIPServiceFromLIS_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveDbReqForCreateIpVch">
+      <wsdl:input wsaw:Action="http://tempuri.org/iIpPostVoucher/SaveDbReqForCreateIpVch" message="tns:iIpPostVoucher_SaveDbReqForCreateIpVch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iIpPostVoucher/SaveDbReqForCreateIpVchResponse" message="tns:iIpPostVoucher_SaveDbReqForCreateIpVch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FnGetReferralDocNm">
+      <wsdl:input wsaw:Action="http://tempuri.org/iIpPostVoucher/FnGetReferralDocNm" message="tns:iIpPostVoucher_FnGetReferralDocNm_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iIpPostVoucher/FnGetReferralDocNmResponse" message="tns:iIpPostVoucher_FnGetReferralDocNm_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReferralDocLstMst">
+      <wsdl:input wsaw:Action="http://tempuri.org/iIpPostVoucher/GetReferralDocLstMst" message="tns:iIpPostVoucher_GetReferralDocLstMst_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iIpPostVoucher/GetReferralDocLstMstResponse" message="tns:iIpPostVoucher_GetReferralDocLstMst_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReferralDocLst">
+      <wsdl:input wsaw:Action="http://tempuri.org/iIpPostVoucher/GetReferralDocLst" message="tns:iIpPostVoucher_GetReferralDocLst_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iIpPostVoucher/GetReferralDocLstResponse" message="tns:iIpPostVoucher_GetReferralDocLst_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListOfNstTstOrdReqDtl">
+      <wsdl:input wsaw:Action="http://tempuri.org/iIpPostVoucher/GetListOfNstTstOrdReqDtl" message="tns:iIpPostVoucher_GetListOfNstTstOrdReqDtl_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iIpPostVoucher/GetListOfNstTstOrdReqDtlResponse" message="tns:iIpPostVoucher_GetListOfNstTstOrdReqDtl_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCalRate">
+      <wsdl:input wsaw:Action="http://tempuri.org/iIpPostVoucher/GetCalRate" message="tns:iIpPostVoucher_GetCalRate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iIpPostVoucher/GetCalRateResponse" message="tns:iIpPostVoucher_GetCalRate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSharerServiceList">
+      <wsdl:input wsaw:Action="http://tempuri.org/iIpPostVoucher/GetSharerServiceList" message="tns:iIpPostVoucher_GetSharerServiceList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iIpPostVoucher/GetSharerServiceListResponse" message="tns:iIpPostVoucher_GetSharerServiceList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCalShare">
+      <wsdl:input wsaw:Action="http://tempuri.org/iIpPostVoucher/GetCalShare" message="tns:iIpPostVoucher_GetCalShare_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iIpPostVoucher/GetCalShareResponse" message="tns:iIpPostVoucher_GetCalShare_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveRecord">
+      <wsdl:input wsaw:Action="http://tempuri.org/iIpPostVoucher/SaveRecord" message="tns:iIpPostVoucher_SaveRecord_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iIpPostVoucher/SaveRecordResponse" message="tns:iIpPostVoucher_SaveRecord_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Validate">
+      <wsdl:input wsaw:Action="http://tempuri.org/iIpPostVoucher/Validate" message="tns:iIpPostVoucher_Validate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iIpPostVoucher/ValidateResponse" message="tns:iIpPostVoucher_Validate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInpatientDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/iIpPostVoucher/GetInpatientDetails" message="tns:iIpPostVoucher_GetInpatientDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iIpPostVoucher/GetInpatientDetailsResponse" message="tns:iIpPostVoucher_GetInpatientDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChrgMst">
+      <wsdl:input wsaw:Action="http://tempuri.org/iIpPostVoucher/GetChrgMst" message="tns:iIpPostVoucher_GetChrgMst_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iIpPostVoucher/GetChrgMstResponse" message="tns:iIpPostVoucher_GetChrgMst_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSrvMstDtl">
+      <wsdl:input wsaw:Action="http://tempuri.org/iIpPostVoucher/GetSrvMstDtl" message="tns:iIpPostVoucher_GetSrvMstDtl_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iIpPostVoucher/GetSrvMstDtlResponse" message="tns:iIpPostVoucher_GetSrvMstDtl_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceList">
+      <wsdl:input wsaw:Action="http://tempuri.org/iIpPostVoucher/GetServiceList" message="tns:iIpPostVoucher_GetServiceList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iIpPostVoucher/GetServiceListResponse" message="tns:iIpPostVoucher_GetServiceList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListChrgMStForUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/iIpPostVoucher/GetListChrgMStForUser" message="tns:iIpPostVoucher_GetListChrgMStForUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iIpPostVoucher/GetListChrgMStForUserResponse" message="tns:iIpPostVoucher_GetListChrgMStForUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInPtnListByNameDocWard">
+      <wsdl:input wsaw:Action="http://tempuri.org/iIpPostVoucher/GetInPtnListByNameDocWard" message="tns:iIpPostVoucher_GetInPtnListByNameDocWard_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iIpPostVoucher/GetInPtnListByNameDocWardResponse" message="tns:iIpPostVoucher_GetInPtnListByNameDocWard_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="WardDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/iIpPostVoucher/WardDetails" message="tns:iIpPostVoucher_WardDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iIpPostVoucher/WardDetailsResponse" message="tns:iIpPostVoucher_WardDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDoctorList">
+      <wsdl:input wsaw:Action="http://tempuri.org/iIpPostVoucher/GetDoctorList" message="tns:iIpPostVoucher_GetDoctorList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iIpPostVoucher/GetDoctorListResponse" message="tns:iIpPostVoucher_GetDoctorList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DoctorSpeciality">
+      <wsdl:input wsaw:Action="http://tempuri.org/iIpPostVoucher/DoctorSpeciality" message="tns:iIpPostVoucher_DoctorSpeciality_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iIpPostVoucher/DoctorSpecialityResponse" message="tns:iIpPostVoucher_DoctorSpeciality_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDoctor">
+      <wsdl:input wsaw:Action="http://tempuri.org/iIpPostVoucher/GetDoctor" message="tns:iIpPostVoucher_GetDoctor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iIpPostVoucher/GetDoctorResponse" message="tns:iIpPostVoucher_GetDoctor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPtnClsDtlByCd">
+      <wsdl:input wsaw:Action="http://tempuri.org/iIpPostVoucher/GetPtnClsDtlByCd" message="tns:iIpPostVoucher_GetPtnClsDtlByCd_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iIpPostVoucher/GetPtnClsDtlByCdResponse" message="tns:iIpPostVoucher_GetPtnClsDtlByCd_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCmpntShrDtl">
+      <wsdl:input wsaw:Action="http://tempuri.org/iIpPostVoucher/GetCmpntShrDtl" message="tns:iIpPostVoucher_GetCmpntShrDtl_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iIpPostVoucher/GetCmpntShrDtlResponse" message="tns:iIpPostVoucher_GetCmpntShrDtl_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIpBilInsTrnByIpNo">
+      <wsdl:input wsaw:Action="http://tempuri.org/iIpPostVoucher/GetIpBilInsTrnByIpNo" message="tns:iIpPostVoucher_GetIpBilInsTrnByIpNo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iIpPostVoucher/GetIpBilInsTrnByIpNoResponse" message="tns:iIpPostVoucher_GetIpBilInsTrnByIpNo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSrvLstBySrvTypSexFlgUserNstTstOrdAllow">
+      <wsdl:input wsaw:Action="http://tempuri.org/iIpPostVoucher/GetSrvLstBySrvTypSexFlgUserNstTstOrdAllow" message="tns:iIpPostVoucher_GetSrvLstBySrvTypSexFlgUserNstTstOrdAllow_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iIpPostVoucher/GetSrvLstBySrvTypSexFlgUserNstTstOrdAllowResponse" message="tns:iIpPostVoucher_GetSrvLstBySrvTypSexFlgUserNstTstOrdAllow_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSrvLstByModSubModCdPrefix">
+      <wsdl:input wsaw:Action="http://tempuri.org/iIpPostVoucher/GetSrvLstByModSubModCdPrefix" message="tns:iIpPostVoucher_GetSrvLstByModSubModCdPrefix_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iIpPostVoucher/GetSrvLstByModSubModCdPrefixResponse" message="tns:iIpPostVoucher_GetSrvLstByModSubModCdPrefix_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChrgMstListByUserIdModSubModCd">
+      <wsdl:input wsaw:Action="http://tempuri.org/iIpPostVoucher/GetChrgMstListByUserIdModSubModCd" message="tns:iIpPostVoucher_GetChrgMstListByUserIdModSubModCd_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iIpPostVoucher/GetChrgMstListByUserIdModSubModCdResponse" message="tns:iIpPostVoucher_GetChrgMstListByUserIdModSubModCd_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSrvLstByUserIdModSubModCd">
+      <wsdl:input wsaw:Action="http://tempuri.org/iIpPostVoucher/GetSrvLstByUserIdModSubModCd" message="tns:iIpPostVoucher_GetSrvLstByUserIdModSubModCd_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iIpPostVoucher/GetSrvLstByUserIdModSubModCdResponse" message="tns:iIpPostVoucher_GetSrvLstByUserIdModSubModCd_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSrvMstDtlByUserIdModSubmodcd">
+      <wsdl:input wsaw:Action="http://tempuri.org/iIpPostVoucher/GetSrvMstDtlByUserIdModSubmodcd" message="tns:iIpPostVoucher_GetSrvMstDtlByUserIdModSubmodcd_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iIpPostVoucher/GetSrvMstDtlByUserIdModSubmodcdResponse" message="tns:iIpPostVoucher_GetSrvMstDtlByUserIdModSubmodcd_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChrgMstDtlByUserIdModSubModCd">
+      <wsdl:input wsaw:Action="http://tempuri.org/iIpPostVoucher/GetChrgMstDtlByUserIdModSubModCd" message="tns:iIpPostVoucher_GetChrgMstDtlByUserIdModSubModCd_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iIpPostVoucher/GetChrgMstDtlByUserIdModSubModCdResponse" message="tns:iIpPostVoucher_GetChrgMstDtlByUserIdModSubModCd_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserBasicDtl">
+      <wsdl:input wsaw:Action="http://tempuri.org/iIpPostVoucher/GetUserBasicDtl" message="tns:iIpPostVoucher_GetUserBasicDtl_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iIpPostVoucher/GetUserBasicDtlResponse" message="tns:iIpPostVoucher_GetUserBasicDtl_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChargeMstWithchrgstlflg">
+      <wsdl:input wsaw:Action="http://tempuri.org/iIpPostVoucher/GetChargeMstWithchrgstlflg" message="tns:iIpPostVoucher_GetChargeMstWithchrgstlflg_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iIpPostVoucher/GetChargeMstWithchrgstlflgResponse" message="tns:iIpPostVoucher_GetChargeMstWithchrgstlflg_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSrvCdWithDesc">
+      <wsdl:input wsaw:Action="http://tempuri.org/iIpPostVoucher/GetSrvCdWithDesc" message="tns:iIpPostVoucher_GetSrvCdWithDesc_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iIpPostVoucher/GetSrvCdWithDescResponse" message="tns:iIpPostVoucher_GetSrvCdWithDesc_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocListWithTypWithDocStsCd">
+      <wsdl:input wsaw:Action="http://tempuri.org/iIpPostVoucher/GetDocListWithTypWithDocStsCd" message="tns:iIpPostVoucher_GetDocListWithTypWithDocStsCd_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iIpPostVoucher/GetDocListWithTypWithDocStsCdResponse" message="tns:iIpPostVoucher_GetDocListWithTypWithDocStsCd_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPtnClassDtl">
+      <wsdl:input wsaw:Action="http://tempuri.org/iIpPostVoucher/GetPtnClassDtl" message="tns:iIpPostVoucher_GetPtnClassDtl_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iIpPostVoucher/GetPtnClassDtlResponse" message="tns:iIpPostVoucher_GetPtnClassDtl_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmpIDList">
+      <wsdl:input wsaw:Action="http://tempuri.org/iIpPostVoucher/GetEmpIDList" message="tns:iIpPostVoucher_GetEmpIDList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iIpPostVoucher/GetEmpIDListResponse" message="tns:iIpPostVoucher_GetEmpIDList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNetIdParamDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/iIpPostVoucher/GetNetIdParamDetails" message="tns:iIpPostVoucher_GetNetIdParamDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iIpPostVoucher/GetNetIdParamDetailsResponse" message="tns:iIpPostVoucher_GetNetIdParamDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIpPatientHelpMst">
+      <wsdl:input wsaw:Action="http://tempuri.org/iIpPostVoucher/GetIpPatientHelpMst" message="tns:iIpPostVoucher_GetIpPatientHelpMst_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iIpPostVoucher/GetIpPatientHelpMstResponse" message="tns:iIpPostVoucher_GetIpPatientHelpMst_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PopulatePager">
+      <wsdl:input wsaw:Action="http://tempuri.org/iIpPostVoucher/PopulatePager" message="tns:iIpPostVoucher_PopulatePager_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iIpPostVoucher/PopulatePagerResponse" message="tns:iIpPostVoucher_PopulatePager_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPrntRptViewerRule8013">
+      <wsdl:input wsaw:Action="http://tempuri.org/iIpPostVoucher/GetPrntRptViewerRule8013" message="tns:iIpPostVoucher_GetPrntRptViewerRule8013_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iIpPostVoucher/GetPrntRptViewerRule8013Response" message="tns:iIpPostVoucher_GetPrntRptViewerRule8013_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPrntRptViewerRule8013OnlyPdfPrint">
+      <wsdl:input wsaw:Action="http://tempuri.org/iIpPostVoucher/GetPrntRptViewerRule8013OnlyPdfPrint" message="tns:iIpPostVoucher_GetPrntRptViewerRule8013OnlyPdfPrint_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iIpPostVoucher/GetPrntRptViewerRule8013OnlyPdfPrintResponse" message="tns:iIpPostVoucher_GetPrntRptViewerRule8013OnlyPdfPrint_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInpatientDetailsForPrint">
+      <wsdl:input wsaw:Action="http://tempuri.org/iIpPostVoucher/GetInpatientDetailsForPrint" message="tns:iIpPostVoucher_GetInpatientDetailsForPrint_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iIpPostVoucher/GetInpatientDetailsForPrintResponse" message="tns:iIpPostVoucher_GetInpatientDetailsForPrint_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FnIsChkSrvHrs">
+      <wsdl:input wsaw:Action="http://tempuri.org/iIpPostVoucher/FnIsChkSrvHrs" message="tns:iIpPostVoucher_FnIsChkSrvHrs_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iIpPostVoucher/FnIsChkSrvHrsResponse" message="tns:iIpPostVoucher_FnIsChkSrvHrs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRuleMstDtls">
+      <wsdl:input wsaw:Action="http://tempuri.org/iIpPostVoucher/GetRuleMstDtls" message="tns:iIpPostVoucher_GetRuleMstDtls_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iIpPostVoucher/GetRuleMstDtlsResponse" message="tns:iIpPostVoucher_GetRuleMstDtls_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRuleMstDtlsList">
+      <wsdl:input wsaw:Action="http://tempuri.org/iIpPostVoucher/GetRuleMstDtlsList" message="tns:iIpPostVoucher_GetRuleMstDtlsList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iIpPostVoucher/GetRuleMstDtlsListResponse" message="tns:iIpPostVoucher_GetRuleMstDtlsList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRuleMstDtlsModuleWs">
+      <wsdl:input wsaw:Action="http://tempuri.org/iIpPostVoucher/GetRuleMstDtlsModuleWs" message="tns:iIpPostVoucher_GetRuleMstDtlsModuleWs_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iIpPostVoucher/GetRuleMstDtlsModuleWsResponse" message="tns:iIpPostVoucher_GetRuleMstDtlsModuleWs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FILLSEPSRV">
+      <wsdl:input wsaw:Action="http://tempuri.org/iIpPostVoucher/FILLSEPSRV" message="tns:iIpPostVoucher_FILLSEPSRV_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iIpPostVoucher/FILLSEPSRVResponse" message="tns:iIpPostVoucher_FILLSEPSRV_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getOpServiceBlock">
+      <wsdl:input wsaw:Action="http://tempuri.org/iIpPostVoucher/getOpServiceBlock" message="tns:iIpPostVoucher_getOpServiceBlock_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iIpPostVoucher/getOpServiceBlockResponse" message="tns:iIpPostVoucher_getOpServiceBlock_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getBalanceDtls">
+      <wsdl:input wsaw:Action="http://tempuri.org/iIpPostVoucher/getBalanceDtls" message="tns:iIpPostVoucher_getBalanceDtls_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iIpPostVoucher/getBalanceDtlsResponse" message="tns:iIpPostVoucher_getBalanceDtls_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmergencyDyDtFlg">
+      <wsdl:input wsaw:Action="http://tempuri.org/iIpPostVoucher/GetEmergencyDyDtFlg" message="tns:iIpPostVoucher_GetEmergencyDyDtFlg_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iIpPostVoucher/GetEmergencyDyDtFlgResponse" message="tns:iIpPostVoucher_GetEmergencyDyDtFlg_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckBedTransReq">
+      <wsdl:input wsaw:Action="http://tempuri.org/iIpPostVoucher/CheckBedTransReq" message="tns:iIpPostVoucher_CheckBedTransReq_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iIpPostVoucher/CheckBedTransReqResponse" message="tns:iIpPostVoucher_CheckBedTransReq_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetArCdContractDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/iIpPostVoucher/GetArCdContractDetails" message="tns:iIpPostVoucher_GetArCdContractDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iIpPostVoucher/GetArCdContractDetailsResponse" message="tns:iIpPostVoucher_GetArCdContractDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAreEmpMstData">
+      <wsdl:input wsaw:Action="http://tempuri.org/iIpPostVoucher/GetAreEmpMstData" message="tns:iIpPostVoucher_GetAreEmpMstData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iIpPostVoucher/GetAreEmpMstDataResponse" message="tns:iIpPostVoucher_GetAreEmpMstData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInPatientCompDlt">
+      <wsdl:input wsaw:Action="http://tempuri.org/iIpPostVoucher/GetInPatientCompDlt" message="tns:iIpPostVoucher_GetInPatientCompDlt_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iIpPostVoucher/GetInPatientCompDltResponse" message="tns:iIpPostVoucher_GetInPatientCompDlt_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getInPtnlstforPrnt">
+      <wsdl:input wsaw:Action="http://tempuri.org/iIpPostVoucher/getInPtnlstforPrnt" message="tns:iIpPostVoucher_getInPtnlstforPrnt_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iIpPostVoucher/getInPtnlstforPrntResponse" message="tns:iIpPostVoucher_getInPtnlstforPrnt_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSrvLstByModSubModCdPrefixWithRt">
+      <wsdl:input wsaw:Action="http://tempuri.org/iIpPostVoucher/GetSrvLstByModSubModCdPrefixWithRt" message="tns:iIpPostVoucher_GetSrvLstByModSubModCdPrefixWithRt_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iIpPostVoucher/GetSrvLstByModSubModCdPrefixWithRtResponse" message="tns:iIpPostVoucher_GetSrvLstByModSubModCdPrefixWithRt_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListOfOutsdTstNstTstOrdReqDtl">
+      <wsdl:input wsaw:Action="http://tempuri.org/iIpPostVoucher/GetListOfOutsdTstNstTstOrdReqDtl" message="tns:iIpPostVoucher_GetListOfOutsdTstNstTstOrdReqDtl_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iIpPostVoucher/GetListOfOutsdTstNstTstOrdReqDtlResponse" message="tns:iIpPostVoucher_GetListOfOutsdTstNstTstOrdReqDtl_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIpVchDtlForSameSrv">
+      <wsdl:input wsaw:Action="http://tempuri.org/iIpPostVoucher/GetIpVchDtlForSameSrv" message="tns:iIpPostVoucher_GetIpVchDtlForSameSrv_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iIpPostVoucher/GetIpVchDtlForSameSrvResponse" message="tns:iIpPostVoucher_GetIpVchDtlForSameSrv_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExPtnIPList">
+      <wsdl:input wsaw:Action="http://tempuri.org/iIpPostVoucher/GetExPtnIPList" message="tns:iIpPostVoucher_GetExPtnIPList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iIpPostVoucher/GetExPtnIPListResponse" message="tns:iIpPostVoucher_GetExPtnIPList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserWsModFnList">
+      <wsdl:input wsaw:Action="http://tempuri.org/iIpPostVoucher/GetUserWsModFnList" message="tns:iIpPostVoucher_GetUserWsModFnList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iIpPostVoucher/GetUserWsModFnListResponse" message="tns:iIpPostVoucher_GetUserWsModFnList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIPInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/iIpPostVoucher/GetIPInfo" message="tns:iIpPostVoucher_GetIPInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iIpPostVoucher/GetIPInfoResponse" message="tns:iIpPostVoucher_GetIPInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetArMstForAutoHelp">
+      <wsdl:input wsaw:Action="http://tempuri.org/iIpPostVoucher/GetArMstForAutoHelp" message="tns:iIpPostVoucher_GetArMstForAutoHelp_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iIpPostVoucher/GetArMstForAutoHelpResponse" message="tns:iIpPostVoucher_GetArMstForAutoHelp_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FnChkIsSeniorCitizen">
+      <wsdl:input wsaw:Action="http://tempuri.org/iIpPostVoucher/FnChkIsSeniorCitizen" message="tns:iIpPostVoucher_FnChkIsSeniorCitizen_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iIpPostVoucher/FnChkIsSeniorCitizenResponse" message="tns:iIpPostVoucher_FnChkIsSeniorCitizen_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPtnTypeMst">
+      <wsdl:input wsaw:Action="http://tempuri.org/iIpPostVoucher/GetPtnTypeMst" message="tns:iIpPostVoucher_GetPtnTypeMst_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iIpPostVoucher/GetPtnTypeMstResponse" message="tns:iIpPostVoucher_GetPtnTypeMst_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPtnTypeMstByTypCd">
+      <wsdl:input wsaw:Action="http://tempuri.org/iIpPostVoucher/GetPtnTypeMstByTypCd" message="tns:iIpPostVoucher_GetPtnTypeMstByTypCd_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iIpPostVoucher/GetPtnTypeMstByTypCdResponse" message="tns:iIpPostVoucher_GetPtnTypeMstByTypCd_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSrvBlockSts">
+      <wsdl:input wsaw:Action="http://tempuri.org/iIpPostVoucher/GetSrvBlockSts" message="tns:iIpPostVoucher_GetSrvBlockSts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iIpPostVoucher/GetSrvBlockStsResponse" message="tns:iIpPostVoucher_GetSrvBlockSts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIpICUEquipMstList">
+      <wsdl:input wsaw:Action="http://tempuri.org/iIpPostVoucher/GetIpICUEquipMstList" message="tns:iIpPostVoucher_GetIpICUEquipMstList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iIpPostVoucher/GetIpICUEquipMstListResponse" message="tns:iIpPostVoucher_GetIpICUEquipMstList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIpICUEquipMstDtl">
+      <wsdl:input wsaw:Action="http://tempuri.org/iIpPostVoucher/GetIpICUEquipMstDtl" message="tns:iIpPostVoucher_GetIpICUEquipMstDtl_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iIpPostVoucher/GetIpICUEquipMstDtlResponse" message="tns:iIpPostVoucher_GetIpICUEquipMstDtl_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIpICUEquipLinkViewHistory">
+      <wsdl:input wsaw:Action="http://tempuri.org/iIpPostVoucher/GetIpICUEquipLinkViewHistory" message="tns:iIpPostVoucher_GetIpICUEquipLinkViewHistory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iIpPostVoucher/GetIpICUEquipLinkViewHistoryResponse" message="tns:iIpPostVoucher_GetIpICUEquipLinkViewHistory_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_iIpPostVoucher" type="tns:iIpPostVoucher">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetIpICUEquipLinkPostList">
+      <soap:operation soapAction="http://tempuri.org/iIpPostVoucher/GetIpICUEquipLinkPostList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveAttachEquipment">
+      <soap:operation soapAction="http://tempuri.org/iIpPostVoucher/SaveAttachEquipment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelAttachEquipment">
+      <soap:operation soapAction="http://tempuri.org/iIpPostVoucher/CancelAttachEquipment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTechSrvList">
+      <soap:operation soapAction="http://tempuri.org/iIpPostVoucher/GetTechSrvList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Fn_GetDocDeductionPerc">
+      <soap:operation soapAction="http://tempuri.org/iIpPostVoucher/Fn_GetDocDeductionPerc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Fn_IsArMstNoEmgSrv">
+      <soap:operation soapAction="http://tempuri.org/iIpPostVoucher/Fn_IsArMstNoEmgSrv" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostIPServiceFromLIS">
+      <soap:operation soapAction="http://tempuri.org/iIpPostVoucher/PostIPServiceFromLIS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveDbReqForCreateIpVch">
+      <soap:operation soapAction="http://tempuri.org/iIpPostVoucher/SaveDbReqForCreateIpVch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FnGetReferralDocNm">
+      <soap:operation soapAction="http://tempuri.org/iIpPostVoucher/FnGetReferralDocNm" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReferralDocLstMst">
+      <soap:operation soapAction="http://tempuri.org/iIpPostVoucher/GetReferralDocLstMst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReferralDocLst">
+      <soap:operation soapAction="http://tempuri.org/iIpPostVoucher/GetReferralDocLst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListOfNstTstOrdReqDtl">
+      <soap:operation soapAction="http://tempuri.org/iIpPostVoucher/GetListOfNstTstOrdReqDtl" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCalRate">
+      <soap:operation soapAction="http://tempuri.org/iIpPostVoucher/GetCalRate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSharerServiceList">
+      <soap:operation soapAction="http://tempuri.org/iIpPostVoucher/GetSharerServiceList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCalShare">
+      <soap:operation soapAction="http://tempuri.org/iIpPostVoucher/GetCalShare" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveRecord">
+      <soap:operation soapAction="http://tempuri.org/iIpPostVoucher/SaveRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Validate">
+      <soap:operation soapAction="http://tempuri.org/iIpPostVoucher/Validate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInpatientDetails">
+      <soap:operation soapAction="http://tempuri.org/iIpPostVoucher/GetInpatientDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChrgMst">
+      <soap:operation soapAction="http://tempuri.org/iIpPostVoucher/GetChrgMst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSrvMstDtl">
+      <soap:operation soapAction="http://tempuri.org/iIpPostVoucher/GetSrvMstDtl" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceList">
+      <soap:operation soapAction="http://tempuri.org/iIpPostVoucher/GetServiceList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListChrgMStForUser">
+      <soap:operation soapAction="http://tempuri.org/iIpPostVoucher/GetListChrgMStForUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInPtnListByNameDocWard">
+      <soap:operation soapAction="http://tempuri.org/iIpPostVoucher/GetInPtnListByNameDocWard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WardDetails">
+      <soap:operation soapAction="http://tempuri.org/iIpPostVoucher/WardDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDoctorList">
+      <soap:operation soapAction="http://tempuri.org/iIpPostVoucher/GetDoctorList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DoctorSpeciality">
+      <soap:operation soapAction="http://tempuri.org/iIpPostVoucher/DoctorSpeciality" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDoctor">
+      <soap:operation soapAction="http://tempuri.org/iIpPostVoucher/GetDoctor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPtnClsDtlByCd">
+      <soap:operation soapAction="http://tempuri.org/iIpPostVoucher/GetPtnClsDtlByCd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCmpntShrDtl">
+      <soap:operation soapAction="http://tempuri.org/iIpPostVoucher/GetCmpntShrDtl" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIpBilInsTrnByIpNo">
+      <soap:operation soapAction="http://tempuri.org/iIpPostVoucher/GetIpBilInsTrnByIpNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSrvLstBySrvTypSexFlgUserNstTstOrdAllow">
+      <soap:operation soapAction="http://tempuri.org/iIpPostVoucher/GetSrvLstBySrvTypSexFlgUserNstTstOrdAllow" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSrvLstByModSubModCdPrefix">
+      <soap:operation soapAction="http://tempuri.org/iIpPostVoucher/GetSrvLstByModSubModCdPrefix" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChrgMstListByUserIdModSubModCd">
+      <soap:operation soapAction="http://tempuri.org/iIpPostVoucher/GetChrgMstListByUserIdModSubModCd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSrvLstByUserIdModSubModCd">
+      <soap:operation soapAction="http://tempuri.org/iIpPostVoucher/GetSrvLstByUserIdModSubModCd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSrvMstDtlByUserIdModSubmodcd">
+      <soap:operation soapAction="http://tempuri.org/iIpPostVoucher/GetSrvMstDtlByUserIdModSubmodcd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChrgMstDtlByUserIdModSubModCd">
+      <soap:operation soapAction="http://tempuri.org/iIpPostVoucher/GetChrgMstDtlByUserIdModSubModCd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserBasicDtl">
+      <soap:operation soapAction="http://tempuri.org/iIpPostVoucher/GetUserBasicDtl" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChargeMstWithchrgstlflg">
+      <soap:operation soapAction="http://tempuri.org/iIpPostVoucher/GetChargeMstWithchrgstlflg" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSrvCdWithDesc">
+      <soap:operation soapAction="http://tempuri.org/iIpPostVoucher/GetSrvCdWithDesc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocListWithTypWithDocStsCd">
+      <soap:operation soapAction="http://tempuri.org/iIpPostVoucher/GetDocListWithTypWithDocStsCd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPtnClassDtl">
+      <soap:operation soapAction="http://tempuri.org/iIpPostVoucher/GetPtnClassDtl" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmpIDList">
+      <soap:operation soapAction="http://tempuri.org/iIpPostVoucher/GetEmpIDList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNetIdParamDetails">
+      <soap:operation soapAction="http://tempuri.org/iIpPostVoucher/GetNetIdParamDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIpPatientHelpMst">
+      <soap:operation soapAction="http://tempuri.org/iIpPostVoucher/GetIpPatientHelpMst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PopulatePager">
+      <soap:operation soapAction="http://tempuri.org/iIpPostVoucher/PopulatePager" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPrntRptViewerRule8013">
+      <soap:operation soapAction="http://tempuri.org/iIpPostVoucher/GetPrntRptViewerRule8013" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPrntRptViewerRule8013OnlyPdfPrint">
+      <soap:operation soapAction="http://tempuri.org/iIpPostVoucher/GetPrntRptViewerRule8013OnlyPdfPrint" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInpatientDetailsForPrint">
+      <soap:operation soapAction="http://tempuri.org/iIpPostVoucher/GetInpatientDetailsForPrint" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FnIsChkSrvHrs">
+      <soap:operation soapAction="http://tempuri.org/iIpPostVoucher/FnIsChkSrvHrs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRuleMstDtls">
+      <soap:operation soapAction="http://tempuri.org/iIpPostVoucher/GetRuleMstDtls" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRuleMstDtlsList">
+      <soap:operation soapAction="http://tempuri.org/iIpPostVoucher/GetRuleMstDtlsList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRuleMstDtlsModuleWs">
+      <soap:operation soapAction="http://tempuri.org/iIpPostVoucher/GetRuleMstDtlsModuleWs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FILLSEPSRV">
+      <soap:operation soapAction="http://tempuri.org/iIpPostVoucher/FILLSEPSRV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getOpServiceBlock">
+      <soap:operation soapAction="http://tempuri.org/iIpPostVoucher/getOpServiceBlock" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBalanceDtls">
+      <soap:operation soapAction="http://tempuri.org/iIpPostVoucher/getBalanceDtls" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmergencyDyDtFlg">
+      <soap:operation soapAction="http://tempuri.org/iIpPostVoucher/GetEmergencyDyDtFlg" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckBedTransReq">
+      <soap:operation soapAction="http://tempuri.org/iIpPostVoucher/CheckBedTransReq" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetArCdContractDetails">
+      <soap:operation soapAction="http://tempuri.org/iIpPostVoucher/GetArCdContractDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAreEmpMstData">
+      <soap:operation soapAction="http://tempuri.org/iIpPostVoucher/GetAreEmpMstData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInPatientCompDlt">
+      <soap:operation soapAction="http://tempuri.org/iIpPostVoucher/GetInPatientCompDlt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getInPtnlstforPrnt">
+      <soap:operation soapAction="http://tempuri.org/iIpPostVoucher/getInPtnlstforPrnt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSrvLstByModSubModCdPrefixWithRt">
+      <soap:operation soapAction="http://tempuri.org/iIpPostVoucher/GetSrvLstByModSubModCdPrefixWithRt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListOfOutsdTstNstTstOrdReqDtl">
+      <soap:operation soapAction="http://tempuri.org/iIpPostVoucher/GetListOfOutsdTstNstTstOrdReqDtl" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIpVchDtlForSameSrv">
+      <soap:operation soapAction="http://tempuri.org/iIpPostVoucher/GetIpVchDtlForSameSrv" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExPtnIPList">
+      <soap:operation soapAction="http://tempuri.org/iIpPostVoucher/GetExPtnIPList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserWsModFnList">
+      <soap:operation soapAction="http://tempuri.org/iIpPostVoucher/GetUserWsModFnList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIPInfo">
+      <soap:operation soapAction="http://tempuri.org/iIpPostVoucher/GetIPInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetArMstForAutoHelp">
+      <soap:operation soapAction="http://tempuri.org/iIpPostVoucher/GetArMstForAutoHelp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FnChkIsSeniorCitizen">
+      <soap:operation soapAction="http://tempuri.org/iIpPostVoucher/FnChkIsSeniorCitizen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPtnTypeMst">
+      <soap:operation soapAction="http://tempuri.org/iIpPostVoucher/GetPtnTypeMst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPtnTypeMstByTypCd">
+      <soap:operation soapAction="http://tempuri.org/iIpPostVoucher/GetPtnTypeMstByTypCd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSrvBlockSts">
+      <soap:operation soapAction="http://tempuri.org/iIpPostVoucher/GetSrvBlockSts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIpICUEquipMstList">
+      <soap:operation soapAction="http://tempuri.org/iIpPostVoucher/GetIpICUEquipMstList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIpICUEquipMstDtl">
+      <soap:operation soapAction="http://tempuri.org/iIpPostVoucher/GetIpICUEquipMstDtl" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIpICUEquipLinkViewHistory">
+      <soap:operation soapAction="http://tempuri.org/iIpPostVoucher/GetIpICUEquipLinkViewHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="bclsIpPostVoucher">
+    <wsdl:port name="BasicHttpBinding_iIpPostVoucher" binding="tns:BasicHttpBinding_iIpPostVoucher">
+      <soap:address location="http://localhost:50875/IpPostVoucher.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

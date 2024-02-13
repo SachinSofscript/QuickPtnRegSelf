@@ -1,0 +1,746 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="CmnSecurityFun" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost/CWWEBWCFSPLIT/CommonSecurityFunc/CmnSecurityFun.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost/CWWEBWCFSPLIT/CommonSecurityFunc/CmnSecurityFun.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost/CWWEBWCFSPLIT/CommonSecurityFunc/CmnSecurityFun.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost/CWWEBWCFSPLIT/CommonSecurityFunc/CmnSecurityFun.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/CmnSecurityFunSrv" />
+      <xsd:import schemaLocation="http://localhost/CWWEBWCFSPLIT/CommonSecurityFunc/CmnSecurityFun.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/CmnSecurityFunSrv.CommonModule" />
+      <xsd:import schemaLocation="http://localhost/CWWEBWCFSPLIT/CommonSecurityFunc/CmnSecurityFun.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/CmnSecurityFunSrv.CareworksSecurity" />
+      <xsd:import schemaLocation="http://localhost/CWWEBWCFSPLIT/CommonSecurityFunc/CmnSecurityFun.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/CmnSecurityFunSrv.CashDenomination" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="iCmnSecurityFun_GetReportServerUserNamePassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetReportServerUserNamePassword" />
+  </wsdl:message>
+  <wsdl:message name="iCmnSecurityFun_GetReportServerUserNamePassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetReportServerUserNamePasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="iCmnSecurityFun_GetNetIdDetailsWithForReportPath_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNetIdDetailsWithForReportPath" />
+  </wsdl:message>
+  <wsdl:message name="iCmnSecurityFun_GetNetIdDetailsWithForReportPath_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNetIdDetailsWithForReportPathResponse" />
+  </wsdl:message>
+  <wsdl:message name="iCmnSecurityFun_GetNetIdDetailsWithModuleName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNetIdDetailsWithModuleName" />
+  </wsdl:message>
+  <wsdl:message name="iCmnSecurityFun_GetNetIdDetailsWithModuleName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNetIdDetailsWithModuleNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="iCmnSecurityFun_ConvertYYYYMMDDToSQLDatetime_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConvertYYYYMMDDToSQLDatetime" />
+  </wsdl:message>
+  <wsdl:message name="iCmnSecurityFun_ConvertYYYYMMDDToSQLDatetime_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConvertYYYYMMDDToSQLDatetimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="iCmnSecurityFun_ConvertSQLDatetimeToYYYYMMDD_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConvertSQLDatetimeToYYYYMMDD" />
+  </wsdl:message>
+  <wsdl:message name="iCmnSecurityFun_ConvertSQLDatetimeToYYYYMMDD_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConvertSQLDatetimeToYYYYMMDDResponse" />
+  </wsdl:message>
+  <wsdl:message name="iCmnSecurityFun_GetServerDateTime_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetServerDateTime" />
+  </wsdl:message>
+  <wsdl:message name="iCmnSecurityFun_GetServerDateTime_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetServerDateTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="iCmnSecurityFun_GetRevenueDate_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRevenueDate" />
+  </wsdl:message>
+  <wsdl:message name="iCmnSecurityFun_GetRevenueDate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRevenueDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="iCmnSecurityFun_GetRevenueDateDL_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRevenueDateDL" />
+  </wsdl:message>
+  <wsdl:message name="iCmnSecurityFun_GetRevenueDateDL_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRevenueDateDLResponse" />
+  </wsdl:message>
+  <wsdl:message name="iCmnSecurityFun_GetGenderName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGenderName" />
+  </wsdl:message>
+  <wsdl:message name="iCmnSecurityFun_GetGenderName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGenderNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="iCmnSecurityFun_GetFinancialYr_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFinancialYr" />
+  </wsdl:message>
+  <wsdl:message name="iCmnSecurityFun_GetFinancialYr_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFinancialYrResponse" />
+  </wsdl:message>
+  <wsdl:message name="iCmnSecurityFun_GetCurrancy_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCurrancy" />
+  </wsdl:message>
+  <wsdl:message name="iCmnSecurityFun_GetCurrancy_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCurrancyResponse" />
+  </wsdl:message>
+  <wsdl:message name="iCmnSecurityFun_GetAdmissionDate_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAdmissionDate" />
+  </wsdl:message>
+  <wsdl:message name="iCmnSecurityFun_GetAdmissionDate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAdmissionDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="iCmnSecurityFun_ChkSysLock_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChkSysLock" />
+  </wsdl:message>
+  <wsdl:message name="iCmnSecurityFun_ChkSysLock_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChkSysLockResponse" />
+  </wsdl:message>
+  <wsdl:message name="iCmnSecurityFun_GetCalRate_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCalRate" />
+  </wsdl:message>
+  <wsdl:message name="iCmnSecurityFun_GetCalRate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCalRateResponse" />
+  </wsdl:message>
+  <wsdl:message name="iCmnSecurityFun_GetCalShare_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCalShare" />
+  </wsdl:message>
+  <wsdl:message name="iCmnSecurityFun_GetCalShare_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCalShareResponse" />
+  </wsdl:message>
+  <wsdl:message name="iCmnSecurityFun_CalCompanyScheme_InputMessage">
+    <wsdl:part name="parameters" element="tns:CalCompanyScheme" />
+  </wsdl:message>
+  <wsdl:message name="iCmnSecurityFun_CalCompanyScheme_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CalCompanySchemeResponse" />
+  </wsdl:message>
+  <wsdl:message name="iCmnSecurityFun_ShowDenominationScreen_InputMessage">
+    <wsdl:part name="parameters" element="tns:ShowDenominationScreen" />
+  </wsdl:message>
+  <wsdl:message name="iCmnSecurityFun_ShowDenominationScreen_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ShowDenominationScreenResponse" />
+  </wsdl:message>
+  <wsdl:message name="iCmnSecurityFun_GetmsgmstList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetmsgmstList" />
+  </wsdl:message>
+  <wsdl:message name="iCmnSecurityFun_GetmsgmstList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetmsgmstListResponse" />
+  </wsdl:message>
+  <wsdl:message name="iCmnSecurityFun_SaveCashDenomination_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveCashDenomination" />
+  </wsdl:message>
+  <wsdl:message name="iCmnSecurityFun_SaveCashDenomination_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveCashDenominationResponse" />
+  </wsdl:message>
+  <wsdl:message name="iCmnSecurityFun_GetFinancialYrBetweenDt_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFinancialYrBetweenDt" />
+  </wsdl:message>
+  <wsdl:message name="iCmnSecurityFun_GetFinancialYrBetweenDt_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFinancialYrBetweenDtResponse" />
+  </wsdl:message>
+  <wsdl:message name="iCmnSecurityFun_FunctionAccessDtl_InputMessage">
+    <wsdl:part name="parameters" element="tns:FunctionAccessDtl" />
+  </wsdl:message>
+  <wsdl:message name="iCmnSecurityFun_FunctionAccessDtl_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FunctionAccessDtlResponse" />
+  </wsdl:message>
+  <wsdl:message name="iCmnSecurityFun_AccessModCd_InputMessage">
+    <wsdl:part name="parameters" element="tns:AccessModCd" />
+  </wsdl:message>
+  <wsdl:message name="iCmnSecurityFun_AccessModCd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AccessModCdResponse" />
+  </wsdl:message>
+  <wsdl:message name="iCmnSecurityFun_GetNetIdDetByModCdSubModCd_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNetIdDetByModCdSubModCd" />
+  </wsdl:message>
+  <wsdl:message name="iCmnSecurityFun_GetNetIdDetByModCdSubModCd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNetIdDetByModCdSubModCdResponse" />
+  </wsdl:message>
+  <wsdl:message name="iCmnSecurityFun_GetNetIdDetByModCdSubModCdReq_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNetIdDetByModCdSubModCdReq" />
+  </wsdl:message>
+  <wsdl:message name="iCmnSecurityFun_GetNetIdDetByModCdSubModCdReq_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNetIdDetByModCdSubModCdReqResponse" />
+  </wsdl:message>
+  <wsdl:message name="iCmnSecurityFun_UserRights_InputMessage">
+    <wsdl:part name="parameters" element="tns:UserRights" />
+  </wsdl:message>
+  <wsdl:message name="iCmnSecurityFun_UserRights_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UserRightsResponse" />
+  </wsdl:message>
+  <wsdl:message name="iCmnSecurityFun_SelDoctorFeeSource_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelDoctorFeeSource" />
+  </wsdl:message>
+  <wsdl:message name="iCmnSecurityFun_SelDoctorFeeSource_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelDoctorFeeSourceResponse" />
+  </wsdl:message>
+  <wsdl:message name="iCmnSecurityFun_GetDepositsType_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDepositsType" />
+  </wsdl:message>
+  <wsdl:message name="iCmnSecurityFun_GetDepositsType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDepositsTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="iCmnSecurityFun_DepositTypeByCd_InputMessage">
+    <wsdl:part name="parameters" element="tns:DepositTypeByCd" />
+  </wsdl:message>
+  <wsdl:message name="iCmnSecurityFun_DepositTypeByCd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DepositTypeByCdResponse" />
+  </wsdl:message>
+  <wsdl:message name="iCmnSecurityFun_GetCodeDeCodeDtlByTypByCd_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCodeDeCodeDtlByTypByCd" />
+  </wsdl:message>
+  <wsdl:message name="iCmnSecurityFun_GetCodeDeCodeDtlByTypByCd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCodeDeCodeDtlByTypByCdResponse" />
+  </wsdl:message>
+  <wsdl:message name="iCmnSecurityFun_GetCashDenomControl_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCashDenomControl" />
+  </wsdl:message>
+  <wsdl:message name="iCmnSecurityFun_GetCashDenomControl_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCashDenomControlResponse" />
+  </wsdl:message>
+  <wsdl:message name="iCmnSecurityFun_GetBedTypeList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBedTypeList" />
+  </wsdl:message>
+  <wsdl:message name="iCmnSecurityFun_GetBedTypeList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBedTypeListResponse" />
+  </wsdl:message>
+  <wsdl:message name="iCmnSecurityFun_WardDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:WardDetails" />
+  </wsdl:message>
+  <wsdl:message name="iCmnSecurityFun_WardDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:WardDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="iCmnSecurityFun_GetCodeDeCodeListForPtnGender_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCodeDeCodeListForPtnGender" />
+  </wsdl:message>
+  <wsdl:message name="iCmnSecurityFun_GetCodeDeCodeListForPtnGender_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCodeDeCodeListForPtnGenderResponse" />
+  </wsdl:message>
+  <wsdl:message name="iCmnSecurityFun_GetButtonRights_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetButtonRights" />
+  </wsdl:message>
+  <wsdl:message name="iCmnSecurityFun_GetButtonRights_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetButtonRightsResponse" />
+  </wsdl:message>
+  <wsdl:message name="iCmnSecurityFun_GetClncMst_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetClncMst" />
+  </wsdl:message>
+  <wsdl:message name="iCmnSecurityFun_GetClncMst_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetClncMstResponse" />
+  </wsdl:message>
+  <wsdl:message name="iCmnSecurityFun_GetCodeDeCodeList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCodeDeCodeList" />
+  </wsdl:message>
+  <wsdl:message name="iCmnSecurityFun_GetCodeDeCodeList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCodeDeCodeListResponse" />
+  </wsdl:message>
+  <wsdl:message name="iCmnSecurityFun_GetFiledTitleMst_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFiledTitleMst" />
+  </wsdl:message>
+  <wsdl:message name="iCmnSecurityFun_GetFiledTitleMst_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFiledTitleMstResponse" />
+  </wsdl:message>
+  <wsdl:message name="iCmnSecurityFun_GetCashTrnLimit_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCashTrnLimit" />
+  </wsdl:message>
+  <wsdl:message name="iCmnSecurityFun_GetCashTrnLimit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCashTrnLimitResponse" />
+  </wsdl:message>
+  <wsdl:portType name="iCmnSecurityFun">
+    <wsdl:operation name="GetReportServerUserNamePassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/iCmnSecurityFun/GetReportServerUserNamePassword" message="tns:iCmnSecurityFun_GetReportServerUserNamePassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iCmnSecurityFun/GetReportServerUserNamePasswordResponse" message="tns:iCmnSecurityFun_GetReportServerUserNamePassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNetIdDetailsWithForReportPath">
+      <wsdl:input wsaw:Action="http://tempuri.org/iCmnSecurityFun/GetNetIdDetailsWithForReportPath" message="tns:iCmnSecurityFun_GetNetIdDetailsWithForReportPath_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iCmnSecurityFun/GetNetIdDetailsWithForReportPathResponse" message="tns:iCmnSecurityFun_GetNetIdDetailsWithForReportPath_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNetIdDetailsWithModuleName">
+      <wsdl:input wsaw:Action="http://tempuri.org/iCmnSecurityFun/GetNetIdDetailsWithModuleName" message="tns:iCmnSecurityFun_GetNetIdDetailsWithModuleName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iCmnSecurityFun/GetNetIdDetailsWithModuleNameResponse" message="tns:iCmnSecurityFun_GetNetIdDetailsWithModuleName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConvertYYYYMMDDToSQLDatetime">
+      <wsdl:input wsaw:Action="http://tempuri.org/iCmnSecurityFun/ConvertYYYYMMDDToSQLDatetime" message="tns:iCmnSecurityFun_ConvertYYYYMMDDToSQLDatetime_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iCmnSecurityFun/ConvertYYYYMMDDToSQLDatetimeResponse" message="tns:iCmnSecurityFun_ConvertYYYYMMDDToSQLDatetime_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConvertSQLDatetimeToYYYYMMDD">
+      <wsdl:input wsaw:Action="http://tempuri.org/iCmnSecurityFun/ConvertSQLDatetimeToYYYYMMDD" message="tns:iCmnSecurityFun_ConvertSQLDatetimeToYYYYMMDD_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iCmnSecurityFun/ConvertSQLDatetimeToYYYYMMDDResponse" message="tns:iCmnSecurityFun_ConvertSQLDatetimeToYYYYMMDD_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServerDateTime">
+      <wsdl:input wsaw:Action="http://tempuri.org/iCmnSecurityFun/GetServerDateTime" message="tns:iCmnSecurityFun_GetServerDateTime_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iCmnSecurityFun/GetServerDateTimeResponse" message="tns:iCmnSecurityFun_GetServerDateTime_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRevenueDate">
+      <wsdl:input wsaw:Action="http://tempuri.org/iCmnSecurityFun/GetRevenueDate" message="tns:iCmnSecurityFun_GetRevenueDate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iCmnSecurityFun/GetRevenueDateResponse" message="tns:iCmnSecurityFun_GetRevenueDate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRevenueDateDL">
+      <wsdl:input wsaw:Action="http://tempuri.org/iCmnSecurityFun/GetRevenueDateDL" message="tns:iCmnSecurityFun_GetRevenueDateDL_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iCmnSecurityFun/GetRevenueDateDLResponse" message="tns:iCmnSecurityFun_GetRevenueDateDL_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGenderName">
+      <wsdl:input wsaw:Action="http://tempuri.org/iCmnSecurityFun/GetGenderName" message="tns:iCmnSecurityFun_GetGenderName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iCmnSecurityFun/GetGenderNameResponse" message="tns:iCmnSecurityFun_GetGenderName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFinancialYr">
+      <wsdl:input wsaw:Action="http://tempuri.org/iCmnSecurityFun/GetFinancialYr" message="tns:iCmnSecurityFun_GetFinancialYr_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iCmnSecurityFun/GetFinancialYrResponse" message="tns:iCmnSecurityFun_GetFinancialYr_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrancy">
+      <wsdl:input wsaw:Action="http://tempuri.org/iCmnSecurityFun/GetCurrancy" message="tns:iCmnSecurityFun_GetCurrancy_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iCmnSecurityFun/GetCurrancyResponse" message="tns:iCmnSecurityFun_GetCurrancy_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAdmissionDate">
+      <wsdl:input wsaw:Action="http://tempuri.org/iCmnSecurityFun/GetAdmissionDate" message="tns:iCmnSecurityFun_GetAdmissionDate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iCmnSecurityFun/GetAdmissionDateResponse" message="tns:iCmnSecurityFun_GetAdmissionDate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChkSysLock">
+      <wsdl:input wsaw:Action="http://tempuri.org/iCmnSecurityFun/ChkSysLock" message="tns:iCmnSecurityFun_ChkSysLock_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iCmnSecurityFun/ChkSysLockResponse" message="tns:iCmnSecurityFun_ChkSysLock_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCalRate">
+      <wsdl:input wsaw:Action="http://tempuri.org/iCmnSecurityFun/GetCalRate" message="tns:iCmnSecurityFun_GetCalRate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iCmnSecurityFun/GetCalRateResponse" message="tns:iCmnSecurityFun_GetCalRate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCalShare">
+      <wsdl:input wsaw:Action="http://tempuri.org/iCmnSecurityFun/GetCalShare" message="tns:iCmnSecurityFun_GetCalShare_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iCmnSecurityFun/GetCalShareResponse" message="tns:iCmnSecurityFun_GetCalShare_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CalCompanyScheme">
+      <wsdl:input wsaw:Action="http://tempuri.org/iCmnSecurityFun/CalCompanyScheme" message="tns:iCmnSecurityFun_CalCompanyScheme_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iCmnSecurityFun/CalCompanySchemeResponse" message="tns:iCmnSecurityFun_CalCompanyScheme_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ShowDenominationScreen">
+      <wsdl:input wsaw:Action="http://tempuri.org/iCmnSecurityFun/ShowDenominationScreen" message="tns:iCmnSecurityFun_ShowDenominationScreen_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iCmnSecurityFun/ShowDenominationScreenResponse" message="tns:iCmnSecurityFun_ShowDenominationScreen_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetmsgmstList">
+      <wsdl:input wsaw:Action="http://tempuri.org/iCmnSecurityFun/GetmsgmstList" message="tns:iCmnSecurityFun_GetmsgmstList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iCmnSecurityFun/GetmsgmstListResponse" message="tns:iCmnSecurityFun_GetmsgmstList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveCashDenomination">
+      <wsdl:input wsaw:Action="http://tempuri.org/iCmnSecurityFun/SaveCashDenomination" message="tns:iCmnSecurityFun_SaveCashDenomination_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iCmnSecurityFun/SaveCashDenominationResponse" message="tns:iCmnSecurityFun_SaveCashDenomination_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFinancialYrBetweenDt">
+      <wsdl:input wsaw:Action="http://tempuri.org/iCmnSecurityFun/GetFinancialYrBetweenDt" message="tns:iCmnSecurityFun_GetFinancialYrBetweenDt_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iCmnSecurityFun/GetFinancialYrBetweenDtResponse" message="tns:iCmnSecurityFun_GetFinancialYrBetweenDt_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FunctionAccessDtl">
+      <wsdl:input wsaw:Action="http://tempuri.org/iCmnSecurityFun/FunctionAccessDtl" message="tns:iCmnSecurityFun_FunctionAccessDtl_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iCmnSecurityFun/FunctionAccessDtlResponse" message="tns:iCmnSecurityFun_FunctionAccessDtl_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AccessModCd">
+      <wsdl:input wsaw:Action="http://tempuri.org/iCmnSecurityFun/AccessModCd" message="tns:iCmnSecurityFun_AccessModCd_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iCmnSecurityFun/AccessModCdResponse" message="tns:iCmnSecurityFun_AccessModCd_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNetIdDetByModCdSubModCd">
+      <wsdl:input wsaw:Action="http://tempuri.org/iCmnSecurityFun/GetNetIdDetByModCdSubModCd" message="tns:iCmnSecurityFun_GetNetIdDetByModCdSubModCd_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iCmnSecurityFun/GetNetIdDetByModCdSubModCdResponse" message="tns:iCmnSecurityFun_GetNetIdDetByModCdSubModCd_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNetIdDetByModCdSubModCdReq">
+      <wsdl:input wsaw:Action="http://tempuri.org/iCmnSecurityFun/GetNetIdDetByModCdSubModCdReq" message="tns:iCmnSecurityFun_GetNetIdDetByModCdSubModCdReq_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iCmnSecurityFun/GetNetIdDetByModCdSubModCdReqResponse" message="tns:iCmnSecurityFun_GetNetIdDetByModCdSubModCdReq_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UserRights">
+      <wsdl:input wsaw:Action="http://tempuri.org/iCmnSecurityFun/UserRights" message="tns:iCmnSecurityFun_UserRights_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iCmnSecurityFun/UserRightsResponse" message="tns:iCmnSecurityFun_UserRights_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelDoctorFeeSource">
+      <wsdl:input wsaw:Action="http://tempuri.org/iCmnSecurityFun/SelDoctorFeeSource" message="tns:iCmnSecurityFun_SelDoctorFeeSource_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iCmnSecurityFun/SelDoctorFeeSourceResponse" message="tns:iCmnSecurityFun_SelDoctorFeeSource_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDepositsType">
+      <wsdl:input wsaw:Action="http://tempuri.org/iCmnSecurityFun/GetDepositsType" message="tns:iCmnSecurityFun_GetDepositsType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iCmnSecurityFun/GetDepositsTypeResponse" message="tns:iCmnSecurityFun_GetDepositsType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DepositTypeByCd">
+      <wsdl:input wsaw:Action="http://tempuri.org/iCmnSecurityFun/DepositTypeByCd" message="tns:iCmnSecurityFun_DepositTypeByCd_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iCmnSecurityFun/DepositTypeByCdResponse" message="tns:iCmnSecurityFun_DepositTypeByCd_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCodeDeCodeDtlByTypByCd">
+      <wsdl:input wsaw:Action="http://tempuri.org/iCmnSecurityFun/GetCodeDeCodeDtlByTypByCd" message="tns:iCmnSecurityFun_GetCodeDeCodeDtlByTypByCd_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iCmnSecurityFun/GetCodeDeCodeDtlByTypByCdResponse" message="tns:iCmnSecurityFun_GetCodeDeCodeDtlByTypByCd_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCashDenomControl">
+      <wsdl:input wsaw:Action="http://tempuri.org/iCmnSecurityFun/GetCashDenomControl" message="tns:iCmnSecurityFun_GetCashDenomControl_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iCmnSecurityFun/GetCashDenomControlResponse" message="tns:iCmnSecurityFun_GetCashDenomControl_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBedTypeList">
+      <wsdl:input wsaw:Action="http://tempuri.org/iCmnSecurityFun/GetBedTypeList" message="tns:iCmnSecurityFun_GetBedTypeList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iCmnSecurityFun/GetBedTypeListResponse" message="tns:iCmnSecurityFun_GetBedTypeList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="WardDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/iCmnSecurityFun/WardDetails" message="tns:iCmnSecurityFun_WardDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iCmnSecurityFun/WardDetailsResponse" message="tns:iCmnSecurityFun_WardDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCodeDeCodeListForPtnGender">
+      <wsdl:input wsaw:Action="http://tempuri.org/iCmnSecurityFun/GetCodeDeCodeListForPtnGender" message="tns:iCmnSecurityFun_GetCodeDeCodeListForPtnGender_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iCmnSecurityFun/GetCodeDeCodeListForPtnGenderResponse" message="tns:iCmnSecurityFun_GetCodeDeCodeListForPtnGender_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetButtonRights">
+      <wsdl:input wsaw:Action="http://tempuri.org/iCmnSecurityFun/GetButtonRights" message="tns:iCmnSecurityFun_GetButtonRights_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iCmnSecurityFun/GetButtonRightsResponse" message="tns:iCmnSecurityFun_GetButtonRights_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClncMst">
+      <wsdl:input wsaw:Action="http://tempuri.org/iCmnSecurityFun/GetClncMst" message="tns:iCmnSecurityFun_GetClncMst_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iCmnSecurityFun/GetClncMstResponse" message="tns:iCmnSecurityFun_GetClncMst_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCodeDeCodeList">
+      <wsdl:input wsaw:Action="http://tempuri.org/iCmnSecurityFun/GetCodeDeCodeList" message="tns:iCmnSecurityFun_GetCodeDeCodeList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iCmnSecurityFun/GetCodeDeCodeListResponse" message="tns:iCmnSecurityFun_GetCodeDeCodeList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFiledTitleMst">
+      <wsdl:input wsaw:Action="http://tempuri.org/iCmnSecurityFun/GetFiledTitleMst" message="tns:iCmnSecurityFun_GetFiledTitleMst_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iCmnSecurityFun/GetFiledTitleMstResponse" message="tns:iCmnSecurityFun_GetFiledTitleMst_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCashTrnLimit">
+      <wsdl:input wsaw:Action="http://tempuri.org/iCmnSecurityFun/GetCashTrnLimit" message="tns:iCmnSecurityFun_GetCashTrnLimit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iCmnSecurityFun/GetCashTrnLimitResponse" message="tns:iCmnSecurityFun_GetCashTrnLimit_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_iCmnSecurityFun" type="tns:iCmnSecurityFun">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetReportServerUserNamePassword">
+      <soap:operation soapAction="http://tempuri.org/iCmnSecurityFun/GetReportServerUserNamePassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNetIdDetailsWithForReportPath">
+      <soap:operation soapAction="http://tempuri.org/iCmnSecurityFun/GetNetIdDetailsWithForReportPath" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNetIdDetailsWithModuleName">
+      <soap:operation soapAction="http://tempuri.org/iCmnSecurityFun/GetNetIdDetailsWithModuleName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConvertYYYYMMDDToSQLDatetime">
+      <soap:operation soapAction="http://tempuri.org/iCmnSecurityFun/ConvertYYYYMMDDToSQLDatetime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConvertSQLDatetimeToYYYYMMDD">
+      <soap:operation soapAction="http://tempuri.org/iCmnSecurityFun/ConvertSQLDatetimeToYYYYMMDD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServerDateTime">
+      <soap:operation soapAction="http://tempuri.org/iCmnSecurityFun/GetServerDateTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRevenueDate">
+      <soap:operation soapAction="http://tempuri.org/iCmnSecurityFun/GetRevenueDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRevenueDateDL">
+      <soap:operation soapAction="http://tempuri.org/iCmnSecurityFun/GetRevenueDateDL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGenderName">
+      <soap:operation soapAction="http://tempuri.org/iCmnSecurityFun/GetGenderName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFinancialYr">
+      <soap:operation soapAction="http://tempuri.org/iCmnSecurityFun/GetFinancialYr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrancy">
+      <soap:operation soapAction="http://tempuri.org/iCmnSecurityFun/GetCurrancy" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAdmissionDate">
+      <soap:operation soapAction="http://tempuri.org/iCmnSecurityFun/GetAdmissionDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChkSysLock">
+      <soap:operation soapAction="http://tempuri.org/iCmnSecurityFun/ChkSysLock" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCalRate">
+      <soap:operation soapAction="http://tempuri.org/iCmnSecurityFun/GetCalRate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCalShare">
+      <soap:operation soapAction="http://tempuri.org/iCmnSecurityFun/GetCalShare" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalCompanyScheme">
+      <soap:operation soapAction="http://tempuri.org/iCmnSecurityFun/CalCompanyScheme" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ShowDenominationScreen">
+      <soap:operation soapAction="http://tempuri.org/iCmnSecurityFun/ShowDenominationScreen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetmsgmstList">
+      <soap:operation soapAction="http://tempuri.org/iCmnSecurityFun/GetmsgmstList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveCashDenomination">
+      <soap:operation soapAction="http://tempuri.org/iCmnSecurityFun/SaveCashDenomination" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFinancialYrBetweenDt">
+      <soap:operation soapAction="http://tempuri.org/iCmnSecurityFun/GetFinancialYrBetweenDt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FunctionAccessDtl">
+      <soap:operation soapAction="http://tempuri.org/iCmnSecurityFun/FunctionAccessDtl" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AccessModCd">
+      <soap:operation soapAction="http://tempuri.org/iCmnSecurityFun/AccessModCd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNetIdDetByModCdSubModCd">
+      <soap:operation soapAction="http://tempuri.org/iCmnSecurityFun/GetNetIdDetByModCdSubModCd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNetIdDetByModCdSubModCdReq">
+      <soap:operation soapAction="http://tempuri.org/iCmnSecurityFun/GetNetIdDetByModCdSubModCdReq" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserRights">
+      <soap:operation soapAction="http://tempuri.org/iCmnSecurityFun/UserRights" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelDoctorFeeSource">
+      <soap:operation soapAction="http://tempuri.org/iCmnSecurityFun/SelDoctorFeeSource" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDepositsType">
+      <soap:operation soapAction="http://tempuri.org/iCmnSecurityFun/GetDepositsType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DepositTypeByCd">
+      <soap:operation soapAction="http://tempuri.org/iCmnSecurityFun/DepositTypeByCd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCodeDeCodeDtlByTypByCd">
+      <soap:operation soapAction="http://tempuri.org/iCmnSecurityFun/GetCodeDeCodeDtlByTypByCd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCashDenomControl">
+      <soap:operation soapAction="http://tempuri.org/iCmnSecurityFun/GetCashDenomControl" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBedTypeList">
+      <soap:operation soapAction="http://tempuri.org/iCmnSecurityFun/GetBedTypeList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WardDetails">
+      <soap:operation soapAction="http://tempuri.org/iCmnSecurityFun/WardDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCodeDeCodeListForPtnGender">
+      <soap:operation soapAction="http://tempuri.org/iCmnSecurityFun/GetCodeDeCodeListForPtnGender" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetButtonRights">
+      <soap:operation soapAction="http://tempuri.org/iCmnSecurityFun/GetButtonRights" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClncMst">
+      <soap:operation soapAction="http://tempuri.org/iCmnSecurityFun/GetClncMst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCodeDeCodeList">
+      <soap:operation soapAction="http://tempuri.org/iCmnSecurityFun/GetCodeDeCodeList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFiledTitleMst">
+      <soap:operation soapAction="http://tempuri.org/iCmnSecurityFun/GetFiledTitleMst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCashTrnLimit">
+      <soap:operation soapAction="http://tempuri.org/iCmnSecurityFun/GetCashTrnLimit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CmnSecurityFun">
+    <wsdl:port name="BasicHttpBinding_iCmnSecurityFun" binding="tns:BasicHttpBinding_iCmnSecurityFun">
+      <soap:address location="http://localhost/CWWEBWCFSPLIT/CommonSecurityFunc/CmnSecurityFun.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,119 @@
+﻿<%@ Master Language="VB" Inherits="OTScheduling.MasterPage" CodeBehind="MasterPage.master.vb" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>CARE @ WORKS</title>
+
+
+    <link href="~\..\CSS\Master.CSS" rel="stylesheet" type="text/css" />
+    <link href="~\..\CSS\stylesheet.CSS" type="text/css" rel="stylesheet" />
+    <link href="~\..\CSS\ButtonStyles.css" type="text/css" rel="stylesheet" />
+    <link href="~\..\CSS\alertify.core.CSS" type="text/css" rel="stylesheet" />
+    <link href="~\..\CSS\alertify.bootstrap.CSS" rel="stylesheet" type="text/css" />
+    <link  href="~\..\CSS\sweetalert.min.css" id="Link1" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" language="javascript" src="~\..\..\..\Scripts\jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" language="javascript" src="~\..\..\..\Scripts\jquery.min.js"></script>
+    <script type="text/javascript" language="javascript" src="~\..\..\..\Scripts\alertify.min.js"></script>
+    <script type="text/javascript" language="javascript" src="~\..\..\..\Scripts\alertify.js"></script>
+    <script type="text/javascript" language="javascript" src="~\..\..\..\Scripts\validation.js"></script>
+    <script type="text/javascript" language="javascript" src="~\..\..\..\Scripts\jquery-ui-1.12.1.min.js"></script>
+    <link href="~\..\Css\ui-lightness\jquery-ui-1.8.21.custom.css" rel="stylesheet" type="text/css" />
+    <link href="~\..\CSS\ui-lightness\jquery-ui -1.12.1.css" rel="stylesheet" type="text/css" />
+     <script  type="text/javascript" language="javascript" src="~\..\..\..\Scripts\sweetalert.min.js"></script>
+
+
+
+<%--     <link href="" rel="stylesheet" type="text/css" id="cssMaster" />
+    <link runat="server" rel="stylesheet" type="text/css" id="CssCommon" href="" />
+    <link runat="server" rel="stylesheet" type="text/css" id="CssButton" href="" />
+    <link runat="server" rel="stylesheet" type="text/css" href="" id="cssAlertify" />
+    <link runat="server" rel="stylesheet" type="text/css" href="" id="cssAlertifyBoot" />
+
+    <link runat="server" rel="stylesheet" type="text/css" href="~/CSS/sweetalert.min.css" id="Link1" />
+
+    <script type="text/javascript" src="../Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../Scripts/alertify.min.js"></script>
+    <script type="text/javascript" src="../Scripts/alertify.js"></script>
+    <script type="text/javascript" src="../Scripts/validation.js"></script>
+    <script type="text/javascript" src="../Scripts/jquery.min.js"></script>
+    <script type="text/javascript" src="../Scripts/jquery-ui.min.js"></script>
+    <link href="..\CSS\ui-lightness\jquery-ui -1.12.1.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" language="javascript" src="..\Scripts\jquery-ui-1.12.1.min.js"></script>--%>
+
+   <%-- <script type="text/javascript" src="../Scripts/colResizable-1.6.min.js"></script>
+
+    <script type="text/javascript" src="../Scripts/colResizable-1.6.js"></script>
+
+    <script type="text/javascript" src="../Scripts/sweetalert.min.js"></script>--%>
+
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="main_container">
+            <div id="header">
+                <div id="logo">
+                    <%--style="padding: 5px;"--%>
+                    <asp:Image runat="server" ID="imgClient" ImageUrl="" Style="height: 30px" />
+                </div>
+                <table style="width: 95%; height: auto;" id="tblHeader" cellpadding="0" border="0"
+                    cellspacing="0">
+                    <tr>
+                        <td rowspan="2" style="width: 75%">
+                            <h2>
+                                <asp:Label runat="server" ID="lblClient"></asp:Label></h2>
+                        </td>
+                        <td style="width: 6%" class="divLocH" valign="middle">Division
+                        </td>
+                        <td class="divLocH">:
+                        </td>
+                        <td class="divLoc" valign="middle">
+                            <asp:Label runat="server" ID="lblDiv"></asp:Label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 6%" class="divLocH" valign="middle">Location
+                        </td>
+                        <td class="divLocH">:
+                        </td>
+                        <td class="divLoc" valign="middle">
+                            <asp:Label runat="server" ID="lblLoc"></asp:Label>
+                        </td>
+                    </tr>
+                </table>
+                <div id="menu">
+                    <table id="menuTable">
+                        <tr>
+                            <td style="width: 8%" class="UserH">Welcome,
+                            </td>
+                            <td class="User">
+                                <asp:Label runat="server" ID="lblUser"></asp:Label>
+                            </td>
+                            <td align="right" class="ModuleNm">
+                                <asp:Label runat="server" ID="lblAppName"></asp:Label>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div id="main_content">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <div style="clear: both;">
+        </div>
+        <div id="footer">
+            <div class="copyright">
+                <asp:Image runat="server" ID="imgSof" ImageUrl="" />
+            </div>
+            <h2 style="text-align: center;">
+                <asp:Label runat="server" ID="lblBottomText">  &copy; 2013 Sofscript System &amp; Services Ltd.</asp:Label>
+            </h2>
+        </div>
+    </form>
+</body>
+</html>

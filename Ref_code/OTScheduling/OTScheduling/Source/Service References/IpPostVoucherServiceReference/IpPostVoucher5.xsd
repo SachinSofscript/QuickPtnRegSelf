@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SofCommon" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SofCommon" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:50875/IpPostVoucher.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
+  <xs:import schemaLocation="http://localhost:50875/IpPostVoucher.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/System" />
+  <xs:complexType name="DBRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AffectedRecords" type="xs:int" />
+      <xs:element minOccurs="0" name="Command" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CommandTimeout" type="xs:int" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/System.Data" minOccurs="0" name="CommandType" type="q1:CommandType" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="Exception" nillable="true" type="q2:Exception" />
+      <xs:element minOccurs="0" name="ObjID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Parameters" nillable="true" type="tns:ArrayOfDBRequest.Parameter" />
+      <xs:element minOccurs="0" name="Srno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Transactional" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DBRequest" nillable="true" type="tns:DBRequest" />
+  <xs:complexType name="ArrayOfDBRequest.Parameter">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DBRequest.Parameter" nillable="true" type="tns:DBRequest.Parameter" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDBRequest.Parameter" nillable="true" type="tns:ArrayOfDBRequest.Parameter" />
+  <xs:complexType name="DBRequest.Parameter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ParamDirection" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParamName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParamSize" type="xs:int" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/System.Data" minOccurs="0" name="ParamType" type="q3:DbType" />
+      <xs:element minOccurs="0" name="ParamValue" nillable="true" type="xs:anyType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DBRequest.Parameter" nillable="true" type="tns:DBRequest.Parameter" />
+</xs:schema>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/CmnSecurityFunSrv.CashDenomination" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CmnSecurityFunSrv.CashDenomination" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost/CWWEBWCFSPLIT/CommonSecurityFunc/CmnSecurityFun.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="CashDenomControl">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Denominations" nillable="true" type="q1:ArrayOfint" />
+      <xs:element minOccurs="0" name="NetAmount" type="xs:double" />
+      <xs:element minOccurs="0" name="Rcvdenominations" nillable="true" type="tns:ArrayOfclsDenomination" />
+      <xs:element minOccurs="0" name="Retndenominations" nillable="true" type="tns:ArrayOfclsDenomination" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CashDenomControl" nillable="true" type="tns:CashDenomControl" />
+  <xs:complexType name="ArrayOfclsDenomination">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clsDenomination" nillable="true" type="tns:clsDenomination" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclsDenomination" nillable="true" type="tns:ArrayOfclsDenomination" />
+  <xs:complexType name="clsDenomination">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="denom" type="xs:int" />
+      <xs:element minOccurs="0" name="qty" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="clsDenomination" nillable="true" type="tns:clsDenomination" />
+</xs:schema>

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/OTSchedulingSrv.PatientVisitAndBilInsTrn" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/OTSchedulingSrv.PatientVisitAndBilInsTrn" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:55278/OTScheduling.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="clsIpPatientVisit">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ADVSTSCD" type="xs:int" />
+      <xs:element minOccurs="0" name="AddDocCd1" type="xs:int" />
+      <xs:element minOccurs="0" name="AddDocCd2" type="xs:int" />
+      <xs:element minOccurs="0" name="AdmCnclnNo" type="xs:int" />
+      <xs:element minOccurs="0" name="AdmCrtDt" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="AdmCrtTm" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="AdmDgnosCd" type="xs:int" />
+      <xs:element minOccurs="0" name="AdmDgnosDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AdmDt" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="AdmStsCd" type="xs:int" />
+      <xs:element minOccurs="0" name="AdmTm" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="AdmUsrId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AdmittedFlg" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Age" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ArCd" type="xs:int" />
+      <xs:element minOccurs="0" name="ArDcd" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AthrtyCd" type="xs:int" />
+      <xs:element minOccurs="0" name="AutoPstDt" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="BedNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BedTransno" type="xs:int" />
+      <xs:element minOccurs="0" name="BedTrnsfrNo" type="xs:int" />
+      <xs:element minOccurs="0" name="BedTrnsfrReqNo" type="xs:int" />
+      <xs:element minOccurs="0" name="BedTypCd" type="xs:int" />
+      <xs:element minOccurs="0" name="BedTypdCd" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BlockBedNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BlockedBedRmno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BlockedRoomDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CNCLRMK" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CampCd" type="xs:int" />
+      <xs:element minOccurs="0" name="CaseManagerCd" type="xs:int" />
+      <xs:element minOccurs="0" name="ChiefComplaints" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClsTransno" type="xs:int" />
+      <xs:element minOccurs="0" name="ClsTrnsfrNo" type="xs:int" />
+      <xs:element minOccurs="0" name="ClsTrnsfrReqNo" type="xs:int" />
+      <xs:element minOccurs="0" name="CnfInfFlg" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ConsentOfDataShare" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CoordinatorCd" type="xs:int" />
+      <xs:element minOccurs="0" name="CreateDt" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CreateTm" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CreateUsrId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CredalNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CrtClFlg" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CseTypCd" type="xs:int" />
+      <xs:element minOccurs="0" name="CseTypDCd" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CsltyClncCd" type="xs:int" />
+      <xs:element minOccurs="0" name="CsltyVstNo" type="xs:int" />
+      <xs:element minOccurs="0" name="DefaultDietType" type="xs:int" />
+      <xs:element minOccurs="0" name="DepAmt" type="xs:double" />
+      <xs:element minOccurs="0" name="DepBal" type="xs:double" />
+      <xs:element minOccurs="0" name="DepositRemark" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DocCd" type="xs:int" />
+      <xs:element minOccurs="0" name="DocCd2" type="xs:int" />
+      <xs:element minOccurs="0" name="DocChngNo" type="xs:int" />
+      <xs:element minOccurs="0" name="DocName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DonCd" type="xs:int" />
+      <xs:element minOccurs="0" name="DsChgAdvNo" type="xs:int" />
+      <xs:element minOccurs="0" name="DsChgDt" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DsChgNo" type="xs:int" />
+      <xs:element minOccurs="0" name="DsChgTm" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DschgDgnosCd" type="xs:int" />
+      <xs:element minOccurs="0" name="DschgDgnosDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DschrgStsCd" type="xs:int" />
+      <xs:element minOccurs="0" name="DueDeptAmt" type="xs:double" />
+      <xs:element minOccurs="0" name="EligibleCls" type="xs:int" />
+      <xs:element minOccurs="0" name="EmailAddrs" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExpectedDischrgeDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ExptdNoDay" type="xs:int" />
+      <xs:element minOccurs="0" name="ExptdNoDays" type="xs:int" />
+      <xs:element minOccurs="0" name="FolAmt" type="xs:double" />
+      <xs:element minOccurs="0" name="FolBal" type="xs:double" />
+      <xs:element minOccurs="0" name="IpNo" type="xs:long" />
+      <xs:element minOccurs="0" name="IsCredalAttached" type="ser:char" />
+      <xs:element minOccurs="0" name="IsIsolation" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsPtnBlackListed" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LOS" type="xs:int" />
+      <xs:element minOccurs="0" name="LocalAdd1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LocalAdd2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LocalAdd3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LocalCity" type="xs:int" />
+      <xs:element minOccurs="0" name="LocalCountry" type="xs:int" />
+      <xs:element minOccurs="0" name="LocalDistrictCd" type="xs:int" />
+      <xs:element minOccurs="0" name="LocalPin" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LocalState" type="xs:int" />
+      <xs:element minOccurs="0" name="LocalTel" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LocalVillageCd" type="xs:int" />
+      <xs:element minOccurs="0" name="MedCseFlg" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MobileNumber2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NewBrthFlg" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="No" type="xs:int" />
+      <xs:element minOccurs="0" name="NoFol" type="xs:int" />
+      <xs:element minOccurs="0" name="PatientNo" type="xs:long" />
+      <xs:element minOccurs="0" name="PrefCls" type="xs:int" />
+      <xs:element minOccurs="0" name="PtnClsCd" type="xs:int" />
+      <xs:element minOccurs="0" name="PtnClsDcd" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PtnRefByCd" type="xs:int" />
+      <xs:element minOccurs="0" name="PtnRefByTyp" type="xs:int" />
+      <xs:element minOccurs="0" name="PtnSrcCd" type="xs:int" />
+      <xs:element minOccurs="0" name="Ptngender" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RMK" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RegionCd" type="xs:int" />
+      <xs:element minOccurs="0" name="Rmrk" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RoomDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RoomNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RsdFlg" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RsvNo" type="xs:long" />
+      <xs:element minOccurs="0" name="RsvStsCd" type="xs:int" />
+      <xs:element minOccurs="0" name="SubCseTypCd" type="xs:int" />
+      <xs:element minOccurs="0" name="UpdtDt" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UpdtTm" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UpdtTrnCd" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpdtUsrId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WardCd" type="xs:int" />
+      <xs:element minOccurs="0" name="WarddCd" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WhatsAppNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WingCd" type="xs:int" />
+      <xs:element minOccurs="0" name="WingdCd" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="folStsCd" type="xs:int" />
+      <xs:element minOccurs="0" name="ptnname" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="clsIpPatientVisit" nillable="true" type="tns:clsIpPatientVisit" />
+</xs:schema>

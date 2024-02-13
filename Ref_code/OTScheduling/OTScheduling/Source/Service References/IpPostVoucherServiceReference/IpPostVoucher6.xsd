@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv.PostVoucher" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv.PostVoucher" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:50875/IpPostVoucher.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/SofCommon" />
+  <xs:import schemaLocation="http://localhost:50875/IpPostVoucher.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ArrayOfclsRefdbrequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clsRefdbrequest" nillable="true" type="tns:clsRefdbrequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclsRefdbrequest" nillable="true" type="tns:ArrayOfclsRefdbrequest" />
+  <xs:complexType name="clsRefdbrequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DbrequestDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsRollback" type="xs:boolean" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/SofCommon" minOccurs="0" name="dbrequest" nillable="true" type="q1:DBRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="clsRefdbrequest" nillable="true" type="tns:clsRefdbrequest" />
+  <xs:complexType name="ArrayOfclsNstTstOrdReqDtl">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clsNstTstOrdReqDtl" nillable="true" type="tns:clsNstTstOrdReqDtl" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclsNstTstOrdReqDtl" nillable="true" type="tns:ArrayOfclsNstTstOrdReqDtl" />
+  <xs:complexType name="clsNstTstOrdReqDtl">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ARCD" type="xs:int" />
+      <xs:element minOccurs="0" name="AddInfo1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AddInfo1FieldTitle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AlreadyUsedQty" type="xs:int" />
+      <xs:element minOccurs="0" name="BalQty" type="xs:double" />
+      <xs:element minOccurs="0" name="BedNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BedTypCd" type="xs:int" />
+      <xs:element minOccurs="0" name="BedTypDcd" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BillStatus" type="xs:int" />
+      <xs:element minOccurs="0" name="CancelationReason" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ChrgCd" type="xs:int" />
+      <xs:element minOccurs="0" name="ChrgDcd" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreateDt" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CreateTm" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CreateUsrId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DepartmentCode" type="xs:int" />
+      <xs:element minOccurs="0" name="DocCd" type="xs:int" />
+      <xs:element minOccurs="0" name="DocName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FctCd" type="xs:int" />
+      <xs:element minOccurs="0" name="IpNo" type="xs:long" />
+      <xs:element minOccurs="0" name="IpOpFlg" type="ser:char" />
+      <xs:element minOccurs="0" name="IsAddInfo1FieldRequired" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsIsolated" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsLabTst" type="xs:long" />
+      <xs:element minOccurs="0" name="IsReversePosting" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsSrvAlreadyPostedToday" type="xs:boolean" />
+      <xs:element minOccurs="0" name="OpFlg" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OrdNo" type="xs:int" />
+      <xs:element minOccurs="0" name="OrdSrNo" type="xs:int" />
+      <xs:element minOccurs="0" name="OrdStatus" type="xs:int" />
+      <xs:element minOccurs="0" name="OrdrDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="OrdrTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PatientFullName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PkgCd" type="xs:int" />
+      <xs:element minOccurs="0" name="PkgCmpntCd" type="xs:int" />
+      <xs:element minOccurs="0" name="PkgRegNo" type="xs:int" />
+      <xs:element minOccurs="0" name="PkgRegYr" type="xs:int" />
+      <xs:element minOccurs="0" name="Priority" type="xs:int" />
+      <xs:element minOccurs="0" name="PrtyDesc" type="xs:int" />
+      <xs:element minOccurs="0" name="PtnAge" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PtnClsCd" type="xs:int" />
+      <xs:element minOccurs="0" name="PtnClsDcd" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PtnClsFreeFlag" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PtnGender" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PtnNo" type="xs:long" />
+      <xs:element minOccurs="0" name="Qty" type="xs:double" />
+      <xs:element minOccurs="0" name="RecId" type="xs:long" />
+      <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReqDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ReqNo" type="xs:int" />
+      <xs:element minOccurs="0" name="ReqSrNo" type="xs:int" />
+      <xs:element minOccurs="0" name="ReqTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ReqWardNo" type="xs:int" />
+      <xs:element minOccurs="0" name="RoomName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RoomNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SCHEMECD" type="xs:int" />
+      <xs:element minOccurs="0" name="SectNo" type="xs:int" />
+      <xs:element minOccurs="0" name="ServiceMode" type="xs:int" />
+      <xs:element minOccurs="0" name="ShowAddInfoTxt" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SrvCd" type="xs:int" />
+      <xs:element minOccurs="0" name="SrvCmpntCd" type="xs:int" />
+      <xs:element minOccurs="0" name="SrvDcd" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SrvRate" type="xs:double" />
+      <xs:element minOccurs="0" name="SrvStatusFlag" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" type="xs:int" />
+      <xs:element minOccurs="0" name="TAXAPPLICABLE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TAXNO" type="xs:int" />
+      <xs:element minOccurs="0" name="TAXPRCNT" type="xs:double" />
+      <xs:element minOccurs="0" name="TestName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TokenAlpha" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TokenNo" type="xs:long" />
+      <xs:element minOccurs="0" name="Unit" type="xs:int" />
+      <xs:element minOccurs="0" name="UsedQty" type="xs:double" />
+      <xs:element minOccurs="0" name="WardCd" type="xs:int" />
+      <xs:element minOccurs="0" name="WardDcd" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WingCd" type="xs:int" />
+      <xs:element minOccurs="0" name="WingDcd" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="adm_dt" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="emg_srv_flg" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fractionallow" type="ser:char" />
+      <xs:element minOccurs="0" name="multipleallow" type="ser:char" />
+      <xs:element minOccurs="0" name="total_count" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="clsNstTstOrdReqDtl" nillable="true" type="tns:clsNstTstOrdReqDtl" />
+  <xs:simpleType name="ServiceType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="All" />
+      <xs:enumeration value="Laboratory" />
+      <xs:enumeration value="Radiology" />
+      <xs:enumeration value="Procedure" />
+      <xs:enumeration value="ServiceRateMstr">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Medicine">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">11</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ServiceType" nillable="true" type="tns:ServiceType" />
+</xs:schema>

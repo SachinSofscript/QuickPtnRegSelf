@@ -1,0 +1,62 @@
+﻿p, body, td, input, select, button {
+    font-family: -apple-system,system-ui,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
+    font-size: 14px;
+}
+
+body {
+    padding: 0px;
+    margin: 0px;
+    background-color: #ffffff;
+}
+
+a {
+    color: #1155a3;
+}
+
+.space {
+    margin: 10px 0px 10px 0px;
+}
+
+.header {
+    background: #003267;
+    background: linear-gradient(to right, #011329 0%,#00639e 44%,#011329 100%);
+    padding: 20px 10px;
+    color: white;
+    box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.75);
+}
+
+.header a {
+    color: white;
+}
+
+.header h1 a {
+    text-decoration: none;
+}
+
+.header h1 {
+    padding: 0px;
+    margin: 0px;
+}
+
+.main {
+    padding: 10px;
+    margin-top: 10px;
+}
+/* toolbar */
+
+.shadow { background: url('layout/main.png') 0 0 repeat-x; height: 5px; }
+
+div.hideSkipLink a { display: none; }
+.toolbar ul { list-style:none; margin: 0px; padding: 0px; width: auto; }
+.toolbar ul li {  }
+.toolbar ul li a { display: inline-block; padding: 5px; text-decoration: none; color: #000;}
+.toolbar ul li a:hover { background-color: #666; color: #fff; }
+.toolbar .selected { background-color: #333; color: #fff; }
+
+.main { padding: 5px; }
+
+/* inner */
+.daypilot-left { margin-right: 10px; }
+.daypilot-main { flex-grow: 1; }
+.daypilot-wrap { display: flex;}
+

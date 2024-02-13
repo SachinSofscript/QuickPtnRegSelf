@@ -1,0 +1,206 @@
+﻿@page
+@model RegisterModel
+
+@section scripts {
+    <script>
+        $('#fullName').focus(); // Set focus to Full Name textbox
+
+        $(function () {
+            $('#clearForm').click(function () {
+                $('form').trigger('reset');
+                $('#fullName').focus();
+            });
+
+        });
+
+
+
+
+
+        $(function () {
+            $('form').submit(function (e) {
+                e.preventDefault();
+                //------------------------------------------
+ 
+                $.ajax({
+                    url: $(this).attr('action'),
+                    type: 'POST',
+                    data: $(this).serialize(),
+                    success: function (response) {
+                        // Extract department description from selected option
+                        var departmentDescription = $('#department option:selected').text();
+
+                        Swal.fire({
+                            icon: 'success',
+                            title: response.message,
+                            //text: 'Patient No: ' + response.patientNo
+                            html: 'Patient No: ' + response.patientNo + '<br>' +
+                                'Patient Name: ' + response.patientFullName + '<br>' +
+                                'Department Description: ' + departmentDescription
+                        }).then((result) => {
+                            if (result.value) {
+                                //  window.location.href = '/Register'; // Redirect to index page
+                                $('form').trigger('reset'); // Clear the form
+                                $('#fullName').focus(); // Set focus to Full Name textbox
+
+                            }
+                        })
+                    ;
+
+                    //             else {
+
+                    //                 alert('hi');
+                    //     // Handle invalid response
+                    //     Swal.fire({
+                    //         icon: 'error',
+                    //         title: 'Error',
+                    //         text: 'Invalid response received.'
+                    //     });
+                    // }
+
+
+
+                    },
+                    error: function (xhr, status, error) {
+                        // Handle error
+                        
+
+
+                    }
+
+                });
+                //--------------------------------------
+
+
+
+
+
+
+
+
+
+            });
+        });
+
+    </script>
+}
+
+
+
+
+
+
+@if (!ModelState.IsValid)
+{
+    <div class="alert alert-danger" role="alert">
+        <ul>
+            @foreach (var modelError in ViewData.ModelState.Values.SelectMany(m => m.Errors))
+            {
+                <li>@modelError.ErrorMessage</li>
+            }
+        </ul>
+    </div>
+}
+
+<br />
+
+<form method="post">
+
+    <div class="card">
+        <div class="card-header">
+            Register a Patient
+        </div>
+        <div class="card-body">
+            <div class="form-group">
+                <span class="text-danger">*</span> 
+                <label for="fullName">Full Name/ಪೂರ್ಣ ಹೆಸರು (ಆಧಾರ್ ಕಾರ್ಡ್ ನಲ್ಲಿರುವಂತೆ):</label>
+                <input type="text" id="fullName" class="form-control" asp-for="Patient.PatientFullName" />
+                <small id="emailHelp" class="form-text text-muted">Enter patient's full name.'</small>
+            </div>
+
+            <br />
+
+            <div class="form-group">
+                <label for="fatherName">Father's name/ತಂದೆಯ ಹೆಸರು:</label>
+                <input type="text" id="fatherName" class="form-control" asp-for="Patient.PatientMiddleName" />
+            </div>
+
+            <br />
+            <div class="form-group">
+                <span class="text-danger">*</span>
+                <label for="age">Age/ವಯಸ್ಸು:</label>
+                <input type="number" id="age" class="form-control" asp-for="Patient.Age" />
+                <small id="emailHelp" class="form-text text-muted">Enter patient's age in years.</small>
+            </div>
+
+            <br />
+
+
+            <div class="form-group">
+                <span class="text-danger">*</span>
+                <label for="sex">Sex-ಲಿಂಗ:</label><br />
+                <input type="radio" id="male" name="Patient.sex" value="M" asp-for="Patient.sex" /> Male
+                <input type="radio" id="female" name="Patient.sex" value="F" asp-for="Patient.sex" /> Female
+                <input type="radio" id="other" name="Patient.sex" value="O" asp-for="Patient.sex" /> Other
+            </div>
+
+            <br />
+            <div class="form-group">
+                <span class="text-danger">*</span>
+                <label for="department">Department:</label>
+                <select id="department" class="form-control" asp-for="Patient.Department">
+                    <option value="">Select Department</option>
+                    @foreach (var department in Model.Departments)
+                    {
+                        <option value="@department.Code">@department.Name</option>
+                    }
+                </select>
+            </div>
+            <br />
+
+            <div class="form-group">
+                <span class="text-danger">*</span>
+                <label for="patientsource">Patient Source ರೋಗಿಯ ಮೂಲ:</label>
+                <select id="patientsource" class="form-control" asp-for="Patient.PatientSourceCode">
+                    <option value="">Select Source</option>
+                    @foreach (var patientsource in Model.PatientSources)
+                    {
+                        <option value="@patientsource.Code">@patientsource.Name</option>
+                    }
+                </select>
+            </div>
+            <br />
+
+            <div class="form-group">
+                <span class="text-danger">*</span>
+                <label for="mobileNo">Mobile Number/ಮೊಬೈಲ್ ನಂಬರ್:</label>
+                <input type="text" id="mobileNo" class="form-control" asp-for="Patient.MobileNumber" />
+            </div>
+
+            <br />
+
+            <button type="submit" accesskey="S" class="btn btn-success btn-lg">Save</button>
+            <button type="button" accesskey="C" class="btn btn-secondary btn-lg" id="clearForm">Clear</button>
+        </div>
+    </div>
+
+
+
+
+    @*<div class="form-group">
+    <label>Department:</label><br />
+    @foreach (var department in Model.Departments)
+    {
+    <input type="radio" id="@department.Code" name="department" value="@department.Code" />
+    <label>@department.Name</label>
+
+    <br />
+    }
+    </div>
+    *@
+
+
+
+
+
+</form>

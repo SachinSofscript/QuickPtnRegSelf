@@ -1,0 +1,285 @@
+﻿body {
+    font-family:Calibri;
+}
+
+.container-fluid {
+    width: 100%;
+}
+
+.navbar {
+    padding: 0px;
+}
+
+.card {
+    width: 99.7%;
+    margin: 2px;
+    margin-left: 2px;
+    /*border:1px solid darkgray;*/
+}
+
+.card-header {
+    padding: 3px;
+    padding-bottom:3px;
+    padding-top:3px;
+    /*height:30px;
+    font-weight:normal;*/
+    /*padding-left: 10px;
+    font-size: 17px;
+    font-family: Calibri;
+    font-weight: bold;*/
+}
+
+.btn {
+    padding: .100rem 1.2rem;
+    font-size:12px;
+    font-family:Calibri;
+}
+
+.compulsory {
+    color: red;
+}
+
+.compulsoryHide {
+    color: red;
+    visibility: hidden;
+}
+
+.form-control {
+    height: 20px;
+}
+
+.col {
+    margin: 0px !important;
+    padding: 0px !important;
+}
+
+.form-group {
+    margin-bottom: 4px;
+}
+
+.col-form-label {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.jumbotron {
+    padding: 3px;
+    margin-bottom: 0px;
+}
+
+.reqFieldIndicatorCell {
+    padding-right: 0px;
+    height: 24px;
+    width: 12px;
+    /*padding-left: 10px;*/
+}
+
+.Pnlbtn {
+    border-top-right-radius: 5px;
+}
+
+.tab-pane {
+    /*border: 1px solid gainsboro;*/
+    height: 300px;
+}
+
+.hr {
+    padding: 0px;
+    margin: 0px;
+}
+
+.col-form-label-sm {
+    padding: 0px;
+    margin: 0px;
+    font-size:12px;
+    font-family:Calibri;
+}
+
+.MyCalendar .ajax__calendar_container {
+    border: 1px solid LightSkyBlue;
+    background-color: #D6ECFE;
+    color: #0054A8;
+    z-index: 1000;
+}
+
+.MyCalendar .ajax__calendar_other .ajax__calendar_day,
+.MyCalendar .ajax__calendar_other .ajax__calendar_year {
+    color: black;
+}
+
+.MyCalendar .ajax__calendar_hover .ajax__calendar_day,
+.MyCalendar .ajax__calendar_hover .ajax__calendar_month,
+.MyCalendar .ajax__calendar_hover .ajax__calendar_year {
+    color: black;
+}
+
+.MyCalendar .ajax__calendar_active .ajax__calendar_day,
+.MyCalendar .ajax__calendar_active .ajax__calendar_month,
+.MyCalendar .ajax__calendar_active .ajax__calendar_year {
+    color: black;
+    font-weight: bold;
+}
+
+.alert-danger {
+    font-size: 12px;
+}
+
+.table > thead > tr > th {
+    padding: 2px;
+    margin: 2px;
+    font-size:11px;
+}
+
+.table > thead > tr {
+    padding: 0px;
+    margin: 0px;
+}
+
+.table > tbody > tr > td {
+    padding: 0px;
+    margin: 0px;
+    font-size: 11px;
+        font-weight: 400;
+}
+
+.table td, .table th {
+    padding: 0.05rem;
+}
+
+.table td, .table th {
+    font-size: 13px;
+    font-weight: 450;
+    font-size: 12px;
+    padding: 0px;
+    margin: 0px;
+}
+
+
+.form-control-sm {
+padding: .15rem .5rem;
+font-size:12px;
+font-family:Calibri;
+}
+
+.form-check {
+    padding:.15rem;
+}
+label{
+    margin:0px;
+}
+.dropdown-menu{
+margin:0px;
+padding:0px;
+}
+.table-sm td, .table-sm th {
+    padding:0px;
+    margin:0px;
+}
+.card-body{
+    padding:3px;
+}
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 2px;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+ .btn-PopUp {
+           
+            background-color: #7eb2e6;
+            border: 1px solid white;
+            color: white;
+        }
+ .table-Wd{
+     max-width:164px;
+ }
+ .ClickDiv {
+            border: 3px inset rgb(153, 204, 255);
+            float: left;
+            width: 305px;
+            height: 100px;
+            border-radius: 3px;
+            background-color: #defbcb;
+            overflow: auto;
+            cursor: pointer;
+        }
+
+        .NotClickDiv {
+            border: 2px #ffffff outset;
+            float: left;
+            width: 305px;
+            height: 100px;
+            border-radius: 3px;
+            background-color: #defbcb;
+            overflow: auto;
+            cursor: pointer;
+        }
+
+/*For GridViGridVir
+/*For Gr Gx;
+ }
+/*For GridView*/
+
+
+
+/**/
+
+
+
+
+.cal_Theme1 .ajax__calendar_container   {
+background-color: #DEF1F4;
+border:solid 1px #77D5F7;
+}
+
+.cal_Theme1 .ajax__calendar_header  {
+background-color: #ffffff;
+margin-bottom: 4px;
+}
+
+.cal_Theme1 .ajax__calendar_title,
+.cal_Theme1 .ajax__calendar_next,
+.cal_Theme1 .ajax__calendar_prev    {
+color: #004080;
+padding-top: 3px;
+}
+
+.cal_Theme1 .ajax__calendar_body    {
+background-color: #ffffff;
+border: solid 1px #77D5F7;
+}
+
+.cal_Theme1 .ajax__calendar_dayname {
+text-align:center;
+font-weight:bold;
+margin-bottom: 4px;
+margin-top: 2px;
+color: #004080;
+}
+
+.cal_Theme1 .ajax__calendar_day {
+color: #004080;
+text-align:center;
+z-index:1000000 !important;
+}
+
+.cal_Theme1 .ajax__calendar_hover .ajax__calendar_day,
+.cal_Theme1 .ajax__calendar_hover .ajax__calendar_month,
+.cal_Theme1 .ajax__calendar_hover .ajax__calendar_year,
+.cal_Theme1 .ajax__calendar_active  {
+color: #004080;
+font-weight: bold;
+background-color: #DEF1F4;
+}
+
+
+ 
+.cal_Theme1 .ajax__calendar_today   {
+font-weight:bold;
+}
+
+.cal_Theme1 .ajax__calendar_other,
+.cal_Theme1 .ajax__calendar_hover .ajax__calendar_today,
+.cal_Theme1 .ajax__calendar_hover .ajax__calendar_title {
+color: #bbbbbb;
+}

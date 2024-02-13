@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv.IpTransactions" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv.IpTransactions" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:50875/IpPostVoucher.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ArrayOfclsMultiTechShrSrvList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clsMultiTechShrSrvList" nillable="true" type="tns:clsMultiTechShrSrvList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclsMultiTechShrSrvList" nillable="true" type="tns:ArrayOfclsMultiTechShrSrvList" />
+  <xs:complexType name="clsMultiTechShrSrvList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="chrg_cd" type="xs:int" />
+      <xs:element minOccurs="0" name="is_tech_shr_appl" type="xs:boolean" />
+      <xs:element minOccurs="0" name="is_tech_shr_appl_chk" type="xs:boolean" />
+      <xs:element minOccurs="0" name="multi_tech_shr_amt" type="xs:decimal" />
+      <xs:element minOccurs="0" name="multi_tech_shr_main_sr_no" type="xs:long" />
+      <xs:element minOccurs="0" name="multi_tech_shr_per_amt" type="xs:decimal" />
+      <xs:element minOccurs="0" name="multi_tech_shr_per_amt_flg" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="multi_tech_shr_sr_no" type="xs:long" />
+      <xs:element minOccurs="0" name="srv_cd" type="xs:int" />
+      <xs:element minOccurs="0" name="tech_cd" type="xs:int" />
+      <xs:element minOccurs="0" name="tech_dcd" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tech_shr_amt" type="xs:decimal" />
+      <xs:element minOccurs="0" name="tech_shr_per_amt_flg" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tech_srv_amt" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="clsMultiTechShrSrvList" nillable="true" type="tns:clsMultiTechShrSrvList" />
+  <xs:complexType name="ArrayOfclsLISScheduleSampleCollect">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clsLISScheduleSampleCollect" nillable="true" type="tns:clsLISScheduleSampleCollect" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclsLISScheduleSampleCollect" nillable="true" type="tns:ArrayOfclsLISScheduleSampleCollect" />
+  <xs:complexType name="clsLISScheduleSampleCollect">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="chrg_cd" type="xs:int" />
+      <xs:element minOccurs="0" name="cmpnt_shr_info" nillable="true" type="tns:ArrayOfclsLISSampleCmpntShrInfo" />
+      <xs:element minOccurs="0" name="ip_no" type="xs:long" />
+      <xs:element minOccurs="0" name="ord_no" type="xs:int" />
+      <xs:element minOccurs="0" name="ord_srno" type="xs:int" />
+      <xs:element minOccurs="0" name="shr_srv_cd" type="xs:int" />
+      <xs:element minOccurs="0" name="srv_cd" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="clsLISScheduleSampleCollect" nillable="true" type="tns:clsLISScheduleSampleCollect" />
+  <xs:complexType name="ArrayOfclsLISSampleCmpntShrInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clsLISSampleCmpntShrInfo" nillable="true" type="tns:clsLISSampleCmpntShrInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclsLISSampleCmpntShrInfo" nillable="true" type="tns:ArrayOfclsLISSampleCmpntShrInfo" />
+  <xs:complexType name="clsLISSampleCmpntShrInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cmpnt_chrg_cd" type="xs:int" />
+      <xs:element minOccurs="0" name="cmpnt_shr_srv_cd" type="xs:int" />
+      <xs:element minOccurs="0" name="cmpnt_srv_cd" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="clsLISSampleCmpntShrInfo" nillable="true" type="tns:clsLISSampleCmpntShrInfo" />
+  <xs:complexType name="ArrayOfclsPostIPServiceFromLIS">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clsPostIPServiceFromLIS" nillable="true" type="tns:clsPostIPServiceFromLIS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclsPostIPServiceFromLIS" nillable="true" type="tns:ArrayOfclsPostIPServiceFromLIS" />
+  <xs:complexType name="clsPostIPServiceFromLIS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="chrg_cd" type="xs:int" />
+      <xs:element minOccurs="0" name="ip_no" type="xs:long" />
+      <xs:element minOccurs="0" name="lab_ref_no" type="xs:int" />
+      <xs:element minOccurs="0" name="ord_no" type="xs:int" />
+      <xs:element minOccurs="0" name="srv_cd" type="xs:int" />
+      <xs:element minOccurs="0" name="vch_no" type="xs:int" />
+      <xs:element minOccurs="0" name="ward_no" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="clsPostIPServiceFromLIS" nillable="true" type="tns:clsPostIPServiceFromLIS" />
+  <xs:complexType name="ArrayOfclsMultiTechShrSrvSave">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clsMultiTechShrSrvSave" nillable="true" type="tns:clsMultiTechShrSrvSave" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclsMultiTechShrSrvSave" nillable="true" type="tns:ArrayOfclsMultiTechShrSrvSave" />
+  <xs:complexType name="clsMultiTechShrSrvSave">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="multi_tech_shr_amt" type="xs:decimal" />
+      <xs:element minOccurs="0" name="tech_cd" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="clsMultiTechShrSrvSave" nillable="true" type="tns:clsMultiTechShrSrvSave" />
+  <xs:complexType name="ArrayOfclsIpTrn">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clsIpTrn" nillable="true" type="tns:clsIpTrn" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclsIpTrn" nillable="true" type="tns:ArrayOfclsIpTrn" />
+  <xs:complexType name="clsIpTrn">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ARCd" type="xs:int" />
+      <xs:element minOccurs="0" name="AddInfo1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Amnd" type="xs:boolean" />
+      <xs:element minOccurs="0" name="AmndNo" type="xs:int" />
+      <xs:element minOccurs="0" name="Amt" type="xs:double" />
+      <xs:element minOccurs="0" name="BRtCFlg" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BRtCPrcnt" type="xs:double" />
+      <xs:element minOccurs="0" name="BedNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BedTypCd" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BilNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BilYr" type="xs:int" />
+      <xs:element minOccurs="0" name="CGSTSharePerc" type="xs:double" />
+      <xs:element minOccurs="0" name="CHRGDCD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ChrgCd" type="xs:int" />
+      <xs:element minOccurs="0" name="CmpntCd" type="xs:int" />
+      <xs:element minOccurs="0" name="CmpntChrgCd" type="xs:int" />
+      <xs:element minOccurs="0" name="CmpntCmpntCd" type="xs:int" />
+      <xs:element minOccurs="0" name="CmpntSrvCd" type="xs:int" />
+      <xs:element minOccurs="0" name="CmpntTrnPstFlg" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CnclnFlg" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CrtDt" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CrtTm" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CrtUsrId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CseTypCd" type="xs:int" />
+      <xs:element minOccurs="0" name="Cst" type="xs:double" />
+      <xs:element minOccurs="0" name="DocConcAmt" type="xs:double" />
+      <xs:element minOccurs="0" name="DocPstFlg" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DrCr" type="xs:int" />
+      <xs:element minOccurs="0" name="EffRt" type="xs:double" />
+      <xs:element minOccurs="0" name="EmgSrvPrcnt" type="xs:double" />
+      <xs:element minOccurs="0" name="FolNo" type="xs:int" />
+      <xs:element minOccurs="0" name="FreeFlg" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GStTaxCd" type="xs:int" />
+      <xs:element minOccurs="0" name="GStTaxFlg" type="xs:boolean" />
+      <xs:element minOccurs="0" name="GStTaxPrcnt" type="xs:double" />
+      <xs:element minOccurs="0" name="HasMultiShares" type="xs:boolean" />
+      <xs:element minOccurs="0" name="HospConcAmt" type="xs:double" />
+      <xs:element minOccurs="0" name="HrsFrmDtTm" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="HrsToDtTm" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ICUChrgAmt" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ICUChrgPrcnt" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ICUChrgRate" type="xs:decimal" />
+      <xs:element minOccurs="0" name="IGSTSharePerc" type="xs:double" />
+      <xs:element minOccurs="0" name="InvCnclnNo" type="xs:int" />
+      <xs:element minOccurs="0" name="InvTrnTypCd" type="xs:int" />
+      <xs:element minOccurs="0" name="IpNo" type="xs:long" />
+      <xs:element minOccurs="0" name="IsAdmissible" type="ser:char" />
+      <xs:element minOccurs="0" name="IsAdmissibleByUsrFlg" type="ser:char" />
+      <xs:element minOccurs="0" name="IsAllowedToSkipDoctorShare" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsEmgsrv" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsPostedAsIndividualSrv" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsSrvPostedWithStdRt" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsbedChrgPosting" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LabRefNo" type="xs:int" />
+      <xs:element minOccurs="0" name="ModCd" type="xs:int" />
+      <xs:element minOccurs="0" name="NewOldIp" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="No" type="xs:int" />
+      <xs:element minOccurs="0" name="NoUnts" type="xs:double" />
+      <xs:element minOccurs="0" name="PtnClsCd" type="xs:int" />
+      <xs:element minOccurs="0" name="PtnClsDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PtnNo" type="xs:long" />
+      <xs:element minOccurs="0" name="PtnSrcCd" type="xs:int" />
+      <xs:element minOccurs="0" name="PtnTypCd" type="xs:int" />
+      <xs:element minOccurs="0" name="RadExecutionNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RefDocCd" type="xs:int" />
+      <xs:element minOccurs="0" name="RefNo" type="xs:int" />
+      <xs:element minOccurs="0" name="ReferalDocCd" type="xs:int" />
+      <xs:element minOccurs="0" name="ReferalDocNm" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReferralShrAmt" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ReferralShrChrgCd" type="xs:int" />
+      <xs:element minOccurs="0" name="ReferralShrConcAmt" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ReferralShrSrvCd" type="xs:int" />
+      <xs:element minOccurs="0" name="ReqNo" type="xs:int" />
+      <xs:element minOccurs="0" name="RevDt" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="RevRefNo" type="xs:int" />
+      <xs:element minOccurs="0" name="Rmk" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RtChngCd" type="xs:int" />
+      <xs:element minOccurs="0" name="RtChngFlg" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RtChngPrcnt" type="xs:int" />
+      <xs:element minOccurs="0" name="SGSTSharePerc" type="xs:double" />
+      <xs:element minOccurs="0" name="SchemeCd" type="xs:int" />
+      <xs:element minOccurs="0" name="SectNo" type="xs:int" />
+      <xs:element minOccurs="0" name="Shft" type="xs:int" />
+      <xs:element minOccurs="0" name="ShrAmt" type="xs:double" />
+      <xs:element minOccurs="0" name="ShrChrgCd" type="xs:int" />
+      <xs:element minOccurs="0" name="ShrRefNo" type="xs:int" />
+      <xs:element minOccurs="0" name="ShrSectNo" type="xs:int" />
+      <xs:element minOccurs="0" name="ShrSrvDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShrSrvNo" type="xs:int" />
+      <xs:element minOccurs="0" name="SplRtCd" type="xs:int" />
+      <xs:element minOccurs="0" name="SplRtIdFlg" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SplRtPaFlg" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SplRtPrcnt" type="xs:double" />
+      <xs:element minOccurs="0" name="SrNo" type="xs:int" />
+      <xs:element minOccurs="0" name="SrchrgCd" type="xs:int" />
+      <xs:element minOccurs="0" name="SrchrgFlg" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SrchrgPrcnt" type="xs:double" />
+      <xs:element minOccurs="0" name="SrvCd" type="xs:int" />
+      <xs:element minOccurs="0" name="SrvDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StdRt" type="xs:double" />
+      <xs:element minOccurs="0" name="StrCd" type="xs:int" />
+      <xs:element minOccurs="0" name="SubModCd" type="xs:int" />
+      <xs:element minOccurs="0" name="TrnCd" type="xs:int" />
+      <xs:element minOccurs="0" name="TrnPstFlg" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TrnTyp" type="ser:char" />
+      <xs:element minOccurs="0" name="UnbilledAmt" type="xs:double" />
+      <xs:element minOccurs="0" name="UpdtDt" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UpdtTm" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UpdtTrnCd" type="xs:int" />
+      <xs:element minOccurs="0" name="UpdtUsrId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VchDt" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="VchFreeFlg" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VchFreeStdRt" type="xs:double" />
+      <xs:element minOccurs="0" name="VchNo" type="xs:int" />
+      <xs:element minOccurs="0" name="WardCd" type="xs:int" />
+      <xs:element minOccurs="0" name="WingCd" type="xs:int" />
+      <xs:element minOccurs="0" name="doc_ddn_amt" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ref_shr_doc_cd" type="xs:int" />
+      <xs:element minOccurs="0" name="skipped_shr_amt" type="xs:decimal" />
+      <xs:element minOccurs="0" name="tech_shr_amt" type="xs:decimal" />
+      <xs:element minOccurs="0" name="totalcnt" type="xs:int" />
+      <xs:element minOccurs="0" name="yr" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="clsIpTrn" nillable="true" type="tns:clsIpTrn" />
+</xs:schema>

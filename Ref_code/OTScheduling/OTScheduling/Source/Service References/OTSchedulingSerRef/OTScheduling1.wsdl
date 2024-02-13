@@ -1,0 +1,1449 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="OTScheduling" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:55278/OTScheduling.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:55278/OTScheduling.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:55278/OTScheduling.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:55278/OTScheduling.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/OTSchedulingSrv" />
+      <xsd:import schemaLocation="http://localhost:55278/OTScheduling.svc?xsd=xsd4" />
+      <xsd:import schemaLocation="http://localhost:55278/OTScheduling.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/OTSchedulingSrv.PatientVisitAndBilInsTrn" />
+      <xsd:import schemaLocation="http://localhost:55278/OTScheduling.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/OTSchedulingSrv.CommonModule" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="iOTScheduling_GetPtnTypListByUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPtnTypListByUser" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetPtnTypListByUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPtnTypListByUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetArMstDetailsByArCd_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetArMstDetailsByArCd" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetArMstDetailsByArCd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetArMstDetailsByArCdResponse" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetOTDtlsByFilter_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOTDtlsByFilter" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetOTDtlsByFilter_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOTDtlsByFilterResponse" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetCreditCoListSts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCreditCoListSts" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetCreditCoListSts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCreditCoListStsResponse" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetUserDetByCD_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserDetByCD" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetUserDetByCD_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserDetByCDResponse" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetIsBaseStateMst_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIsBaseStateMst" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetIsBaseStateMst_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIsBaseStateMstResponse" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetIsBaseCityMst_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIsBaseCityMst" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetIsBaseCityMst_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIsBaseCityMstResponse" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_SaveOfficePermissionChk_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveOfficePermissionChk" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_SaveOfficePermissionChk_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveOfficePermissionChkResponse" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetModFnDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetModFnDetails" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetModFnDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetModFnDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetOTDataForDashBrdSch_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOTDataForDashBrdSch" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetOTDataForDashBrdSch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOTDataForDashBrdSchResponse" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetVarDef_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVarDef" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetVarDef_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVarDefResponse" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetOtIndirectBookingLst002_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOtIndirectBookingLst002" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetOtIndirectBookingLst002_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOtIndirectBookingLst002Response" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetFCTCAL_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFCTCAL" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetFCTCAL_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFCTCALResponse" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetFCTHoliDayDay_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFCTHoliDayDay" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetFCTHoliDayDay_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFCTHoliDayDayResponse" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetFctMstDtlList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFctMstDtlList" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetFctMstDtlList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFctMstDtlListResponse" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetPatientListByNameAndOtherParameter_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatientListByNameAndOtherParameter" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetPatientListByNameAndOtherParameter_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatientListByNameAndOtherParameterResponse" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_DoctorSpeciality_InputMessage">
+    <wsdl:part name="parameters" element="tns:DoctorSpeciality" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_DoctorSpeciality_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DoctorSpecialityResponse" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetFCTFCTSTRTTIME_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFCTFCTSTRTTIME" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetFCTFCTSTRTTIME_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFCTFCTSTRTTIMEResponse" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetFCTFCTENDTIME_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFCTFCTENDTIME" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetFCTFCTENDTIME_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFCTFCTENDTIMEResponse" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetFCTAPTREQ_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFCTAPTREQ" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetFCTAPTREQ_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFCTAPTREQResponse" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetFCTMST_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFCTMST" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetFCTMST_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFCTMSTResponse" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetPatientList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatientList" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetPatientList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatientListResponse" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetDoctorList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDoctorList" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetDoctorList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDoctorListResponse" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_SAVERECORD_InputMessage">
+    <wsdl:part name="parameters" element="tns:SAVERECORD" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_SAVERECORD_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SAVERECORDResponse" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_EDITERECORD_InputMessage">
+    <wsdl:part name="parameters" element="tns:EDITERECORD" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_EDITERECORD_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EDITERECORDResponse" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_CNCLRECORD_InputMessage">
+    <wsdl:part name="parameters" element="tns:CNCLRECORD" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_CNCLRECORD_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CNCLRECORDResponse" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_SHIFTRECORD_InputMessage">
+    <wsdl:part name="parameters" element="tns:SHIFTRECORD" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_SHIFTRECORD_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SHIFTRECORDResponse" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_SHIFTNOW_InputMessage">
+    <wsdl:part name="parameters" element="tns:SHIFTNOW" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_SHIFTNOW_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SHIFTNOWResponse" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetOTAptDetails1_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOTAptDetails1" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetOTAptDetails1_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOTAptDetails1Response" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetPatientFullName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatientFullName" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetPatientFullName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatientFullNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetDoctor_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDoctor" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetDoctor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDoctorResponse" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetCdDcdDtlByTypByCdByAddInfo1_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCdDcdDtlByTypByCdByAddInfo1" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetCdDcdDtlByTypByCdByAddInfo1_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCdDcdDtlByTypByCdByAddInfo1Response" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetCodeDeCodeDtlByTypByCd_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCodeDeCodeDtlByTypByCd" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetCodeDeCodeDtlByTypByCd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCodeDeCodeDtlByTypByCdResponse" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_SaveIndirectBooking_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveIndirectBooking" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_SaveIndirectBooking_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveIndirectBookingResponse" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_CancelOtIndirectBooking_InputMessage">
+    <wsdl:part name="parameters" element="tns:CancelOtIndirectBooking" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_CancelOtIndirectBooking_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CancelOtIndirectBookingResponse" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetOtIndirectBookingLst_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOtIndirectBookingLst" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetOtIndirectBookingLst_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOtIndirectBookingLstResponse" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_WardDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:WardDetails" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_WardDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:WardDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetInPtnListByNameDocWard_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInPtnListByNameDocWard" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetInPtnListByNameDocWard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInPtnListByNameDocWardResponse" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetInpatientDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInpatientDetails" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetInpatientDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInpatientDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetOtName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOtName" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetOtName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOtNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetOtSchSrvList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOtSchSrvList" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetOtSchSrvList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOtSchSrvListResponse" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetLstOtSchSrvParaNm_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLstOtSchSrvParaNm" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetLstOtSchSrvParaNm_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLstOtSchSrvParaNmResponse" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetCalRate_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCalRate" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetCalRate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCalRateResponse" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetPtnClsDtlByIpOpNo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPtnClsDtlByIpOpNo" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetPtnClsDtlByIpOpNo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPtnClsDtlByIpOpNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetArCdByIpOpNo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetArCdByIpOpNo" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetArCdByIpOpNo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetArCdByIpOpNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetCodeDeCodeList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCodeDeCodeList" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetCodeDeCodeList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCodeDeCodeListResponse" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetFctAptOtDocList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFctAptOtDocList" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetFctAptOtDocList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFctAptOtDocListResponse" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetLstOtDocDtlsByApptNoIpNo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLstOtDocDtlsByApptNoIpNo" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetLstOtDocDtlsByApptNoIpNo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLstOtDocDtlsByApptNoIpNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetLstOtSrvDtlsByApptNoIpNo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLstOtSrvDtlsByApptNoIpNo" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetLstOtSrvDtlsByApptNoIpNo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLstOtSrvDtlsByApptNoIpNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetPtnNoByIpNo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPtnNoByIpNo" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetPtnNoByIpNo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPtnNoByIpNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetOtEmpIdLst_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOtEmpIdLst" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetOtEmpIdLst_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOtEmpIdLstResponse" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetLstOtEmpDtlsByApptNoIpNo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLstOtEmpDtlsByApptNoIpNo" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetLstOtEmpDtlsByApptNoIpNo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLstOtEmpDtlsByApptNoIpNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetOtEmpDtlsByEmpNo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOtEmpDtlsByEmpNo" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetOtEmpDtlsByEmpNo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOtEmpDtlsByEmpNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetFCTMstLst_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFCTMstLst" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetFCTMstLst_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFCTMstLstResponse" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetNetIdParamDetailsNew_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNetIdParamDetailsNew" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetNetIdParamDetailsNew_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNetIdParamDetailsNewResponse" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetPrntRptViewerRule8013_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPrntRptViewerRule8013" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetPrntRptViewerRule8013_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPrntRptViewerRule8013Response" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetOtSchedulingSmsList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOtSchedulingSmsList" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetOtSchedulingSmsList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOtSchedulingSmsListResponse" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetRuleMstDtls_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRuleMstDtls" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetRuleMstDtls_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRuleMstDtlsResponse" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_PatientHelpListMst_InputMessage">
+    <wsdl:part name="parameters" element="tns:PatientHelpListMst" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_PatientHelpListMst_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PatientHelpListMstResponse" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_PatientHelpMst_InputMessage">
+    <wsdl:part name="parameters" element="tns:PatientHelpMst" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_PatientHelpMst_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PatientHelpMstResponse" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_PopulatePager_InputMessage">
+    <wsdl:part name="parameters" element="tns:PopulatePager" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_PopulatePager_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PopulatePagerResponse" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetPatientDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatientDetails" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetPatientDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPatientDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_setproperties_InputMessage">
+    <wsdl:part name="parameters" element="tns:setproperties" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_setproperties_OutputMessage">
+    <wsdl:part name="parameters" element="tns:setpropertiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetIpWiseOtAppList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIpWiseOtAppList" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetIpWiseOtAppList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIpWiseOtAppListResponse" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetOpToIpConvertPtnListForOt_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOpToIpConvertPtnListForOt" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetOpToIpConvertPtnListForOt_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOpToIpConvertPtnListForOtResponse" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_ConvertOpToIp_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConvertOpToIp" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_ConvertOpToIp_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConvertOpToIpResponse" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_Salutation_InputMessage">
+    <wsdl:part name="parameters" element="tns:Salutation" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_Salutation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SalutationResponse" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetPtnType_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPtnType" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetPtnType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPtnTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetPtnTypByUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPtnTypByUser" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetPtnTypByUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPtnTypByUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetPtnDtlByMobNoDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPtnDtlByMobNoDetails" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetPtnDtlByMobNoDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPtnDtlByMobNoDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_Nationality_InputMessage">
+    <wsdl:part name="parameters" element="tns:Nationality" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_Nationality_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NationalityResponse" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetStateLst_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStateLst" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetStateLst_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStateLstResponse" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetCityLst_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCityLst" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetCityLst_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCityLstResponse" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_SaveConfirmEnqPtn_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveConfirmEnqPtn" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_SaveConfirmEnqPtn_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveConfirmEnqPtnResponse" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetModFncLst_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetModFncLst" />
+  </wsdl:message>
+  <wsdl:message name="iOTScheduling_GetModFncLst_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetModFncLstResponse" />
+  </wsdl:message>
+  <wsdl:portType name="iOTScheduling">
+    <wsdl:operation name="GetPtnTypListByUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/iOTScheduling/GetPtnTypListByUser" message="tns:iOTScheduling_GetPtnTypListByUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iOTScheduling/GetPtnTypListByUserResponse" message="tns:iOTScheduling_GetPtnTypListByUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetArMstDetailsByArCd">
+      <wsdl:input wsaw:Action="http://tempuri.org/iOTScheduling/GetArMstDetailsByArCd" message="tns:iOTScheduling_GetArMstDetailsByArCd_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iOTScheduling/GetArMstDetailsByArCdResponse" message="tns:iOTScheduling_GetArMstDetailsByArCd_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOTDtlsByFilter">
+      <wsdl:input wsaw:Action="http://tempuri.org/iOTScheduling/GetOTDtlsByFilter" message="tns:iOTScheduling_GetOTDtlsByFilter_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iOTScheduling/GetOTDtlsByFilterResponse" message="tns:iOTScheduling_GetOTDtlsByFilter_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCreditCoListSts">
+      <wsdl:input wsaw:Action="http://tempuri.org/iOTScheduling/GetCreditCoListSts" message="tns:iOTScheduling_GetCreditCoListSts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iOTScheduling/GetCreditCoListStsResponse" message="tns:iOTScheduling_GetCreditCoListSts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserDetByCD">
+      <wsdl:input wsaw:Action="http://tempuri.org/iOTScheduling/GetUserDetByCD" message="tns:iOTScheduling_GetUserDetByCD_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iOTScheduling/GetUserDetByCDResponse" message="tns:iOTScheduling_GetUserDetByCD_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIsBaseStateMst">
+      <wsdl:input wsaw:Action="http://tempuri.org/iOTScheduling/GetIsBaseStateMst" message="tns:iOTScheduling_GetIsBaseStateMst_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iOTScheduling/GetIsBaseStateMstResponse" message="tns:iOTScheduling_GetIsBaseStateMst_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIsBaseCityMst">
+      <wsdl:input wsaw:Action="http://tempuri.org/iOTScheduling/GetIsBaseCityMst" message="tns:iOTScheduling_GetIsBaseCityMst_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iOTScheduling/GetIsBaseCityMstResponse" message="tns:iOTScheduling_GetIsBaseCityMst_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveOfficePermissionChk">
+      <wsdl:input wsaw:Action="http://tempuri.org/iOTScheduling/SaveOfficePermissionChk" message="tns:iOTScheduling_SaveOfficePermissionChk_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iOTScheduling/SaveOfficePermissionChkResponse" message="tns:iOTScheduling_SaveOfficePermissionChk_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetModFnDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/iOTScheduling/GetModFnDetails" message="tns:iOTScheduling_GetModFnDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iOTScheduling/GetModFnDetailsResponse" message="tns:iOTScheduling_GetModFnDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOTDataForDashBrdSch">
+      <wsdl:input wsaw:Action="http://tempuri.org/iOTScheduling/GetOTDataForDashBrdSch" message="tns:iOTScheduling_GetOTDataForDashBrdSch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iOTScheduling/GetOTDataForDashBrdSchResponse" message="tns:iOTScheduling_GetOTDataForDashBrdSch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVarDef">
+      <wsdl:input wsaw:Action="http://tempuri.org/iOTScheduling/GetVarDef" message="tns:iOTScheduling_GetVarDef_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iOTScheduling/GetVarDefResponse" message="tns:iOTScheduling_GetVarDef_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOtIndirectBookingLst002">
+      <wsdl:input wsaw:Action="http://tempuri.org/iOTScheduling/GetOtIndirectBookingLst002" message="tns:iOTScheduling_GetOtIndirectBookingLst002_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iOTScheduling/GetOtIndirectBookingLst002Response" message="tns:iOTScheduling_GetOtIndirectBookingLst002_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFCTCAL">
+      <wsdl:input wsaw:Action="http://tempuri.org/iOTScheduling/GetFCTCAL" message="tns:iOTScheduling_GetFCTCAL_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iOTScheduling/GetFCTCALResponse" message="tns:iOTScheduling_GetFCTCAL_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFCTHoliDayDay">
+      <wsdl:input wsaw:Action="http://tempuri.org/iOTScheduling/GetFCTHoliDayDay" message="tns:iOTScheduling_GetFCTHoliDayDay_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iOTScheduling/GetFCTHoliDayDayResponse" message="tns:iOTScheduling_GetFCTHoliDayDay_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFctMstDtlList">
+      <wsdl:input wsaw:Action="http://tempuri.org/iOTScheduling/GetFctMstDtlList" message="tns:iOTScheduling_GetFctMstDtlList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iOTScheduling/GetFctMstDtlListResponse" message="tns:iOTScheduling_GetFctMstDtlList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPatientListByNameAndOtherParameter">
+      <wsdl:input wsaw:Action="http://tempuri.org/iOTScheduling/GetPatientListByNameAndOtherParameter" message="tns:iOTScheduling_GetPatientListByNameAndOtherParameter_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iOTScheduling/GetPatientListByNameAndOtherParameterResponse" message="tns:iOTScheduling_GetPatientListByNameAndOtherParameter_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DoctorSpeciality">
+      <wsdl:input wsaw:Action="http://tempuri.org/iOTScheduling/DoctorSpeciality" message="tns:iOTScheduling_DoctorSpeciality_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iOTScheduling/DoctorSpecialityResponse" message="tns:iOTScheduling_DoctorSpeciality_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFCTFCTSTRTTIME">
+      <wsdl:input wsaw:Action="http://tempuri.org/iOTScheduling/GetFCTFCTSTRTTIME" message="tns:iOTScheduling_GetFCTFCTSTRTTIME_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iOTScheduling/GetFCTFCTSTRTTIMEResponse" message="tns:iOTScheduling_GetFCTFCTSTRTTIME_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFCTFCTENDTIME">
+      <wsdl:input wsaw:Action="http://tempuri.org/iOTScheduling/GetFCTFCTENDTIME" message="tns:iOTScheduling_GetFCTFCTENDTIME_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iOTScheduling/GetFCTFCTENDTIMEResponse" message="tns:iOTScheduling_GetFCTFCTENDTIME_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFCTAPTREQ">
+      <wsdl:input wsaw:Action="http://tempuri.org/iOTScheduling/GetFCTAPTREQ" message="tns:iOTScheduling_GetFCTAPTREQ_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iOTScheduling/GetFCTAPTREQResponse" message="tns:iOTScheduling_GetFCTAPTREQ_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFCTMST">
+      <wsdl:input wsaw:Action="http://tempuri.org/iOTScheduling/GetFCTMST" message="tns:iOTScheduling_GetFCTMST_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iOTScheduling/GetFCTMSTResponse" message="tns:iOTScheduling_GetFCTMST_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPatientList">
+      <wsdl:input wsaw:Action="http://tempuri.org/iOTScheduling/GetPatientList" message="tns:iOTScheduling_GetPatientList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iOTScheduling/GetPatientListResponse" message="tns:iOTScheduling_GetPatientList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDoctorList">
+      <wsdl:input wsaw:Action="http://tempuri.org/iOTScheduling/GetDoctorList" message="tns:iOTScheduling_GetDoctorList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iOTScheduling/GetDoctorListResponse" message="tns:iOTScheduling_GetDoctorList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SAVERECORD">
+      <wsdl:input wsaw:Action="http://tempuri.org/iOTScheduling/SAVERECORD" message="tns:iOTScheduling_SAVERECORD_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iOTScheduling/SAVERECORDResponse" message="tns:iOTScheduling_SAVERECORD_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EDITERECORD">
+      <wsdl:input wsaw:Action="http://tempuri.org/iOTScheduling/EDITERECORD" message="tns:iOTScheduling_EDITERECORD_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iOTScheduling/EDITERECORDResponse" message="tns:iOTScheduling_EDITERECORD_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CNCLRECORD">
+      <wsdl:input wsaw:Action="http://tempuri.org/iOTScheduling/CNCLRECORD" message="tns:iOTScheduling_CNCLRECORD_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iOTScheduling/CNCLRECORDResponse" message="tns:iOTScheduling_CNCLRECORD_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SHIFTRECORD">
+      <wsdl:input wsaw:Action="http://tempuri.org/iOTScheduling/SHIFTRECORD" message="tns:iOTScheduling_SHIFTRECORD_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iOTScheduling/SHIFTRECORDResponse" message="tns:iOTScheduling_SHIFTRECORD_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SHIFTNOW">
+      <wsdl:input wsaw:Action="http://tempuri.org/iOTScheduling/SHIFTNOW" message="tns:iOTScheduling_SHIFTNOW_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iOTScheduling/SHIFTNOWResponse" message="tns:iOTScheduling_SHIFTNOW_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOTAptDetails1">
+      <wsdl:input wsaw:Action="http://tempuri.org/iOTScheduling/GetOTAptDetails1" message="tns:iOTScheduling_GetOTAptDetails1_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iOTScheduling/GetOTAptDetails1Response" message="tns:iOTScheduling_GetOTAptDetails1_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPatientFullName">
+      <wsdl:input wsaw:Action="http://tempuri.org/iOTScheduling/GetPatientFullName" message="tns:iOTScheduling_GetPatientFullName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iOTScheduling/GetPatientFullNameResponse" message="tns:iOTScheduling_GetPatientFullName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDoctor">
+      <wsdl:input wsaw:Action="http://tempuri.org/iOTScheduling/GetDoctor" message="tns:iOTScheduling_GetDoctor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iOTScheduling/GetDoctorResponse" message="tns:iOTScheduling_GetDoctor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCdDcdDtlByTypByCdByAddInfo1">
+      <wsdl:input wsaw:Action="http://tempuri.org/iOTScheduling/GetCdDcdDtlByTypByCdByAddInfo1" message="tns:iOTScheduling_GetCdDcdDtlByTypByCdByAddInfo1_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iOTScheduling/GetCdDcdDtlByTypByCdByAddInfo1Response" message="tns:iOTScheduling_GetCdDcdDtlByTypByCdByAddInfo1_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCodeDeCodeDtlByTypByCd">
+      <wsdl:input wsaw:Action="http://tempuri.org/iOTScheduling/GetCodeDeCodeDtlByTypByCd" message="tns:iOTScheduling_GetCodeDeCodeDtlByTypByCd_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iOTScheduling/GetCodeDeCodeDtlByTypByCdResponse" message="tns:iOTScheduling_GetCodeDeCodeDtlByTypByCd_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveIndirectBooking">
+      <wsdl:input wsaw:Action="http://tempuri.org/iOTScheduling/SaveIndirectBooking" message="tns:iOTScheduling_SaveIndirectBooking_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iOTScheduling/SaveIndirectBookingResponse" message="tns:iOTScheduling_SaveIndirectBooking_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelOtIndirectBooking">
+      <wsdl:input wsaw:Action="http://tempuri.org/iOTScheduling/CancelOtIndirectBooking" message="tns:iOTScheduling_CancelOtIndirectBooking_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iOTScheduling/CancelOtIndirectBookingResponse" message="tns:iOTScheduling_CancelOtIndirectBooking_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOtIndirectBookingLst">
+      <wsdl:input wsaw:Action="http://tempuri.org/iOTScheduling/GetOtIndirectBookingLst" message="tns:iOTScheduling_GetOtIndirectBookingLst_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iOTScheduling/GetOtIndirectBookingLstResponse" message="tns:iOTScheduling_GetOtIndirectBookingLst_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="WardDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/iOTScheduling/WardDetails" message="tns:iOTScheduling_WardDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iOTScheduling/WardDetailsResponse" message="tns:iOTScheduling_WardDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInPtnListByNameDocWard">
+      <wsdl:input wsaw:Action="http://tempuri.org/iOTScheduling/GetInPtnListByNameDocWard" message="tns:iOTScheduling_GetInPtnListByNameDocWard_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iOTScheduling/GetInPtnListByNameDocWardResponse" message="tns:iOTScheduling_GetInPtnListByNameDocWard_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInpatientDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/iOTScheduling/GetInpatientDetails" message="tns:iOTScheduling_GetInpatientDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iOTScheduling/GetInpatientDetailsResponse" message="tns:iOTScheduling_GetInpatientDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOtName">
+      <wsdl:input wsaw:Action="http://tempuri.org/iOTScheduling/GetOtName" message="tns:iOTScheduling_GetOtName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iOTScheduling/GetOtNameResponse" message="tns:iOTScheduling_GetOtName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOtSchSrvList">
+      <wsdl:input wsaw:Action="http://tempuri.org/iOTScheduling/GetOtSchSrvList" message="tns:iOTScheduling_GetOtSchSrvList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iOTScheduling/GetOtSchSrvListResponse" message="tns:iOTScheduling_GetOtSchSrvList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLstOtSchSrvParaNm">
+      <wsdl:input wsaw:Action="http://tempuri.org/iOTScheduling/GetLstOtSchSrvParaNm" message="tns:iOTScheduling_GetLstOtSchSrvParaNm_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iOTScheduling/GetLstOtSchSrvParaNmResponse" message="tns:iOTScheduling_GetLstOtSchSrvParaNm_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCalRate">
+      <wsdl:input wsaw:Action="http://tempuri.org/iOTScheduling/GetCalRate" message="tns:iOTScheduling_GetCalRate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iOTScheduling/GetCalRateResponse" message="tns:iOTScheduling_GetCalRate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPtnClsDtlByIpOpNo">
+      <wsdl:input wsaw:Action="http://tempuri.org/iOTScheduling/GetPtnClsDtlByIpOpNo" message="tns:iOTScheduling_GetPtnClsDtlByIpOpNo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iOTScheduling/GetPtnClsDtlByIpOpNoResponse" message="tns:iOTScheduling_GetPtnClsDtlByIpOpNo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetArCdByIpOpNo">
+      <wsdl:input wsaw:Action="http://tempuri.org/iOTScheduling/GetArCdByIpOpNo" message="tns:iOTScheduling_GetArCdByIpOpNo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iOTScheduling/GetArCdByIpOpNoResponse" message="tns:iOTScheduling_GetArCdByIpOpNo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCodeDeCodeList">
+      <wsdl:input wsaw:Action="http://tempuri.org/iOTScheduling/GetCodeDeCodeList" message="tns:iOTScheduling_GetCodeDeCodeList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iOTScheduling/GetCodeDeCodeListResponse" message="tns:iOTScheduling_GetCodeDeCodeList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFctAptOtDocList">
+      <wsdl:input wsaw:Action="http://tempuri.org/iOTScheduling/GetFctAptOtDocList" message="tns:iOTScheduling_GetFctAptOtDocList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iOTScheduling/GetFctAptOtDocListResponse" message="tns:iOTScheduling_GetFctAptOtDocList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLstOtDocDtlsByApptNoIpNo">
+      <wsdl:input wsaw:Action="http://tempuri.org/iOTScheduling/GetLstOtDocDtlsByApptNoIpNo" message="tns:iOTScheduling_GetLstOtDocDtlsByApptNoIpNo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iOTScheduling/GetLstOtDocDtlsByApptNoIpNoResponse" message="tns:iOTScheduling_GetLstOtDocDtlsByApptNoIpNo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLstOtSrvDtlsByApptNoIpNo">
+      <wsdl:input wsaw:Action="http://tempuri.org/iOTScheduling/GetLstOtSrvDtlsByApptNoIpNo" message="tns:iOTScheduling_GetLstOtSrvDtlsByApptNoIpNo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iOTScheduling/GetLstOtSrvDtlsByApptNoIpNoResponse" message="tns:iOTScheduling_GetLstOtSrvDtlsByApptNoIpNo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPtnNoByIpNo">
+      <wsdl:input wsaw:Action="http://tempuri.org/iOTScheduling/GetPtnNoByIpNo" message="tns:iOTScheduling_GetPtnNoByIpNo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iOTScheduling/GetPtnNoByIpNoResponse" message="tns:iOTScheduling_GetPtnNoByIpNo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOtEmpIdLst">
+      <wsdl:input wsaw:Action="http://tempuri.org/iOTScheduling/GetOtEmpIdLst" message="tns:iOTScheduling_GetOtEmpIdLst_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iOTScheduling/GetOtEmpIdLstResponse" message="tns:iOTScheduling_GetOtEmpIdLst_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLstOtEmpDtlsByApptNoIpNo">
+      <wsdl:input wsaw:Action="http://tempuri.org/iOTScheduling/GetLstOtEmpDtlsByApptNoIpNo" message="tns:iOTScheduling_GetLstOtEmpDtlsByApptNoIpNo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iOTScheduling/GetLstOtEmpDtlsByApptNoIpNoResponse" message="tns:iOTScheduling_GetLstOtEmpDtlsByApptNoIpNo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOtEmpDtlsByEmpNo">
+      <wsdl:input wsaw:Action="http://tempuri.org/iOTScheduling/GetOtEmpDtlsByEmpNo" message="tns:iOTScheduling_GetOtEmpDtlsByEmpNo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iOTScheduling/GetOtEmpDtlsByEmpNoResponse" message="tns:iOTScheduling_GetOtEmpDtlsByEmpNo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFCTMstLst">
+      <wsdl:input wsaw:Action="http://tempuri.org/iOTScheduling/GetFCTMstLst" message="tns:iOTScheduling_GetFCTMstLst_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iOTScheduling/GetFCTMstLstResponse" message="tns:iOTScheduling_GetFCTMstLst_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNetIdParamDetailsNew">
+      <wsdl:input wsaw:Action="http://tempuri.org/iOTScheduling/GetNetIdParamDetailsNew" message="tns:iOTScheduling_GetNetIdParamDetailsNew_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iOTScheduling/GetNetIdParamDetailsNewResponse" message="tns:iOTScheduling_GetNetIdParamDetailsNew_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPrntRptViewerRule8013">
+      <wsdl:input wsaw:Action="http://tempuri.org/iOTScheduling/GetPrntRptViewerRule8013" message="tns:iOTScheduling_GetPrntRptViewerRule8013_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iOTScheduling/GetPrntRptViewerRule8013Response" message="tns:iOTScheduling_GetPrntRptViewerRule8013_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOtSchedulingSmsList">
+      <wsdl:input wsaw:Action="http://tempuri.org/iOTScheduling/GetOtSchedulingSmsList" message="tns:iOTScheduling_GetOtSchedulingSmsList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iOTScheduling/GetOtSchedulingSmsListResponse" message="tns:iOTScheduling_GetOtSchedulingSmsList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRuleMstDtls">
+      <wsdl:input wsaw:Action="http://tempuri.org/iOTScheduling/GetRuleMstDtls" message="tns:iOTScheduling_GetRuleMstDtls_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iOTScheduling/GetRuleMstDtlsResponse" message="tns:iOTScheduling_GetRuleMstDtls_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PatientHelpListMst">
+      <wsdl:input wsaw:Action="http://tempuri.org/iOTScheduling/PatientHelpListMst" message="tns:iOTScheduling_PatientHelpListMst_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iOTScheduling/PatientHelpListMstResponse" message="tns:iOTScheduling_PatientHelpListMst_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PatientHelpMst">
+      <wsdl:input wsaw:Action="http://tempuri.org/iOTScheduling/PatientHelpMst" message="tns:iOTScheduling_PatientHelpMst_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iOTScheduling/PatientHelpMstResponse" message="tns:iOTScheduling_PatientHelpMst_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PopulatePager">
+      <wsdl:input wsaw:Action="http://tempuri.org/iOTScheduling/PopulatePager" message="tns:iOTScheduling_PopulatePager_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iOTScheduling/PopulatePagerResponse" message="tns:iOTScheduling_PopulatePager_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPatientDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/iOTScheduling/GetPatientDetails" message="tns:iOTScheduling_GetPatientDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iOTScheduling/GetPatientDetailsResponse" message="tns:iOTScheduling_GetPatientDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="setproperties">
+      <wsdl:input wsaw:Action="http://tempuri.org/iOTScheduling/setproperties" message="tns:iOTScheduling_setproperties_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iOTScheduling/setpropertiesResponse" message="tns:iOTScheduling_setproperties_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIpWiseOtAppList">
+      <wsdl:input wsaw:Action="http://tempuri.org/iOTScheduling/GetIpWiseOtAppList" message="tns:iOTScheduling_GetIpWiseOtAppList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iOTScheduling/GetIpWiseOtAppListResponse" message="tns:iOTScheduling_GetIpWiseOtAppList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOpToIpConvertPtnListForOt">
+      <wsdl:input wsaw:Action="http://tempuri.org/iOTScheduling/GetOpToIpConvertPtnListForOt" message="tns:iOTScheduling_GetOpToIpConvertPtnListForOt_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iOTScheduling/GetOpToIpConvertPtnListForOtResponse" message="tns:iOTScheduling_GetOpToIpConvertPtnListForOt_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConvertOpToIp">
+      <wsdl:input wsaw:Action="http://tempuri.org/iOTScheduling/ConvertOpToIp" message="tns:iOTScheduling_ConvertOpToIp_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iOTScheduling/ConvertOpToIpResponse" message="tns:iOTScheduling_ConvertOpToIp_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Salutation">
+      <wsdl:input wsaw:Action="http://tempuri.org/iOTScheduling/Salutation" message="tns:iOTScheduling_Salutation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iOTScheduling/SalutationResponse" message="tns:iOTScheduling_Salutation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPtnType">
+      <wsdl:input wsaw:Action="http://tempuri.org/iOTScheduling/GetPtnType" message="tns:iOTScheduling_GetPtnType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iOTScheduling/GetPtnTypeResponse" message="tns:iOTScheduling_GetPtnType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPtnTypByUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/iOTScheduling/GetPtnTypByUser" message="tns:iOTScheduling_GetPtnTypByUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iOTScheduling/GetPtnTypByUserResponse" message="tns:iOTScheduling_GetPtnTypByUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPtnDtlByMobNoDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/iOTScheduling/GetPtnDtlByMobNoDetails" message="tns:iOTScheduling_GetPtnDtlByMobNoDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iOTScheduling/GetPtnDtlByMobNoDetailsResponse" message="tns:iOTScheduling_GetPtnDtlByMobNoDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Nationality">
+      <wsdl:input wsaw:Action="http://tempuri.org/iOTScheduling/Nationality" message="tns:iOTScheduling_Nationality_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iOTScheduling/NationalityResponse" message="tns:iOTScheduling_Nationality_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStateLst">
+      <wsdl:input wsaw:Action="http://tempuri.org/iOTScheduling/GetStateLst" message="tns:iOTScheduling_GetStateLst_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iOTScheduling/GetStateLstResponse" message="tns:iOTScheduling_GetStateLst_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCityLst">
+      <wsdl:input wsaw:Action="http://tempuri.org/iOTScheduling/GetCityLst" message="tns:iOTScheduling_GetCityLst_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iOTScheduling/GetCityLstResponse" message="tns:iOTScheduling_GetCityLst_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveConfirmEnqPtn">
+      <wsdl:input wsaw:Action="http://tempuri.org/iOTScheduling/SaveConfirmEnqPtn" message="tns:iOTScheduling_SaveConfirmEnqPtn_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iOTScheduling/SaveConfirmEnqPtnResponse" message="tns:iOTScheduling_SaveConfirmEnqPtn_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetModFncLst">
+      <wsdl:input wsaw:Action="http://tempuri.org/iOTScheduling/GetModFncLst" message="tns:iOTScheduling_GetModFncLst_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/iOTScheduling/GetModFncLstResponse" message="tns:iOTScheduling_GetModFncLst_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_iOTScheduling" type="tns:iOTScheduling">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetPtnTypListByUser">
+      <soap:operation soapAction="http://tempuri.org/iOTScheduling/GetPtnTypListByUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetArMstDetailsByArCd">
+      <soap:operation soapAction="http://tempuri.org/iOTScheduling/GetArMstDetailsByArCd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOTDtlsByFilter">
+      <soap:operation soapAction="http://tempuri.org/iOTScheduling/GetOTDtlsByFilter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCreditCoListSts">
+      <soap:operation soapAction="http://tempuri.org/iOTScheduling/GetCreditCoListSts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserDetByCD">
+      <soap:operation soapAction="http://tempuri.org/iOTScheduling/GetUserDetByCD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIsBaseStateMst">
+      <soap:operation soapAction="http://tempuri.org/iOTScheduling/GetIsBaseStateMst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIsBaseCityMst">
+      <soap:operation soapAction="http://tempuri.org/iOTScheduling/GetIsBaseCityMst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveOfficePermissionChk">
+      <soap:operation soapAction="http://tempuri.org/iOTScheduling/SaveOfficePermissionChk" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetModFnDetails">
+      <soap:operation soapAction="http://tempuri.org/iOTScheduling/GetModFnDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOTDataForDashBrdSch">
+      <soap:operation soapAction="http://tempuri.org/iOTScheduling/GetOTDataForDashBrdSch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVarDef">
+      <soap:operation soapAction="http://tempuri.org/iOTScheduling/GetVarDef" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOtIndirectBookingLst002">
+      <soap:operation soapAction="http://tempuri.org/iOTScheduling/GetOtIndirectBookingLst002" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFCTCAL">
+      <soap:operation soapAction="http://tempuri.org/iOTScheduling/GetFCTCAL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFCTHoliDayDay">
+      <soap:operation soapAction="http://tempuri.org/iOTScheduling/GetFCTHoliDayDay" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFctMstDtlList">
+      <soap:operation soapAction="http://tempuri.org/iOTScheduling/GetFctMstDtlList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPatientListByNameAndOtherParameter">
+      <soap:operation soapAction="http://tempuri.org/iOTScheduling/GetPatientListByNameAndOtherParameter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DoctorSpeciality">
+      <soap:operation soapAction="http://tempuri.org/iOTScheduling/DoctorSpeciality" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFCTFCTSTRTTIME">
+      <soap:operation soapAction="http://tempuri.org/iOTScheduling/GetFCTFCTSTRTTIME" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFCTFCTENDTIME">
+      <soap:operation soapAction="http://tempuri.org/iOTScheduling/GetFCTFCTENDTIME" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFCTAPTREQ">
+      <soap:operation soapAction="http://tempuri.org/iOTScheduling/GetFCTAPTREQ" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFCTMST">
+      <soap:operation soapAction="http://tempuri.org/iOTScheduling/GetFCTMST" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPatientList">
+      <soap:operation soapAction="http://tempuri.org/iOTScheduling/GetPatientList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDoctorList">
+      <soap:operation soapAction="http://tempuri.org/iOTScheduling/GetDoctorList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SAVERECORD">
+      <soap:operation soapAction="http://tempuri.org/iOTScheduling/SAVERECORD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EDITERECORD">
+      <soap:operation soapAction="http://tempuri.org/iOTScheduling/EDITERECORD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CNCLRECORD">
+      <soap:operation soapAction="http://tempuri.org/iOTScheduling/CNCLRECORD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SHIFTRECORD">
+      <soap:operation soapAction="http://tempuri.org/iOTScheduling/SHIFTRECORD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SHIFTNOW">
+      <soap:operation soapAction="http://tempuri.org/iOTScheduling/SHIFTNOW" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOTAptDetails1">
+      <soap:operation soapAction="http://tempuri.org/iOTScheduling/GetOTAptDetails1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPatientFullName">
+      <soap:operation soapAction="http://tempuri.org/iOTScheduling/GetPatientFullName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDoctor">
+      <soap:operation soapAction="http://tempuri.org/iOTScheduling/GetDoctor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCdDcdDtlByTypByCdByAddInfo1">
+      <soap:operation soapAction="http://tempuri.org/iOTScheduling/GetCdDcdDtlByTypByCdByAddInfo1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCodeDeCodeDtlByTypByCd">
+      <soap:operation soapAction="http://tempuri.org/iOTScheduling/GetCodeDeCodeDtlByTypByCd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveIndirectBooking">
+      <soap:operation soapAction="http://tempuri.org/iOTScheduling/SaveIndirectBooking" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelOtIndirectBooking">
+      <soap:operation soapAction="http://tempuri.org/iOTScheduling/CancelOtIndirectBooking" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOtIndirectBookingLst">
+      <soap:operation soapAction="http://tempuri.org/iOTScheduling/GetOtIndirectBookingLst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WardDetails">
+      <soap:operation soapAction="http://tempuri.org/iOTScheduling/WardDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInPtnListByNameDocWard">
+      <soap:operation soapAction="http://tempuri.org/iOTScheduling/GetInPtnListByNameDocWard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInpatientDetails">
+      <soap:operation soapAction="http://tempuri.org/iOTScheduling/GetInpatientDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOtName">
+      <soap:operation soapAction="http://tempuri.org/iOTScheduling/GetOtName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOtSchSrvList">
+      <soap:operation soapAction="http://tempuri.org/iOTScheduling/GetOtSchSrvList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLstOtSchSrvParaNm">
+      <soap:operation soapAction="http://tempuri.org/iOTScheduling/GetLstOtSchSrvParaNm" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCalRate">
+      <soap:operation soapAction="http://tempuri.org/iOTScheduling/GetCalRate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPtnClsDtlByIpOpNo">
+      <soap:operation soapAction="http://tempuri.org/iOTScheduling/GetPtnClsDtlByIpOpNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetArCdByIpOpNo">
+      <soap:operation soapAction="http://tempuri.org/iOTScheduling/GetArCdByIpOpNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCodeDeCodeList">
+      <soap:operation soapAction="http://tempuri.org/iOTScheduling/GetCodeDeCodeList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFctAptOtDocList">
+      <soap:operation soapAction="http://tempuri.org/iOTScheduling/GetFctAptOtDocList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLstOtDocDtlsByApptNoIpNo">
+      <soap:operation soapAction="http://tempuri.org/iOTScheduling/GetLstOtDocDtlsByApptNoIpNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLstOtSrvDtlsByApptNoIpNo">
+      <soap:operation soapAction="http://tempuri.org/iOTScheduling/GetLstOtSrvDtlsByApptNoIpNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPtnNoByIpNo">
+      <soap:operation soapAction="http://tempuri.org/iOTScheduling/GetPtnNoByIpNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOtEmpIdLst">
+      <soap:operation soapAction="http://tempuri.org/iOTScheduling/GetOtEmpIdLst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLstOtEmpDtlsByApptNoIpNo">
+      <soap:operation soapAction="http://tempuri.org/iOTScheduling/GetLstOtEmpDtlsByApptNoIpNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOtEmpDtlsByEmpNo">
+      <soap:operation soapAction="http://tempuri.org/iOTScheduling/GetOtEmpDtlsByEmpNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFCTMstLst">
+      <soap:operation soapAction="http://tempuri.org/iOTScheduling/GetFCTMstLst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNetIdParamDetailsNew">
+      <soap:operation soapAction="http://tempuri.org/iOTScheduling/GetNetIdParamDetailsNew" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPrntRptViewerRule8013">
+      <soap:operation soapAction="http://tempuri.org/iOTScheduling/GetPrntRptViewerRule8013" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOtSchedulingSmsList">
+      <soap:operation soapAction="http://tempuri.org/iOTScheduling/GetOtSchedulingSmsList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRuleMstDtls">
+      <soap:operation soapAction="http://tempuri.org/iOTScheduling/GetRuleMstDtls" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PatientHelpListMst">
+      <soap:operation soapAction="http://tempuri.org/iOTScheduling/PatientHelpListMst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PatientHelpMst">
+      <soap:operation soapAction="http://tempuri.org/iOTScheduling/PatientHelpMst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PopulatePager">
+      <soap:operation soapAction="http://tempuri.org/iOTScheduling/PopulatePager" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPatientDetails">
+      <soap:operation soapAction="http://tempuri.org/iOTScheduling/GetPatientDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setproperties">
+      <soap:operation soapAction="http://tempuri.org/iOTScheduling/setproperties" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIpWiseOtAppList">
+      <soap:operation soapAction="http://tempuri.org/iOTScheduling/GetIpWiseOtAppList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOpToIpConvertPtnListForOt">
+      <soap:operation soapAction="http://tempuri.org/iOTScheduling/GetOpToIpConvertPtnListForOt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConvertOpToIp">
+      <soap:operation soapAction="http://tempuri.org/iOTScheduling/ConvertOpToIp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Salutation">
+      <soap:operation soapAction="http://tempuri.org/iOTScheduling/Salutation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPtnType">
+      <soap:operation soapAction="http://tempuri.org/iOTScheduling/GetPtnType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPtnTypByUser">
+      <soap:operation soapAction="http://tempuri.org/iOTScheduling/GetPtnTypByUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPtnDtlByMobNoDetails">
+      <soap:operation soapAction="http://tempuri.org/iOTScheduling/GetPtnDtlByMobNoDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Nationality">
+      <soap:operation soapAction="http://tempuri.org/iOTScheduling/Nationality" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStateLst">
+      <soap:operation soapAction="http://tempuri.org/iOTScheduling/GetStateLst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCityLst">
+      <soap:operation soapAction="http://tempuri.org/iOTScheduling/GetCityLst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveConfirmEnqPtn">
+      <soap:operation soapAction="http://tempuri.org/iOTScheduling/SaveConfirmEnqPtn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetModFncLst">
+      <soap:operation soapAction="http://tempuri.org/iOTScheduling/GetModFncLst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="OTScheduling">
+    <wsdl:port name="BasicHttpBinding_iOTScheduling" binding="tns:BasicHttpBinding_iOTScheduling">
+      <soap:address location="http://localhost:55278/OTScheduling.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

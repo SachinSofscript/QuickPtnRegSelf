@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/OTSchedulingSrv.CommonModule" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/OTSchedulingSrv.CommonModule" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="clsCalRate">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdmissionDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EmergencyFlg" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmergencyPerc" type="xs:double" />
+      <xs:element minOccurs="0" name="MaxRate" type="xs:double" />
+      <xs:element minOccurs="0" name="MinRate" type="xs:double" />
+      <xs:element minOccurs="0" name="Rate" type="xs:double" />
+      <xs:element minOccurs="0" name="RateChangeFlg" type="xs:boolean" />
+      <xs:element minOccurs="0" name="RateChangeType" type="xs:int" />
+      <xs:element minOccurs="0" name="SchemeId" type="xs:int" />
+      <xs:element minOccurs="0" name="StdRt" type="xs:double" />
+      <xs:element minOccurs="0" name="lvArCd" type="xs:long" />
+      <xs:element minOccurs="0" name="lvChrgCd" type="xs:int" />
+      <xs:element minOccurs="0" name="lvFreeFlag" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="lvIpNo" type="xs:long" />
+      <xs:element minOccurs="0" name="lvPtnClsCd" type="xs:int" />
+      <xs:element minOccurs="0" name="lvSrvCd" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="clsCalRate" nillable="true" type="tns:clsCalRate" />
+</xs:schema>

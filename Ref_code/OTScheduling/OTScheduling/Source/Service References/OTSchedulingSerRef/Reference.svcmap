@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="fd042ec0-1495-4ead-8587-6669c1292a9c" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:55278/OTScheduling.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="OTScheduling7.xsd" MetadataType="Schema" ID="50016f25-f6a2-49f9-b44f-f585dd08a838" SourceId="1" SourceUrl="http://localhost:55278/OTScheduling.svc?xsd=xsd2" />
+    <MetadataFile FileName="OTScheduling71.xsd" MetadataType="Schema" ID="a0be2b34-70ea-475c-8506-ce1e87b9b9eb" SourceId="1" SourceUrl="http://localhost:55278/OTScheduling.svc?xsd=xsd5" />
+    <MetadataFile FileName="OTScheduling72.xsd" MetadataType="Schema" ID="67ef7aa5-06da-4e86-80c2-1412e74e1991" SourceId="1" SourceUrl="http://localhost:55278/OTScheduling.svc?xsd=xsd0" />
+    <MetadataFile FileName="OTScheduling1.disco" MetadataType="Disco" ID="a00a1dfa-faca-41e8-a376-7519926fd49f" SourceId="1" SourceUrl="http://localhost:55278/OTScheduling.svc?disco" />
+    <MetadataFile FileName="OTScheduling73.xsd" MetadataType="Schema" ID="1e22ed6e-5487-4672-9262-62180c41a862" SourceId="1" SourceUrl="http://localhost:55278/OTScheduling.svc?xsd=xsd6" />
+    <MetadataFile FileName="OTScheduling74.xsd" MetadataType="Schema" ID="c7fb28d7-417c-4bab-b462-2f4337977023" SourceId="1" SourceUrl="http://localhost:55278/OTScheduling.svc?xsd=xsd4" />
+    <MetadataFile FileName="OTScheduling75.xsd" MetadataType="Schema" ID="b3fcbb97-a9df-418e-b9f2-549775134716" SourceId="1" SourceUrl="http://localhost:55278/OTScheduling.svc?xsd=xsd1" />
+    <MetadataFile FileName="OTScheduling1.wsdl" MetadataType="Wsdl" ID="5c7fad5e-ac65-4f73-86da-fbf4ae7bc76e" SourceId="1" SourceUrl="http://localhost:55278/OTScheduling.svc?wsdl" />
+    <MetadataFile FileName="OTScheduling76.xsd" MetadataType="Schema" ID="fb6f9a61-4b91-4c17-8758-4702cef07846" SourceId="1" SourceUrl="http://localhost:55278/OTScheduling.svc?xsd=xsd3" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

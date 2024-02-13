@@ -1,0 +1,1432 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>
+    </SchemaVersion>
+    <ProjectGuid>{72E53F75-4A6D-4402-8F78-13E0410279B8}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>OTScheduling</RootNamespace>
+    <AssemblyName>OTScheduling</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MyType>Custom</MyType>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>OTScheduling.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>OTScheduling.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=15.1.4.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Sofscript\WebIIS\CLIENTR2\AllotedAdmission\bin\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="CWCommonLib, Version=1.0.0.7, Culture=neutral, PublicKeyToken=652d9fba00c5f11f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Windows\assembly\GAC_MSIL\CWCommonLib\1.0.0.7__652d9fba00c5f11f\CWCommonLib.dll</HintPath>
+    </Reference>
+    <Reference Include="CWSQLServerReportLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6616253825bfd884, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Windows\Microsoft.NET\assembly\GAC_MSIL\CWSQLServerReportLib\v4.0_1.0.0.0__6616253825bfd884\CWSQLServerReportLib.dll</HintPath>
+    </Reference>
+    <Reference Include="DayPilot">
+      <HintPath>D:\TechSupport\Trupti\TutorialShiftScheduling\TutorialCS\Bin\DayPilot.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Windows\assembly\GAC_MSIL\Microsoft.ReportViewer.WebForms\10.0.0.0__b03f5f7f11d50a3a\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CSS\alertify.bootstrap.css" />
+    <Content Include="CSS\alertify.core.css" />
+    <Content Include="CSS\alertify.default.css" />
+    <Content Include="CSS\bootstrap.min.css" />
+    <Content Include="CSS\ButtonStyles.css" />
+    <Content Include="CSS\Custom.css" />
+    <Content Include="CSS\doctorsorder.css" />
+    <Content Include="CSS\ItemHelp.css" />
+    <Content Include="CSS\Master.css" />
+    <Content Include="CSS\ModelPopup.css" />
+    <Content Include="CSS\RadioButtons.css" />
+    <Content Include="CSS\scrollbar.css" />
+    <Content Include="CSS\style.css" />
+    <Content Include="CSS\stylesheet.css" />
+    <Content Include="CSS\sweetalert.min.css" />
+    <Content Include="CSS\ui-lightness\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="CSS\ui-lightness\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="CSS\ui-lightness\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="CSS\ui-lightness\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="CSS\ui-lightness\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="CSS\ui-lightness\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="CSS\ui-lightness\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="CSS\ui-lightness\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="CSS\ui-lightness\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="CSS\ui-lightness\images\ui-icons_222222_256x240.png" />
+    <Content Include="CSS\ui-lightness\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="CSS\ui-lightness\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="CSS\ui-lightness\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="CSS\ui-lightness\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="CSS\ui-lightness\jquery-ui -1.12.1.css" />
+    <Content Include="CSS\ui-lightness\jquery-ui-1.12.1.theme.min.css" />
+    <Content Include="CSS\ui-lightness\jquery-ui-1.8.21.custom.css" />
+    <Content Include="Images\animated.gif" />
+    <Content Include="Images\check.png" />
+    <Content Include="Images\Close48px.png" />
+    <Content Include="Images\delete.gif" />
+    <Content Include="Images\down.jpg" />
+    <Content Include="Images\isolated_ptn_24px.png" />
+    <Content Include="Images\next1.gif" />
+    <Content Include="Images\previous.gif" />
+    <Content Include="Images\Search.ico" />
+    <Content Include="Images\Uncheck.png" />
+    <Content Include="Images\up.jpg" />
+    <Content Include="Media\layout.css" />
+    <Content Include="Media\layout\header-in.png" />
+    <Content Include="Media\layout\header.png" />
+    <Content Include="Media\layout\li.png" />
+    <Content Include="Media\layout\main.png" />
+    <Content Include="Media\layout\shadow.png" />
+    <Content Include="Media\linked\recur10x9.png" />
+    <Content Include="Pages\CreditCompHelp.aspx" />
+    <Content Include="Pages\Default.aspx" />
+    <Content Include="Pages\DoctorSearch.aspx" />
+    <Content Include="Pages\frmHelpDoc.aspx" />
+    <Content Include="Pages\frmOTDoctorsAdd.aspx" />
+    <Content Include="Pages\frmOTEmpAdd.aspx" />
+    <Content Include="Pages\frmOTEmpHelp.aspx" />
+    <Content Include="Pages\frmOTServicesAdd.aspx" />
+    <Content Include="Pages\frmOtServicesHelp.aspx" />
+    <Content Include="Pages\OTDashBoard.aspx" />
+    <Content Include="Pages\OtDashboardSch.aspx" />
+    <Content Include="Pages\OTHelp.aspx" />
+    <Content Include="Pages\OtScheduling.aspx" />
+    <Content Include="Pages\image.aspx" />
+    <Content Include="Pages\imageshft.aspx" />
+    <Content Include="Pages\InPatientHelp.aspx" />
+    <Content Include="Pages\OTRequest.aspx" />
+    <Content Include="Pages\OTSearch.aspx" />
+    <Content Include="Pages\PatientSearch.aspx" />
+    <Content Include="Pages\PrintRpt.aspx" />
+    <Content Include="Pages\ReportViewerRpt.aspx" />
+    <Content Include="Pages\shiftnow.aspx" />
+    <Content Include="Pages\ViewPrint.aspx" />
+    <Content Include="Scripts\alertify.js" />
+    <Content Include="Scripts\alertify.min.js" />
+    <Content Include="Scripts\colResizable-1.6.js" />
+    <Content Include="Scripts\colResizable-1.6.min.js" />
+    <Content Include="Scripts\DayPilot\event_handling.js" />
+    <Content Include="Scripts\DayPilot\modal.js" />
+    <Content Include="Scripts\DayPilot\recurrence.js" />
+    <Content Include="Scripts\FixFocus.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Scripts\jquery-ui-1.12.1.min.js" />
+    <Content Include="Scripts\jquery-ui.min.js" />
+    <Content Include="Scripts\jquery.min.js" />
+    <Content Include="Scripts\sweetalert.min.js" />
+    <Content Include="Scripts\validation.js" />
+    <Content Include="My Project\DataSources\System.Data.DataSet.datasource" />
+    <None Include="My Project\PublishProfiles\das.pubxml" />
+    <None Include="My Project\PublishProfiles\mkkkk.pubxml" />
+    <None Include="My Project\PublishProfiles\WEBAPP.pubxml" />
+    <Content Include="Pages\MasterPage.master" />
+    <None Include="Service References\CmnSecurityFunSrvRef\CmnSecurityFun1.disco" />
+    <Content Include="Service References\CmnSecurityFunSrvRef\OTScheduling.CmnSecurityFunSrvRef.CalCompanySchemeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CmnSecurityFunSrvRef\OTScheduling.CmnSecurityFunSrvRef.CashDenomControl.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CmnSecurityFunSrvRef\OTScheduling.CmnSecurityFunSrvRef.ChkSysLockResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CmnSecurityFunSrvRef\OTScheduling.CmnSecurityFunSrvRef.clsBedTypeMaster.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CmnSecurityFunSrvRef\OTScheduling.CmnSecurityFunSrvRef.clsCalRate.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CmnSecurityFunSrvRef\OTScheduling.CmnSecurityFunSrvRef.clsCalShare.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CmnSecurityFunSrvRef\OTScheduling.CmnSecurityFunSrvRef.clsCodeDecode.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CmnSecurityFunSrvRef\OTScheduling.CmnSecurityFunSrvRef.clsDepositTypeMst.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CmnSecurityFunSrvRef\OTScheduling.CmnSecurityFunSrvRef.clsMsgMst.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CmnSecurityFunSrvRef\OTScheduling.CmnSecurityFunSrvRef.clsNetId.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CmnSecurityFunSrvRef\OTScheduling.CmnSecurityFunSrvRef.DepositTypeByCdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CmnSecurityFunSrvRef\OTScheduling.CmnSecurityFunSrvRef.FunctionAccessDtl.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CmnSecurityFunSrvRef\OTScheduling.CmnSecurityFunSrvRef.FunctionAccessDtlResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CmnSecurityFunSrvRef\OTScheduling.CmnSecurityFunSrvRef.GetBedTypeListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CmnSecurityFunSrvRef\OTScheduling.CmnSecurityFunSrvRef.GetButtonRightsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CmnSecurityFunSrvRef\OTScheduling.CmnSecurityFunSrvRef.GetCalRateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CmnSecurityFunSrvRef\OTScheduling.CmnSecurityFunSrvRef.GetCalShareResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CmnSecurityFunSrvRef\OTScheduling.CmnSecurityFunSrvRef.GetCodeDeCodeDtlByTypByCdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CmnSecurityFunSrvRef\OTScheduling.CmnSecurityFunSrvRef.GetCodeDeCodeListForPtnGenderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CmnSecurityFunSrvRef\OTScheduling.CmnSecurityFunSrvRef.GetCurrancyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CmnSecurityFunSrvRef\OTScheduling.CmnSecurityFunSrvRef.GetDepositsTypeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CmnSecurityFunSrvRef\OTScheduling.CmnSecurityFunSrvRef.GetFinancialYrBetweenDtResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CmnSecurityFunSrvRef\OTScheduling.CmnSecurityFunSrvRef.GetGenderNameResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CmnSecurityFunSrvRef\OTScheduling.CmnSecurityFunSrvRef.GetmsgmstListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CmnSecurityFunSrvRef\OTScheduling.CmnSecurityFunSrvRef.GetNetIdDetailsWithForReportPathResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CmnSecurityFunSrvRef\OTScheduling.CmnSecurityFunSrvRef.GetNetIdDetailsWithModuleNameResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CmnSecurityFunSrvRef\OTScheduling.CmnSecurityFunSrvRef.GetNetIdDetByModCdSubModCdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CmnSecurityFunSrvRef\OTScheduling.CmnSecurityFunSrvRef.GetReportServerUserNamePasswordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CmnSecurityFunSrvRef\OTScheduling.CmnSecurityFunSrvRef.GetRevenueDateDLResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CmnSecurityFunSrvRef\OTScheduling.CmnSecurityFunSrvRef.SaveCashDenominationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CmnSecurityFunSrvRef\OTScheduling.CmnSecurityFunSrvRef.SelDoctorFeeSourceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CmnSecurityFunSrvRef\OTScheduling.CmnSecurityFunSrvRef.ShowDenominationScreenResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CmnSecurityFunSrvRef\OTScheduling.CmnSecurityFunSrvRef.UserRightsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CmnSecurityFunSrvRef\OTScheduling.CmnSecurityFunSrvRef.WardDetailsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\CmnSecurityFunSrvRef\CmnSecurityFun1.wsdl" />
+    <None Include="Service References\CmnSecurityFunSrvRef\CmnSecurityFun7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CmnSecurityFunSrvRef\CmnSecurityFun71.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CmnSecurityFunSrvRef\CmnSecurityFun72.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CmnSecurityFunSrvRef\CmnSecurityFun73.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CmnSecurityFunSrvRef\CmnSecurityFun74.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CmnSecurityFunSrvRef\CmnSecurityFun75.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CmnSecurityFunSrvRef\CmnSecurityFun76.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CmnSecurityFunSrvRef\configuration91.svcinfo" />
+    <None Include="Service References\CmnSecurityFunSrvRef\configuration.svcinfo" />
+    <Content Include="Service References\CmnSecurityFunSrvRef\OTScheduling.CmnSecurityFunSrvRef.clsCwFiledTitleMst.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CmnSecurityFunSrvRef\OTScheduling.CmnSecurityFunSrvRef.clsMaster.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CmnSecurityFunSrvRef\OTScheduling.CmnSecurityFunSrvRef.GetCashTrnLimitResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CmnSecurityFunSrvRef\OTScheduling.CmnSecurityFunSrvRef.GetClncMstResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CmnSecurityFunSrvRef\OTScheduling.CmnSecurityFunSrvRef.GetCodeDeCodeListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CmnSecurityFunSrvRef\OTScheduling.CmnSecurityFunSrvRef.GetFiledTitleMstResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CmnSecurityFunSrvRef\OTScheduling.CmnSecurityFunSrvRef.GetNetIdDetByModCdSubModCdReqResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\CmnSecurityFunSrvRef\OTScheduling.CmnSecurityFunSrvRef.TrnCshLimit.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\CmnSecurityFunSrvRef\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <Content Include="Pages\ViewReport.aspx" />
+    <None Include="Service References\IpPostVoucherServiceReference\bclsIpPostVoucher.wsdl" />
+    <None Include="Service References\IpPostVoucherServiceReference\IpPostVoucher.disco" />
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.CancelAttachEquipmentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.CheckBedTransReqResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.clsAREMPMST.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.clsArMst.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.clsArSchemeContractMst.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.clsAttPayDbEmpId.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.clsBedTransReq.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.clsBlockSrvOrdPost.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.clsCalRate.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.clsCalShare.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.clsChargeMaster.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.clsChargeMasterDtl.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.clsChargeMasterHelp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.clsCmpntTrnShrInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.clsCodeDecode.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.clsDoctor.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.clsDoctorHelp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.clsInPatient.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.clsInPatientHelp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.clsIpBilInsTrn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.clsIpDepRcpt.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.clsIpICUEquipLinkPostList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.clsIpICUEquipLinkViewHistory.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.clsIpICUEquipMst.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.clsIPInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.clsIpPatientVisit.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.clsIpTrn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.clsMultiTechShrSrvList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.clsNetIDParam.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.clsNstTstOrdReqDtl.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.clsOpServicesBlock.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.clsPaging.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.clsPatientClassMaster.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.clsPostIPServiceFromLIS.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.ClsPtnClsHelp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.clsPtnTypMst.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.clsRefdbrequest.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.clsRuleMaster.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.clsServiceMaster.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.ClsServiceMasterDtl.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.ClsServiceMasterHelp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.clsSharerServiceDetails.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.clsSrvMst.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.ClsSrvMstByType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.ClsSrvMstMainHelp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.clsUserBasicDtl.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.clsUserModuleFunction.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.DoctorSpecialityResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.FILLSEPSRVResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.FnChkIsSeniorCitizenResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.FnIsChkSrvHrsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.Fn_GetDocDeductionPercResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.Fn_IsArMstNoEmgSrvResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.GetArCdContractDetailsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.GetAreEmpMstDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.GetArMstForAutoHelpResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.getBalanceDtlsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.GetCalRateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.GetCalShareResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.GetChargeMstWithchrgstlflgResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.GetChrgMstDtlByUserIdModSubModCdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.GetChrgMstListByUserIdModSubModCdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.GetChrgMstResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.GetCmpntShrDtlResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.GetDocListWithTypWithDocStsCdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.GetDoctorListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.GetDoctorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.GetEmergencyDyDtFlgResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.GetEmpIDListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.GetExPtnIPListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.GetInPatientCompDltResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.GetInpatientDetailsForPrintResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.GetInpatientDetailsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.GetInPtnListByNameDocWardResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.getInPtnlstforPrntResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.GetIpBilInsTrnByIpNoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.GetIpICUEquipLinkPostListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.GetIpICUEquipLinkViewHistoryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.GetIpICUEquipMstDtlResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.GetIpICUEquipMstListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.GetIPInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.GetIpPatientHelpMstResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.GetIpVchDtlForSameSrvResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.GetListChrgMStForUserResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.GetListOfNstTstOrdReqDtlResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.GetListOfOutsdTstNstTstOrdReqDtlResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.GetNetIdParamDetailsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.GetPrntRptViewerRule8013OnlyPdfPrintResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.GetPrntRptViewerRule8013Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.GetPtnClassDtlResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.GetPtnClsDtlByCdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.GetPtnTypeMstByTypCdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.GetPtnTypeMstResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.GetRuleMstDtlsModuleWsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.GetRuleMstDtlsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.GetServiceListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.GetSharerServiceListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.GetSrvBlockStsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.GetSrvCdWithDescResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.GetSrvLstByModSubModCdPrefixResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.GetSrvLstByModSubModCdPrefixWithRtResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.GetSrvLstBySrvTypSexFlgUserNstTstOrdAllowResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.GetSrvLstByUserIdModSubModCdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.GetSrvMstDtlByUserIdModSubmodcdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.GetSrvMstDtlResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.GetTechSrvListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.GetUserBasicDtlResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.GetUserWsModFnListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.PopulatePagerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.PostIPServiceFromLISResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.SaveAttachEquipmentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.SaveDbReqForCreateIpVchResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.SaveRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.ValidateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.WardDetailsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\IpPostVoucherServiceReference\configuration91.svcinfo" />
+    <None Include="Service References\IpPostVoucherServiceReference\configuration.svcinfo" />
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.clsRefDocHelp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.FnGetReferralDocNmResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.GetReferralDocLstMstResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.GetReferralDocLstResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\IpPostVoucherServiceReference\OTScheduling.IpPostVoucherServiceReference.GetRuleMstDtlsListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\IpPostVoucherServiceReference\IpPostVoucher.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\IpPostVoucherServiceReference\IpPostVoucher1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\IpPostVoucherServiceReference\IpPostVoucher10.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\IpPostVoucherServiceReference\IpPostVoucher11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\IpPostVoucherServiceReference\IpPostVoucher2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\IpPostVoucherServiceReference\IpPostVoucher3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\IpPostVoucherServiceReference\IpPostVoucher4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\IpPostVoucherServiceReference\IpPostVoucher5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\IpPostVoucherServiceReference\IpPostVoucher6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\IpPostVoucherServiceReference\IpPostVoucher7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\IpPostVoucherServiceReference\IpPostVoucher8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\IpPostVoucherServiceReference\IpPostVoucher9.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\IpPostVoucherServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Service References\OTSchedulingSerRef\configuration91.svcinfo" />
+    <None Include="Service References\OTSchedulingSerRef\configuration.svcinfo" />
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.CancelOtIndirectBookingResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.CityMaster.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.clsArMst.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.clsArMstCdDcd.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.clsAttPayDbEmpId.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.clsCalRate.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.clsCodeDecode.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.clsConvertOpToIp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.clsDoctor.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.clsFCTAPTOT.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.clsFctAptOtEmpDtls.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.clsFctAptOtSrvprm.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.clsFCTCAL.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.clsFCTMST.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.clsFCTMstHelp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.clsInPatientHelp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.clsIpPatientVisit.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.clsMaster.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.clsNetIDParam.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.clsOtDocDtls.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.ClsOtIndirectBookingLst.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.ClsOtSrvLstDtls.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.clsPaging.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.clsPatient.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.clsPatientHelp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.clsPtnBasicInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.ClsPtnDtlsSetup.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.clsPtnTypeMst.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.clsPtnVstPtnClsDtl.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.clsRuleMaster.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.clsSMSMstDetails.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.clsUserDet.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.clsUserModuleFunction.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.ClsUserPtnTypMst.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.CNCLRECORDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.ConvertOpToIpResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.DoctorSpecialityResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.EDITERECORDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.GetArCdByIpOpNoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.GetArMstDetailsByArCdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.GetCalRateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.GetCdDcdDtlByTypByCdByAddInfo1Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.GetCityLstResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.GetCodeDeCodeDtlByTypByCdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.GetCodeDeCodeListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.GetCreditCoListStsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.GetDoctorListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.GetDoctorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.GetFctAptOtDocListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.GetFCTAPTREQResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.GetFCTCALResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.GetFCTFCTENDTIMEResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.GetFCTFCTSTRTTIMEResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.GetFCTHoliDayDayResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.GetFctMstDtlListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.GetFCTMstLstResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.GetFCTMSTResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.GetInpatientDetailsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.GetInPtnListByNameDocWardResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.GetIpWiseOtAppListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.GetIsBaseCityMstResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.GetIsBaseStateMstResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.GetLstOtDocDtlsByApptNoIpNoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.GetLstOtEmpDtlsByApptNoIpNoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.GetLstOtSchSrvParaNmResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.GetLstOtSrvDtlsByApptNoIpNoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.GetModFncLstResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.GetModFnDetailsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.GetNetIdParamDetailsNewResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.GetOpToIpConvertPtnListForOtResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.GetOTAptDetails1Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.GetOTDtlsByFilterResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.GetOtEmpDtlsByEmpNoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.GetOtEmpIdLstResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.GetOtIndirectBookingLst002Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.GetOtIndirectBookingLstResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.GetOtNameResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.GetOtSchedulingSmsListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.GetOtSchSrvListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.GetPatientDetailsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.GetPatientFullNameResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.GetPatientListByNameAndOtherParameterResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.GetPatientListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.GetPrntRptViewerRule8013Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.GetPtnClsDtlByIpOpNoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.GetPtnDtlByMobNoDetailsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.GetPtnNoByIpNoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.GetPtnTypeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.GetPtnTypListByUserResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.GetRuleMstDtlsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.GetStateLstResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.GetUserDetByCDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.NationalityResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.PatientDetails.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.PatientHelpListMstResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.PatientHelpMstResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.PopulatePagerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.SalutationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.SaveConfirmEnqPtnResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.SaveIndirectBookingResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.SaveOfficePermissionChkResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.SAVERECORDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.setpropertiesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.SHIFTNOWResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.SHIFTRECORDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.StateMaster.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.WardDetailsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.GetOTDataForDashBrdSchResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.GetVarDefResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\OTSchedulingSerRef\OTScheduling.OTSchedulingSerRef.GetPtnTypByUserResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\OTSchedulingSerRef\OTScheduling1.wsdl" />
+    <None Include="Service References\OTSchedulingSerRef\OTScheduling7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\OTSchedulingSerRef\OTScheduling71.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\OTSchedulingSerRef\OTScheduling72.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\OTSchedulingSerRef\OTScheduling73.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\OTSchedulingSerRef\OTScheduling74.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\OTSchedulingSerRef\OTScheduling75.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\OTSchedulingSerRef\OTScheduling76.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\OTSchedulingSerRef\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Service References\OTSchedulingSerRef\OTScheduling1.disco" />
+    <Content Include="UserControl\PtnQuickReg.ascx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\clsGeneral.vb" />
+    <Compile Include="Classes\clsInPatientHelp.vb" />
+    <Compile Include="Classes\clsIpPostVoucher.vb" />
+    <Compile Include="Classes\clsTimeSlot.vb" />
+    <Compile Include="Classes\OTScheduling.vb" />
+    <Compile Include="Classes\PatientHelp.vb" />
+    <Compile Include="Classes\ReportVererCredentials.vb" />
+    <Compile Include="Pages\CreditCompHelp.aspx.designer.vb">
+      <DependentUpon>CreditCompHelp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CreditCompHelp.aspx.vb">
+      <DependentUpon>CreditCompHelp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Default.aspx.designer.vb">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Default.aspx.vb">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\DoctorSearch.aspx.designer.vb">
+      <DependentUpon>DoctorSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\DoctorSearch.aspx.vb">
+      <DependentUpon>DoctorSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\frmHelpDoc.aspx.designer.vb">
+      <DependentUpon>frmHelpDoc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\frmHelpDoc.aspx.vb">
+      <DependentUpon>frmHelpDoc.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Pages\frmOTDoctorsAdd.aspx.designer.vb">
+      <DependentUpon>frmOTDoctorsAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\frmOTDoctorsAdd.aspx.vb">
+      <DependentUpon>frmOTDoctorsAdd.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Pages\frmOTEmpAdd.aspx.designer.vb">
+      <DependentUpon>frmOTEmpAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\frmOTEmpAdd.aspx.vb">
+      <DependentUpon>frmOTEmpAdd.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Pages\frmOTEmpHelp.aspx.designer.vb">
+      <DependentUpon>frmOTEmpHelp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\frmOTEmpHelp.aspx.vb">
+      <DependentUpon>frmOTEmpHelp.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Pages\frmOTServicesAdd.aspx.designer.vb">
+      <DependentUpon>frmOTServicesAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\frmOTServicesAdd.aspx.vb">
+      <DependentUpon>frmOTServicesAdd.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Pages\frmOtServicesHelp.aspx.designer.vb">
+      <DependentUpon>frmOtServicesHelp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\frmOtServicesHelp.aspx.vb">
+      <DependentUpon>frmOtServicesHelp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\OTDashBoard.aspx.designer.vb">
+      <DependentUpon>OTDashBoard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\OTDashBoard.aspx.vb">
+      <DependentUpon>OTDashBoard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\OtDashboardSch.aspx.designer.vb">
+      <DependentUpon>OtDashboardSch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\OtDashboardSch.aspx.vb">
+      <DependentUpon>OtDashboardSch.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Pages\OTHelp.aspx.designer.vb">
+      <DependentUpon>OTHelp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\OTHelp.aspx.vb">
+      <DependentUpon>OTHelp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\OtScheduling.aspx.designer.vb">
+      <DependentUpon>OtScheduling.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\OtScheduling.aspx.vb">
+      <DependentUpon>OtScheduling.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\image.aspx.designer.vb">
+      <DependentUpon>image.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\image.aspx.vb">
+      <DependentUpon>image.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\imageshft.aspx.designer.vb">
+      <DependentUpon>imageshft.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\imageshft.aspx.vb">
+      <DependentUpon>imageshft.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\InPatientHelp.aspx.designer.vb">
+      <DependentUpon>InPatientHelp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\InPatientHelp.aspx.vb">
+      <DependentUpon>InPatientHelp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\MasterPage.master.designer.vb">
+      <DependentUpon>MasterPage.master</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MasterPage.master.vb">
+      <DependentUpon>MasterPage.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\OTRequest.aspx.designer.vb">
+      <DependentUpon>OTRequest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\OTRequest.aspx.vb">
+      <DependentUpon>OTRequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\OTSearch.aspx.designer.vb">
+      <DependentUpon>OTSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\OTSearch.aspx.vb">
+      <DependentUpon>OTSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\PatientSearch.aspx.designer.vb">
+      <DependentUpon>PatientSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PatientSearch.aspx.vb">
+      <DependentUpon>PatientSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\PrintRpt.aspx.designer.vb">
+      <DependentUpon>PrintRpt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PrintRpt.aspx.vb">
+      <DependentUpon>PrintRpt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ReportViewerRpt.aspx.designer.vb">
+      <DependentUpon>ReportViewerRpt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ReportViewerRpt.aspx.vb">
+      <DependentUpon>ReportViewerRpt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\shiftnow.aspx.designer.vb">
+      <DependentUpon>shiftnow.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\shiftnow.aspx.vb">
+      <DependentUpon>shiftnow.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ViewPrint.aspx.designer.vb">
+      <DependentUpon>ViewPrint.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ViewPrint.aspx.vb">
+      <DependentUpon>ViewPrint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\MyExtensions\MyWebExtension.vb">
+      <VBMyExtensionTemplateID>Microsoft.VisualBasic.Web.MyExtension</VBMyExtensionTemplateID>
+      <VBMyExtensionTemplateVersion>1.0.0.0</VBMyExtensionTemplateVersion>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Service References\CmnSecurityFunSrvRef\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ViewReport.aspx.designer.vb">
+      <DependentUpon>ViewReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ViewReport.aspx.vb">
+      <DependentUpon>ViewReport.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Service References\IpPostVoucherServiceReference\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\OTSchedulingSerRef\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\PtnQuickReg.ascx.designer.vb">
+      <DependentUpon>PtnQuickReg.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\PtnQuickReg.ascx.vb">
+      <DependentUpon>PtnQuickReg.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\CmnSecurityFunSrvRef\" />
+    <WCFMetadataStorage Include="Service References\IpPostVoucherServiceReference\" />
+    <WCFMetadataStorage Include="Service References\OTSchedulingSerRef\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="obj\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>53793</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:51888/</IISUrl>
+          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
+          <IISAppRootUrl>http://localhost:51888/</IISAppRootUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

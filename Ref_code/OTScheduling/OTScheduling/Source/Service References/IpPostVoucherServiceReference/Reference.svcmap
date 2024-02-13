@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="a95ba132-2c36-4772-8cba-f1b80e5ea600" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:50875/IpPostVoucher.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="IpPostVoucher.disco" MetadataType="Disco" ID="0c2e95e4-4b71-4934-989c-cdba6f7d70f3" SourceId="1" SourceUrl="http://localhost:50875/IpPostVoucher.svc?disco" />
+    <MetadataFile FileName="IpPostVoucher.xsd" MetadataType="Schema" ID="014c7d6d-ff61-4157-8c21-795944a38b95" SourceId="1" SourceUrl="http://localhost:50875/IpPostVoucher.svc?xsd=xsd10" />
+    <MetadataFile FileName="IpPostVoucher1.xsd" MetadataType="Schema" ID="c898c24c-862a-421c-b35d-3f40c2393f7a" SourceId="1" SourceUrl="http://localhost:50875/IpPostVoucher.svc?xsd=xsd9" />
+    <MetadataFile FileName="IpPostVoucher2.xsd" MetadataType="Schema" ID="448a35ff-c20f-4348-9ac9-b0ea4c0ccb5c" SourceId="1" SourceUrl="http://localhost:50875/IpPostVoucher.svc?xsd=xsd8" />
+    <MetadataFile FileName="IpPostVoucher3.xsd" MetadataType="Schema" ID="b08dcb72-7173-4657-80ad-3589065253d7" SourceId="1" SourceUrl="http://localhost:50875/IpPostVoucher.svc?xsd=xsd11" />
+    <MetadataFile FileName="bclsIpPostVoucher.wsdl" MetadataType="Wsdl" ID="4fddb544-4b23-4397-a12d-876af1f4163a" SourceId="1" SourceUrl="http://localhost:50875/IpPostVoucher.svc?wsdl" />
+    <MetadataFile FileName="IpPostVoucher4.xsd" MetadataType="Schema" ID="30f0b2ef-389f-4396-9833-c0e9380bbeab" SourceId="1" SourceUrl="http://localhost:50875/IpPostVoucher.svc?xsd=xsd7" />
+    <MetadataFile FileName="IpPostVoucher5.xsd" MetadataType="Schema" ID="9f2516d2-eb18-4cd2-b833-c227962c1474" SourceId="1" SourceUrl="http://localhost:50875/IpPostVoucher.svc?xsd=xsd6" />
+    <MetadataFile FileName="IpPostVoucher6.xsd" MetadataType="Schema" ID="79f70051-3f7e-4d32-8690-a5c9e62885ae" SourceId="1" SourceUrl="http://localhost:50875/IpPostVoucher.svc?xsd=xsd5" />
+    <MetadataFile FileName="IpPostVoucher7.xsd" MetadataType="Schema" ID="3839ee76-5fea-4773-ab63-e9c6243eea66" SourceId="1" SourceUrl="http://localhost:50875/IpPostVoucher.svc?xsd=xsd4" />
+    <MetadataFile FileName="IpPostVoucher8.xsd" MetadataType="Schema" ID="44cfe2b4-e6eb-4b7d-bd20-fbddbce5b23b" SourceId="1" SourceUrl="http://localhost:50875/IpPostVoucher.svc?xsd=xsd3" />
+    <MetadataFile FileName="IpPostVoucher9.xsd" MetadataType="Schema" ID="331581a3-1c73-4a5e-a292-fb327858e2ec" SourceId="1" SourceUrl="http://localhost:50875/IpPostVoucher.svc?xsd=xsd2" />
+    <MetadataFile FileName="IpPostVoucher10.xsd" MetadataType="Schema" ID="c20c8d6e-5439-4369-8eb6-d0c9db2ad666" SourceId="1" SourceUrl="http://localhost:50875/IpPostVoucher.svc?xsd=xsd1" />
+    <MetadataFile FileName="IpPostVoucher11.xsd" MetadataType="Schema" ID="d17ec997-ffe6-4a77-8b29-0b4afd9ea38c" SourceId="1" SourceUrl="http://localhost:50875/IpPostVoucher.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

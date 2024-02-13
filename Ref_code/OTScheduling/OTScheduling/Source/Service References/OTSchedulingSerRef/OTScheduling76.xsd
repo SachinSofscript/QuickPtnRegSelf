@@ -1,0 +1,1860 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/OTSchedulingSrv" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/OTSchedulingSrv" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:55278/OTScheduling.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ArrayOfClsUserPtnTypMst">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ClsUserPtnTypMst" nillable="true" type="tns:ClsUserPtnTypMst" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfClsUserPtnTypMst" nillable="true" type="tns:ArrayOfClsUserPtnTypMst" />
+  <xs:complexType name="ClsUserPtnTypMst">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:clsPtnTypeMst">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DefAccess" type="xs:boolean" />
+          <xs:element minOccurs="0" name="HasAccess" type="xs:boolean" />
+          <xs:element minOccurs="0" name="crtdttm" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="crtusrid" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="usr_id" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ClsUserPtnTypMst" nillable="true" type="tns:ClsUserPtnTypMst" />
+  <xs:complexType name="clsPtnTypeMst">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AllowedSelectedAr" type="xs:int" />
+      <xs:element minOccurs="0" name="CASH" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CODE" type="xs:int" />
+      <xs:element minOccurs="0" name="CONC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREDIT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CSHDEPTCD" type="xs:int" />
+      <xs:element minOccurs="0" name="CSHDEPTDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DECODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DefConcTypCd" type="xs:int" />
+      <xs:element minOccurs="0" name="FREE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsNewRecord" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PTNCLSCD" type="xs:int" />
+      <xs:element minOccurs="0" name="PTNCLSDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PtnTypCd" type="xs:int" />
+      <xs:element minOccurs="0" name="PtnTypDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REFUND" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USRID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VCHCHRGCD" type="xs:int" />
+      <xs:element minOccurs="0" name="VCHCHRGDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WINGCD" type="xs:int" />
+      <xs:element minOccurs="0" name="WINGDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="addinfo1" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="clsPtnTypeMst" nillable="true" type="tns:clsPtnTypeMst" />
+  <xs:complexType name="clsArMst">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ArAddrs1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ArAddrs2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ArAddrs3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ArAmt" type="xs:double" />
+      <xs:element minOccurs="0" name="ArCd" type="xs:int" />
+      <xs:element minOccurs="0" name="ArCity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ArCityCd" type="xs:int" />
+      <xs:element minOccurs="0" name="ArContactPerson" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ArCountry" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ArCountryCd" type="xs:int" />
+      <xs:element minOccurs="0" name="ArDesig" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ArEmail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ArFax" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ArLngNm" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ArPin" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ArShrtNm" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ArStsCd" type="xs:int" />
+      <xs:element minOccurs="0" name="ArTel" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ArTlx" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ArTypCd" type="xs:int" />
+      <xs:element minOccurs="0" name="ArUrl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CntCtDsgnCd" type="xs:int" />
+      <xs:element minOccurs="0" name="CntCtFrstNm" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CntCtLstNm" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CntCtMidNm" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CntCtTtlCd" type="xs:int" />
+      <xs:element minOccurs="0" name="CrDays" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CrDepAmt" type="xs:double" />
+      <xs:element minOccurs="0" name="CrFolAmt" type="xs:double" />
+      <xs:element minOccurs="0" name="DrDepAmt" type="xs:double" />
+      <xs:element minOccurs="0" name="DrFolAmt" type="xs:double" />
+      <xs:element minOccurs="0" name="DscntCd1" type="xs:int" />
+      <xs:element minOccurs="0" name="DscntCd2" type="xs:int" />
+      <xs:element minOccurs="0" name="DscntDays" type="xs:int" />
+      <xs:element minOccurs="0" name="DscntDt" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IndlBillLimit" type="xs:double" />
+      <xs:element minOccurs="0" name="IntCd1" type="xs:int" />
+      <xs:element minOccurs="0" name="IntCd2" type="xs:int" />
+      <xs:element minOccurs="0" name="IntRtDt" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IpPtnSellingFlag" type="xs:int" />
+      <xs:element minOccurs="0" name="IsArStrLinked" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsDoctorSharedAllowed" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LstBlPstDt" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LstInvDt" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LstRcptDt" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LyrCrDepAmt" type="xs:double" />
+      <xs:element minOccurs="0" name="LyrCrFolAmt" type="xs:double" />
+      <xs:element minOccurs="0" name="LyrDrDepAmt" type="xs:double" />
+      <xs:element minOccurs="0" name="LyrDrFolAmt" type="xs:double" />
+      <xs:element minOccurs="0" name="LyrOpnDepAmt" type="xs:double" />
+      <xs:element minOccurs="0" name="LyrOpnFolAmt" type="xs:double" />
+      <xs:element minOccurs="0" name="OpPtnSellingFlag" type="xs:int" />
+      <xs:element minOccurs="0" name="OpnDepAmt" type="xs:double" />
+      <xs:element minOccurs="0" name="OpnFolAmt" type="xs:double" />
+      <xs:element minOccurs="0" name="PerAcFlg" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Phrm_Disc_Per" type="xs:decimal" />
+      <xs:element minOccurs="0" name="RecLock" type="xs:boolean" />
+      <xs:element minOccurs="0" name="StateCd" type="xs:int" />
+      <xs:element minOccurs="0" name="StateDcd" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserDtTm" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="clsArMst" nillable="true" type="tns:clsArMst" />
+  <xs:complexType name="ArrayOfclsFCTAPTOT">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clsFCTAPTOT" nillable="true" type="tns:clsFCTAPTOT" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclsFCTAPTOT" nillable="true" type="tns:ArrayOfclsFCTAPTOT" />
+  <xs:complexType name="clsFCTAPTOT">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ANAESTHESIST" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ANESTYPCD" type="xs:int" />
+      <xs:element minOccurs="0" name="APPTMSTSDCD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="APPTNO" type="xs:int" />
+      <xs:element minOccurs="0" name="APPTRMRK" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="APTMDATE" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="APTMTMFROM" type="xs:int" />
+      <xs:element minOccurs="0" name="APTMTMTO" type="xs:int" />
+      <xs:element minOccurs="0" name="APTM_DATE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AnesthesiaTyp" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ArDcd" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BOOKING_TYPE" type="xs:int" />
+      <xs:element minOccurs="0" name="BOOKING_TYPE_DCD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Bedno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CRTDTTM" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CRTUSRID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CompanyCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DOCCD" type="xs:int" />
+      <xs:element minOccurs="0" name="DOCNAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DURATION" type="xs:int" />
+      <xs:element minOccurs="0" name="Diagnosis" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DisplayText" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DivisionCode" type="xs:int" />
+      <xs:element minOccurs="0" name="FCTCODE" type="xs:int" />
+      <xs:element minOccurs="0" name="FLG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FctCatCode" type="xs:int" />
+      <xs:element minOccurs="0" name="FctMainCode" type="xs:int" />
+      <xs:element minOccurs="0" name="FrmDTtm" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Frmtm" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IPNO" type="xs:long" />
+      <xs:element minOccurs="0" name="IPOP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ISPATIENT" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ISPERFORMED" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ISPOSTED" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsOfficePrmsnGiven" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LocationCode" type="xs:int" />
+      <xs:element minOccurs="0" name="NOOFSLOTSUSED" type="xs:int" />
+      <xs:element minOccurs="0" name="NurseName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OfficePrmsnByUsrID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OfficePrmsnDtTm" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="OfficePrmsnRmrk" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PTNLNGNM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PTNNO" type="xs:long" />
+      <xs:element minOccurs="0" name="PatientClassCodeDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PtnType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SurgeonName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SurgeyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ToDTTm" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ToTm" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fct_name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="clsFCTAPTOT" nillable="true" type="tns:clsFCTAPTOT" />
+  <xs:complexType name="ArrayOfclsArMstCdDcd">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clsArMstCdDcd" nillable="true" type="tns:clsArMstCdDcd" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclsArMstCdDcd" nillable="true" type="tns:ArrayOfclsArMstCdDcd" />
+  <xs:complexType name="clsArMstCdDcd">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" type="xs:int" />
+      <xs:element minOccurs="0" name="Decode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="clsArMstCdDcd" nillable="true" type="tns:clsArMstCdDcd" />
+  <xs:complexType name="clsUserDet">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DefPtnTypeCd" type="xs:int" />
+      <xs:element minOccurs="0" name="DeptCd" type="xs:int" />
+      <xs:element minOccurs="0" name="DocCd" type="xs:int" />
+      <xs:element minOccurs="0" name="GrpId" type="xs:int" />
+      <xs:element minOccurs="0" name="Shft" type="xs:int" />
+      <xs:element minOccurs="0" name="StrCd" type="xs:int" />
+      <xs:element minOccurs="0" name="StrDcd" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserNickName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsrFrstNm" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsrLstNm" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsrMidNm" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VIPAcc" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="clsUserDet" nillable="true" type="tns:clsUserDet" />
+  <xs:complexType name="StateMaster">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CityName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CountryCd" type="xs:int" />
+      <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsBase" type="xs:boolean" />
+      <xs:element minOccurs="0" name="StateCd" type="xs:int" />
+      <xs:element minOccurs="0" name="StateName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StateMaster" nillable="true" type="tns:StateMaster" />
+  <xs:complexType name="CityMaster">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CityCd" type="xs:int" />
+      <xs:element minOccurs="0" name="CityName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsBase" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsBaseCity" type="xs:boolean" />
+      <xs:element minOccurs="0" name="StateCd" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CityMaster" nillable="true" type="tns:CityMaster" />
+  <xs:complexType name="ClsOtIndirectBooking">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DocCd" type="xs:int" />
+      <xs:element minOccurs="0" name="ExpectedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FLG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsOfficePrmsnGiven" type="xs:boolean" />
+      <xs:element minOccurs="0" name="OfficePrmsnByUsrID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OfficePrmsnDtTm" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="OfficePrmsnRmrk" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PtnNo" type="xs:long" />
+      <xs:element minOccurs="0" name="Status" type="xs:int" />
+      <xs:element minOccurs="0" name="TrnNo" type="xs:int" />
+      <xs:element minOccurs="0" name="UserDtTm" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ClsOtIndirectBooking" nillable="true" type="tns:ClsOtIndirectBooking" />
+  <xs:complexType name="ArrayOfclsUserModuleFunction">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clsUserModuleFunction" nillable="true" type="tns:clsUserModuleFunction" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclsUserModuleFunction" nillable="true" type="tns:ArrayOfclsUserModuleFunction" />
+  <xs:complexType name="clsUserModuleFunction">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DisplayOrder" type="xs:int" />
+      <xs:element minOccurs="0" name="FunctionID" type="xs:int" />
+      <xs:element minOccurs="0" name="FunctionName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HasRights" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ModCd" type="xs:int" />
+      <xs:element minOccurs="0" name="SubModCd" type="xs:int" />
+      <xs:element minOccurs="0" name="UserID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cocd" type="xs:int" />
+      <xs:element minOccurs="0" name="divcd" type="xs:int" />
+      <xs:element minOccurs="0" name="loccd" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="clsUserModuleFunction" nillable="true" type="tns:clsUserModuleFunction" />
+  <xs:complexType name="ArrayOfclsPtnTypeMst">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clsPtnTypeMst" nillable="true" type="tns:clsPtnTypeMst" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclsPtnTypeMst" nillable="true" type="tns:ArrayOfclsPtnTypeMst" />
+  <xs:complexType name="ArrayOfClsOtIndirectBookingLst">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ClsOtIndirectBookingLst" nillable="true" type="tns:ClsOtIndirectBookingLst" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfClsOtIndirectBookingLst" nillable="true" type="tns:ArrayOfClsOtIndirectBookingLst" />
+  <xs:complexType name="ClsOtIndirectBookingLst">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ClsOtIndirectBooking">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Age" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DocFullNm" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Gender" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ISToday" type="xs:boolean" />
+          <xs:element minOccurs="0" name="MobNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PtnActualPtnNo" type="xs:long" />
+          <xs:element minOccurs="0" name="PtnFullNm" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ClsOtIndirectBookingLst" nillable="true" type="tns:ClsOtIndirectBookingLst" />
+  <xs:complexType name="ArrayOfclsFCTCAL">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clsFCTCAL" nillable="true" type="tns:clsFCTCAL" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclsFCTCAL" nillable="true" type="tns:ArrayOfclsFCTCAL" />
+  <xs:complexType name="clsFCTCAL">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CompanyCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DOCCD" type="xs:int" />
+      <xs:element minOccurs="0" name="DivisionCode" type="xs:int" />
+      <xs:element minOccurs="0" name="ENDTIME" type="xs:int" />
+      <xs:element minOccurs="0" name="FCTCCRTDT" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FCTCCRTTM" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FCTCCRTUID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FCTCDAY" type="xs:int" />
+      <xs:element minOccurs="0" name="FCTCODE" type="xs:int" />
+      <xs:element minOccurs="0" name="FCTCRMKS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FCTCTMFRMHRS" type="xs:int" />
+      <xs:element minOccurs="0" name="FCTCTMFRMMIN" type="xs:int" />
+      <xs:element minOccurs="0" name="FCTCTMTOHRS" type="xs:int" />
+      <xs:element minOccurs="0" name="FCTCTMTOMNS" type="xs:int" />
+      <xs:element minOccurs="0" name="FCTCUPDDT" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FCTCUPDTM" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FCTCUPDUID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FctCatCode" type="xs:int" />
+      <xs:element minOccurs="0" name="FctMainCode" type="xs:int" />
+      <xs:element minOccurs="0" name="LocationCode" type="xs:int" />
+      <xs:element minOccurs="0" name="SESSIONCODE" type="xs:int" />
+      <xs:element minOccurs="0" name="STRTTIME" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="clsFCTCAL" nillable="true" type="tns:clsFCTCAL" />
+  <xs:complexType name="ArrayOfclsFCTMST">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clsFCTMST" nillable="true" type="tns:clsFCTMST" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclsFCTMST" nillable="true" type="tns:ArrayOfclsFCTMST" />
+  <xs:complexType name="clsFCTMST">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="APPBOOKSTAT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CompanyCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DivisionCode" type="xs:int" />
+      <xs:element minOccurs="0" name="FCTCODE" type="xs:int" />
+      <xs:element minOccurs="0" name="FCTDAY" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FCTMAXCALPRD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FCTNAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FCTNOSESSION" type="xs:int" />
+      <xs:element minOccurs="0" name="FCTRCHRGCD" type="xs:int" />
+      <xs:element minOccurs="0" name="FCTRMKS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FCTRTSTCD" type="xs:int" />
+      <xs:element minOccurs="0" name="FCTSLOTPRDHRS" type="xs:int" />
+      <xs:element minOccurs="0" name="FCTSLOTPRDMNS" type="xs:int" />
+      <xs:element minOccurs="0" name="FctCatCode" type="xs:int" />
+      <xs:element minOccurs="0" name="FctMainCode" type="xs:int" />
+      <xs:element minOccurs="0" name="LocationCode" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="clsFCTMST" nillable="true" type="tns:clsFCTMST" />
+  <xs:complexType name="ArrayOfclsMaster">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clsMaster" nillable="true" type="tns:clsMaster" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclsMaster" nillable="true" type="tns:ArrayOfclsMaster" />
+  <xs:complexType name="clsMaster">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" type="xs:int" />
+      <xs:element minOccurs="0" name="Decode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ToDt" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Typ" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="data1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="data2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="data3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fromDt" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="clsMaster" nillable="true" type="tns:clsMaster" />
+  <xs:complexType name="ArrayOfclsPatient">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clsPatient" nillable="true" type="tns:clsPatient" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclsPatient" nillable="true" type="tns:ArrayOfclsPatient" />
+  <xs:complexType name="clsPatient">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Aadhar" type="ser:char" />
+      <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Age" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AgeYY" type="xs:int" />
+      <xs:element minOccurs="0" name="Agedd" type="xs:int" />
+      <xs:element minOccurs="0" name="Agemm" type="xs:int" />
+      <xs:element minOccurs="0" name="Agetypflg" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ArCd" type="xs:long" />
+      <xs:element minOccurs="0" name="ArEmpcd" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BillTyp" type="xs:int" />
+      <xs:element minOccurs="0" name="BillType" type="xs:int" />
+      <xs:element minOccurs="0" name="BirthDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CampCd" type="xs:int" />
+      <xs:element minOccurs="0" name="ClncCd" type="xs:int" />
+      <xs:element minOccurs="0" name="CrtDtTm" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CseTypCd" type="xs:int" />
+      <xs:element minOccurs="0" name="DayCareNo" type="xs:int" />
+      <xs:element minOccurs="0" name="DepositBal" type="xs:double" />
+      <xs:element minOccurs="0" name="DocCd" type="xs:int" />
+      <xs:element minOccurs="0" name="EMPNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EXPDT" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FreeFlg" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Gender" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InPatientNo" type="xs:long" />
+      <xs:element minOccurs="0" name="IsMember" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsPtnBlackListed" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MRNo" type="xs:int" />
+      <xs:element minOccurs="0" name="MapConcType" type="xs:int" />
+      <xs:element minOccurs="0" name="MembershipID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MobileNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MobileNumber2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NRI" type="ser:char" />
+      <xs:element minOccurs="0" name="NtnltyCd" type="xs:int" />
+      <xs:element minOccurs="0" name="PanNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PatientFirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PatientFullName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PatientLastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PatientMiddleName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PatientNo" type="xs:long" />
+      <xs:element minOccurs="0" name="PatientTitleCode" type="xs:int" />
+      <xs:element minOccurs="0" name="PatientTitleCodeDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrmntPtnno" type="xs:long" />
+      <xs:element minOccurs="0" name="PtnBlackListedRsn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PtnCareModelDCd" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PtnCareModelDescRmrk" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PtnCareModelRmrk" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PtnRefByTyp" type="xs:int" />
+      <xs:element minOccurs="0" name="PtnRefBycd" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PtnRmrk" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PtnType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RegTypFlg" type="ser:char" />
+      <xs:element minOccurs="0" name="SSno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StateCode" type="xs:int" />
+      <xs:element minOccurs="0" name="Status" type="xs:boolean" />
+      <xs:element minOccurs="0" name="TYPFLG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TokenNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserDtTm" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VchrNo" type="xs:int" />
+      <xs:element minOccurs="0" name="VisitCompletedTm" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="VisitNo" type="xs:int" />
+      <xs:element minOccurs="0" name="WhatsAppNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="city" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cityCode" type="xs:int" />
+      <xs:element minOccurs="0" name="istranblocked" type="xs:int" />
+      <xs:element minOccurs="0" name="peraddress1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="prmnt_addrs2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="prmnt_addrs3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="prmnt_cntry" type="xs:int" />
+      <xs:element minOccurs="0" name="prmnt_pin" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="prmnt_tel" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="clsPatient" nillable="true" type="tns:clsPatient" />
+  <xs:complexType name="ArrayOfclsCodeDecode">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clsCodeDecode" nillable="true" type="tns:clsCodeDecode" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclsCodeDecode" nillable="true" type="tns:ArrayOfclsCodeDecode" />
+  <xs:complexType name="clsCodeDecode">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" type="xs:int" />
+      <xs:element minOccurs="0" name="Decode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Type" type="xs:int" />
+      <xs:element minOccurs="0" name="addinfo1" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="clsCodeDecode" nillable="true" type="tns:clsCodeDecode" />
+  <xs:complexType name="ArrayOfclsDoctor">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clsDoctor" nillable="true" type="tns:clsDoctor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclsDoctor" nillable="true" type="tns:ArrayOfclsDoctor" />
+  <xs:complexType name="clsDoctor">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DoctorCode" type="xs:int" />
+      <xs:element minOccurs="0" name="DoctorFirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DoctorFullName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DoctorLastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DoctorMiddleName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DoctorTitleCode" type="xs:int" />
+      <xs:element minOccurs="0" name="DoctorTitleCodeDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsAdmissionAllowed" type="xs:boolean" />
+      <xs:element minOccurs="0" name="NoOfOverLoad" type="xs:int" />
+      <xs:element minOccurs="0" name="NoOfSlots" type="xs:int" />
+      <xs:element minOccurs="0" name="SpecialityCode" type="xs:int" />
+      <xs:element minOccurs="0" name="SpecialityCodeDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="clsDoctor" nillable="true" type="tns:clsDoctor" />
+  <xs:complexType name="clsFCTAPTMAIN">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ANAS1CODE" type="xs:int" />
+      <xs:element minOccurs="0" name="ANAS2CODE" type="xs:int" />
+      <xs:element minOccurs="0" name="ANAS3CODE" type="xs:int" />
+      <xs:element minOccurs="0" name="ANASNOTE1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ANASNOTE2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="APPTNO" type="xs:int" />
+      <xs:element minOccurs="0" name="APTMACTFROMHRS" type="xs:int" />
+      <xs:element minOccurs="0" name="APTMACTFROMMIN" type="xs:int" />
+      <xs:element minOccurs="0" name="APTMACTTOHRS" type="xs:int" />
+      <xs:element minOccurs="0" name="APTMACTTOMNS" type="xs:int" />
+      <xs:element minOccurs="0" name="APTMDATE" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="APTMFROMHRS" type="xs:int" />
+      <xs:element minOccurs="0" name="APTMFROMMIN" type="xs:int" />
+      <xs:element minOccurs="0" name="APTMREFBY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="APTMSTS" type="xs:int" />
+      <xs:element minOccurs="0" name="APTMTOHRS" type="xs:int" />
+      <xs:element minOccurs="0" name="APTMTOMNS" type="xs:int" />
+      <xs:element minOccurs="0" name="BEDNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Billed" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BookFor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CHRGCD" type="xs:int" />
+      <xs:element minOccurs="0" name="CRTDTTM" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CRTUSRID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CompanyCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DOCCD" type="xs:int" />
+      <xs:element minOccurs="0" name="DR1CODE" type="xs:int" />
+      <xs:element minOccurs="0" name="DR2CODE" type="xs:int" />
+      <xs:element minOccurs="0" name="DR3CODE" type="xs:int" />
+      <xs:element minOccurs="0" name="DR4CODE" type="xs:int" />
+      <xs:element minOccurs="0" name="DivisionCode" type="xs:int" />
+      <xs:element minOccurs="0" name="FCTCODE" type="xs:int" />
+      <xs:element minOccurs="0" name="FctCatCode" type="xs:int" />
+      <xs:element minOccurs="0" name="FctMainCode" type="xs:int" />
+      <xs:element minOccurs="0" name="ICDCD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ICDGRPCD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IPOP" type="xs:long" />
+      <xs:element minOccurs="0" name="ISPATIENT" type="xs:int" />
+      <xs:element minOccurs="0" name="LocationCode" type="xs:int" />
+      <xs:element minOccurs="0" name="OPRSTFTYPE1" type="xs:int" />
+      <xs:element minOccurs="0" name="OPRSTFTYPE2" type="xs:int" />
+      <xs:element minOccurs="0" name="OPRSTFTYPE3" type="xs:int" />
+      <xs:element minOccurs="0" name="OPRSTFTYPE4" type="xs:int" />
+      <xs:element minOccurs="0" name="PANASTYPE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PTNCLSCD" type="xs:int" />
+      <xs:element minOccurs="0" name="PTNFSTNAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PTNLSTNAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PTNMIDNAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REQNO" type="xs:int" />
+      <xs:element minOccurs="0" name="REQSRNO" type="xs:int" />
+      <xs:element minOccurs="0" name="SMSSENDFLG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SPLINST" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SURGNOTE1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SURGNOTE2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TESTCD" type="xs:int" />
+      <xs:element minOccurs="0" name="TYPE1NOS" type="xs:int" />
+      <xs:element minOccurs="0" name="TYPE2NOS" type="xs:int" />
+      <xs:element minOccurs="0" name="TYPE3NOS" type="xs:int" />
+      <xs:element minOccurs="0" name="TYPE4NOS" type="xs:int" />
+      <xs:element minOccurs="0" name="UPDTTTM" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UPDUSRID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WARDNO" type="xs:int" />
+      <xs:element minOccurs="0" name="pIPOPFLG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ptndet" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="clsFCTAPTMAIN" nillable="true" type="tns:clsFCTAPTMAIN" />
+  <xs:complexType name="clsFCTAPTREQ">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ANESTYPCD" type="xs:int" />
+      <xs:element minOccurs="0" name="APPTNO" type="xs:int" />
+      <xs:element minOccurs="0" name="APPTRMRK" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="APTMTMFROM" type="xs:int" />
+      <xs:element minOccurs="0" name="APTMTMTO" type="xs:int" />
+      <xs:element minOccurs="0" name="BOOKING_TYPE" type="xs:int" />
+      <xs:element minOccurs="0" name="CRTDTTM" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CRTUSRID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CompanyCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DOCCD" type="xs:int" />
+      <xs:element minOccurs="0" name="DivisionCode" type="xs:int" />
+      <xs:element minOccurs="0" name="FCTCODE" type="xs:int" />
+      <xs:element minOccurs="0" name="FORSPCFCFCT" type="xs:boolean" />
+      <xs:element minOccurs="0" name="FctCatCode" type="xs:int" />
+      <xs:element minOccurs="0" name="FctMainCode" type="xs:int" />
+      <xs:element minOccurs="0" name="IPOPNO" type="xs:long" />
+      <xs:element minOccurs="0" name="IP_OP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ISPATIENT" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ISSHIFTED" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LocationCode" type="xs:int" />
+      <xs:element minOccurs="0" name="NEWAPPTNO" type="xs:int" />
+      <xs:element minOccurs="0" name="NEWFCTCODE" type="xs:int" />
+      <xs:element minOccurs="0" name="NurseName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PRMREQCODE" type="xs:int" />
+      <xs:element minOccurs="0" name="PTNLNGNM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PTNNO" type="xs:long" />
+      <xs:element minOccurs="0" name="REQDATE" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="REQNO" type="xs:int" />
+      <xs:element minOccurs="0" name="UPDDTTM" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UPDUSRID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="clsFCTAPTREQ" nillable="true" type="tns:clsFCTAPTREQ" />
+  <xs:complexType name="clsFCTSCH">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="APPTNO" type="xs:int" />
+      <xs:element minOccurs="0" name="APTMREFBY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="APTMSTS" type="xs:int" />
+      <xs:element minOccurs="0" name="CHRGCD" type="xs:int" />
+      <xs:element minOccurs="0" name="CompanyCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DivisionCode" type="xs:int" />
+      <xs:element minOccurs="0" name="ENDTHR" type="xs:int" />
+      <xs:element minOccurs="0" name="ENDTMIN" type="xs:int" />
+      <xs:element minOccurs="0" name="FCTCODE" type="xs:int" />
+      <xs:element minOccurs="0" name="FctCatCode" type="xs:int" />
+      <xs:element minOccurs="0" name="FctMainCode" type="xs:int" />
+      <xs:element minOccurs="0" name="ICDCODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ICDGRPCD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IPOPFLG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IPOPNO" type="xs:long" />
+      <xs:element minOccurs="0" name="LocationCode" type="xs:int" />
+      <xs:element minOccurs="0" name="SCHDATE" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="SCHTIMEFROMHRS" type="xs:int" />
+      <xs:element minOccurs="0" name="SCHTIMEFROMMIN" type="xs:int" />
+      <xs:element minOccurs="0" name="SCHTIMETOHRS" type="xs:int" />
+      <xs:element minOccurs="0" name="SCHTIMETOMINS" type="xs:int" />
+      <xs:element minOccurs="0" name="SESSIONCODE" type="xs:int" />
+      <xs:element minOccurs="0" name="SLOTNO" type="xs:int" />
+      <xs:element minOccurs="0" name="STRTHR" type="xs:int" />
+      <xs:element minOccurs="0" name="STRTMIN" type="xs:int" />
+      <xs:element minOccurs="0" name="TESTCD" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="clsFCTSCH" nillable="true" type="tns:clsFCTSCH" />
+  <xs:complexType name="ArrayOfclsFctAptOtSrv">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clsFctAptOtSrv" nillable="true" type="tns:clsFctAptOtSrv" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclsFctAptOtSrv" nillable="true" type="tns:ArrayOfclsFctAptOtSrv" />
+  <xs:complexType name="clsFctAptOtSrv">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ApptNo" type="xs:int" />
+      <xs:element minOccurs="0" name="ChrgCd" type="xs:int" />
+      <xs:element minOccurs="0" name="FctCatCode" type="xs:int" />
+      <xs:element minOccurs="0" name="FctCode" type="xs:int" />
+      <xs:element minOccurs="0" name="FctMainCode" type="xs:int" />
+      <xs:element minOccurs="0" name="IpNo" type="xs:long" />
+      <xs:element minOccurs="0" name="IpOp" type="ser:char" />
+      <xs:element minOccurs="0" name="PtnNo" type="xs:long" />
+      <xs:element minOccurs="0" name="SrvCd" type="xs:int" />
+      <xs:element minOccurs="0" name="SrvRmrk" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserDtTm" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="clsFctAptOtSrv" nillable="true" type="tns:clsFctAptOtSrv" />
+  <xs:complexType name="ArrayOfclsFctAptOtDoc">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clsFctAptOtDoc" nillable="true" type="tns:clsFctAptOtDoc" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclsFctAptOtDoc" nillable="true" type="tns:ArrayOfclsFctAptOtDoc" />
+  <xs:complexType name="clsFctAptOtDoc">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ApptNo" type="xs:int" />
+      <xs:element minOccurs="0" name="DocCd" type="xs:int" />
+      <xs:element minOccurs="0" name="FctCatCode" type="xs:int" />
+      <xs:element minOccurs="0" name="FctCode" type="xs:int" />
+      <xs:element minOccurs="0" name="FctMainCode" type="xs:int" />
+      <xs:element minOccurs="0" name="IpNo" type="xs:long" />
+      <xs:element minOccurs="0" name="IpOp" type="ser:char" />
+      <xs:element minOccurs="0" name="PtnNo" type="xs:long" />
+      <xs:element minOccurs="0" name="SurgnTypCd" type="xs:int" />
+      <xs:element minOccurs="0" name="UserDtTm" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="clsFctAptOtDoc" nillable="true" type="tns:clsFctAptOtDoc" />
+  <xs:complexType name="ArrayOfclsFctAptOtEmp">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clsFctAptOtEmp" nillable="true" type="tns:clsFctAptOtEmp" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclsFctAptOtEmp" nillable="true" type="tns:ArrayOfclsFctAptOtEmp" />
+  <xs:complexType name="clsFctAptOtEmp">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ApptNo" type="xs:int" />
+      <xs:element minOccurs="0" name="EmpCd" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FctCatCode" type="xs:int" />
+      <xs:element minOccurs="0" name="FctCode" type="xs:int" />
+      <xs:element minOccurs="0" name="FctMainCode" type="xs:int" />
+      <xs:element minOccurs="0" name="IpNo" type="xs:long" />
+      <xs:element minOccurs="0" name="IpOp" type="ser:char" />
+      <xs:element minOccurs="0" name="PtnNo" type="xs:long" />
+      <xs:element minOccurs="0" name="UserDtTm" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="clsFctAptOtEmp" nillable="true" type="tns:clsFctAptOtEmp" />
+  <xs:complexType name="clsFCTAPTCNCL">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="APPTNO" type="xs:int" />
+      <xs:element minOccurs="0" name="APPTRMRK" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="APTMDATE" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="APTMTMFROM" type="xs:int" />
+      <xs:element minOccurs="0" name="APTMTMTO" type="xs:int" />
+      <xs:element minOccurs="0" name="CNCLDTTM" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CNCLUSRID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CNCL_RMRK" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CRTDTTM" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CRTUSRID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CompanyCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DOCCD" type="xs:int" />
+      <xs:element minOccurs="0" name="DURATION" type="xs:int" />
+      <xs:element minOccurs="0" name="DivisionCode" type="xs:int" />
+      <xs:element minOccurs="0" name="FCTCODE" type="xs:int" />
+      <xs:element minOccurs="0" name="FctCatCode" type="xs:int" />
+      <xs:element minOccurs="0" name="FctMainCode" type="xs:int" />
+      <xs:element minOccurs="0" name="IP_OP" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ISPATIENT" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ISPERFORMED" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ISPOSTED" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ISSHIFTED" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LocationCode" type="xs:int" />
+      <xs:element minOccurs="0" name="NOOFSLOTSUSED" type="xs:int" />
+      <xs:element minOccurs="0" name="PTNLNGNM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PTNNO" type="xs:long" />
+      <xs:element minOccurs="0" name="SESSIONCODE" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="clsFCTAPTCNCL" nillable="true" type="tns:clsFCTAPTCNCL" />
+  <xs:simpleType name="EnumCodeDecode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Ward">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TitleCd">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Relation">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MaritalStatus">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Occupation">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">6</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Education">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">7</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Income">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">8</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Community">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">9</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Religion">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">10</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Nationality">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">11</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BloodGrp">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">12</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PatientSource">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">13</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Country">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">14</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Height">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">15</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Width">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">16</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SpecialRequirement">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">18</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DischargeStatus">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">19</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DeliveryStatus">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">20</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DoctorFeeSource">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">23</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AuthDesignation">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">24</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DoctorTypes">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">26</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DoctorSpeciality">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">28</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TaxTable">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">30</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ItemType">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">31</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Departments">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">33</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="COSTHEADS">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">39</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BillingGrp">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">40</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ServiceCategory">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">46</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SurgeryCategory">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">47</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="OperationNames">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">48</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Dosage">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">55</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Route">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">56</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Stock">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">57</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CreditCoTyp">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">60</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ItemGroup">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">61</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PurAuth">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">62</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ConcernType">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">70</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PurchaseType">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">71</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TermHeads">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">75</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="InjuryType">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">99</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="City">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">100</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="State">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">101</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PatientTyp">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">154</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Reorder">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">155</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="InsuranceCompanyName">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">156</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ApplicationStatus">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">157</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RhFactor">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">303</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FCTCategory">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">401</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FCTMainCode">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">402</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RoomShape">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">727</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RoomType">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">729</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CostCenterGroup">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">805</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PharmaSetting">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">807</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DocumentId">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">808</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DoctorBankCodes">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">905</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AreaCodes">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">907</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CreditCardBanks">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">908</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MisChrg">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1007</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FOODCHOICES">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1205</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DepositBreakTyp">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1510</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="QueryType">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1511</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BillFwdDisc">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1513</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Gender">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1557</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PatientDocumentType">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1566</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AnesthesiaTypes">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1606</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PurchaseOrderStatus">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1607</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CompTypes">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5002</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CshDeptWing">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5003</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GLTypes">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5004</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AccTypes">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5005</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SubLedgerType">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5006</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BlacklistReason">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5009</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SmsCategoryType">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5010</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PatientReferralType">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5011</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PatientStatus">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5012</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CradleTyp">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5013</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AppointmentType">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5014</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Resources">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5015</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AppointmentCancellationType">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5016</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PatientCategory">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5017</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CategoryConcessionType">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5018</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AnswerSeriesPattern">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5019</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RejectionReasonType">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5020</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GLDocType">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5021</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DebitNoteType">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5022</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CreditNoteType">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5023</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FOODCATEGORY">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5024</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="FOODUNITS">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5025</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MtrPriorityType">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5026</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PMSPayslipType">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">7000</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PMSElementCategory">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">7001</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PMSAttributes">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">7002</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PMSSourceHow">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">7003</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PMSElements">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">7004</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PMSParameterTitles">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">7005</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PMSHealthcareGroups">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">7006</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PMSEmployeeCategory">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">7007</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PMSDesignation">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">7008</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PMSGrade">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">7009</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PMSNameTitles">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">7010</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="EqpFlg">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">8012</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CaseManager">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">8023</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CaseCoordinator">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">8024</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="TaxCategory">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">8025</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SubCaseType">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">8026</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="classification">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">8027</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ScanningDocuments">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">8028</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CardType">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">8029</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="VisitType">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">8031</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="BookingType">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">8109</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SurgeonType">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">8113</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EnumCodeDecode" nillable="true" type="tns:EnumCodeDecode" />
+  <xs:complexType name="ArrayOfclsInPatientHelp">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clsInPatientHelp" nillable="true" type="tns:clsInPatientHelp" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclsInPatientHelp" nillable="true" type="tns:ArrayOfclsInPatientHelp" />
+  <xs:complexType name="clsInPatientHelp">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AdharNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AdmDt" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Age" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BedNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BedTypDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreditCompany" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DoctorCd" type="xs:int" />
+      <xs:element minOccurs="0" name="DoctorName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DschgDt" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Gender" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IpNo" type="xs:long" />
+      <xs:element minOccurs="0" name="PanNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PatientFullName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PatientNo" type="xs:long" />
+      <xs:element minOccurs="0" name="PtnNo" type="xs:long" />
+      <xs:element minOccurs="0" name="Status" type="xs:int" />
+      <xs:element minOccurs="0" name="StatusDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WardCd" type="xs:int" />
+      <xs:element minOccurs="0" name="WardDCd" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="folStsCd" type="xs:int" />
+      <xs:element minOccurs="0" name="mobile" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="totalcnt" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="clsInPatientHelp" nillable="true" type="tns:clsInPatientHelp" />
+  <xs:complexType name="ArrayOfClsOtSrvLstDtls">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ClsOtSrvLstDtls" nillable="true" type="tns:ClsOtSrvLstDtls" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfClsOtSrvLstDtls" nillable="true" type="tns:ArrayOfClsOtSrvLstDtls" />
+  <xs:complexType name="ClsOtSrvLstDtls">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ClsSrvMstMainHelp">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AnesTypCd" type="xs:int" />
+          <xs:element minOccurs="0" name="AnesTypDesc" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SrvDiagnosis" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SrvRate" type="xs:double" />
+          <xs:element minOccurs="0" name="SrvTypCd" type="xs:int" />
+          <xs:element minOccurs="0" name="SrvTypDesc" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ClsOtSrvLstDtls" nillable="true" type="tns:ClsOtSrvLstDtls" />
+  <xs:complexType name="ClsSrvMstMainHelp">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChrgDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SharerExist" type="xs:boolean" />
+      <xs:element minOccurs="0" name="chrgcd" type="xs:int" />
+      <xs:element minOccurs="0" name="srvcd" type="xs:int" />
+      <xs:element minOccurs="0" name="srvdesc" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ClsSrvMstMainHelp" nillable="true" type="tns:ClsSrvMstMainHelp" />
+  <xs:complexType name="ArrayOfclsFctAptOtSrvprm">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clsFctAptOtSrvprm" nillable="true" type="tns:clsFctAptOtSrvprm" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclsFctAptOtSrvprm" nillable="true" type="tns:ArrayOfclsFctAptOtSrvprm" />
+  <xs:complexType name="clsFctAptOtSrvprm">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChrgCd" type="xs:int" />
+      <xs:element minOccurs="0" name="ParamNm" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SrNo" type="xs:int" />
+      <xs:element minOccurs="0" name="SrvCd" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="clsFctAptOtSrvprm" nillable="true" type="tns:clsFctAptOtSrvprm" />
+  <xs:complexType name="clsPtnVstPtnClsDtl">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PtnClsCd" type="xs:int" />
+      <xs:element minOccurs="0" name="PtnNo" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="clsPtnVstPtnClsDtl" nillable="true" type="tns:clsPtnVstPtnClsDtl" />
+  <xs:complexType name="clsOtDocDtls">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AnesthesiaCd" type="xs:int" />
+      <xs:element minOccurs="0" name="AnesthesiaDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AnesthesiaTypCd" type="xs:int" />
+      <xs:element minOccurs="0" name="DoctorCode" type="xs:int" />
+      <xs:element minOccurs="0" name="DoctorFullName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NurseName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SpecialityCode" type="xs:int" />
+      <xs:element minOccurs="0" name="SpecialityCodeDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SurgnTypCd" type="xs:int" />
+      <xs:element minOccurs="0" name="SurgnTypDcd" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="clsOtDocDtls" nillable="true" type="tns:clsOtDocDtls" />
+  <xs:complexType name="ArrayOfclsOtDocDtls">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clsOtDocDtls" nillable="true" type="tns:clsOtDocDtls" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclsOtDocDtls" nillable="true" type="tns:ArrayOfclsOtDocDtls" />
+  <xs:complexType name="ArrayOfclsAttPayDbEmpId">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clsAttPayDbEmpId" nillable="true" type="tns:clsAttPayDbEmpId" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclsAttPayDbEmpId" nillable="true" type="tns:ArrayOfclsAttPayDbEmpId" />
+  <xs:complexType name="clsAttPayDbEmpId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EMPId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmpName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="clsAttPayDbEmpId" nillable="true" type="tns:clsAttPayDbEmpId" />
+  <xs:complexType name="ArrayOfclsFctAptOtEmpDtls">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clsFctAptOtEmpDtls" nillable="true" type="tns:clsFctAptOtEmpDtls" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclsFctAptOtEmpDtls" nillable="true" type="tns:ArrayOfclsFctAptOtEmpDtls" />
+  <xs:complexType name="clsFctAptOtEmpDtls">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EmpCd" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmpName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="clsFctAptOtEmpDtls" nillable="true" type="tns:clsFctAptOtEmpDtls" />
+  <xs:complexType name="ArrayOfclsFCTMstHelp">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clsFCTMstHelp" nillable="true" type="tns:clsFCTMstHelp" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclsFCTMstHelp" nillable="true" type="tns:ArrayOfclsFCTMstHelp" />
+  <xs:complexType name="clsFCTMstHelp">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" type="xs:int" />
+      <xs:element minOccurs="0" name="Decode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="clsFCTMstHelp" nillable="true" type="tns:clsFCTMstHelp" />
+  <xs:complexType name="ArrayOfclsNetIDParam">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clsNetIDParam" nillable="true" type="tns:clsNetIDParam" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclsNetIDParam" nillable="true" type="tns:ArrayOfclsNetIDParam" />
+  <xs:complexType name="clsNetIDParam">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Isactive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="NetID" type="xs:int" />
+      <xs:element minOccurs="0" name="ParamDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParamID" type="xs:int" />
+      <xs:element minOccurs="0" name="ParamName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParamType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParamValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubModName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsrId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VerNo" type="xs:int" />
+      <xs:element minOccurs="0" name="modcd" type="xs:int" />
+      <xs:element minOccurs="0" name="submodcd" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="clsNetIDParam" nillable="true" type="tns:clsNetIDParam" />
+  <xs:complexType name="ArrayOfclsSMSMstDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clsSMSMstDetails" nillable="true" type="tns:clsSMSMstDetails" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclsSMSMstDetails" nillable="true" type="tns:ArrayOfclsSMSMstDetails" />
+  <xs:complexType name="clsSMSMstDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AgeMax" type="xs:int" />
+      <xs:element minOccurs="0" name="BedNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CategoryCd" type="xs:int" />
+      <xs:element minOccurs="0" name="DischrgeStsCd" type="xs:int" />
+      <xs:element minOccurs="0" name="DocCd" type="xs:int" />
+      <xs:element minOccurs="0" name="IpNo" type="xs:long" />
+      <xs:element minOccurs="0" name="PtnFrstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PtnFullName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PtnGender" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PtnLstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PtnMidName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PtnMobileNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PtnNo" type="xs:long" />
+      <xs:element minOccurs="0" name="PtnTtlCd" type="xs:int" />
+      <xs:element minOccurs="0" name="PtnTtlDcd" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="clsSMSMstDetails" nillable="true" type="tns:clsSMSMstDetails" />
+  <xs:complexType name="clsRuleMaster">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Data1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Data2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Desciption" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DetFlag" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RuleID" type="xs:int" />
+      <xs:element minOccurs="0" name="RuleName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="clsRuleMaster" nillable="true" type="tns:clsRuleMaster" />
+  <xs:complexType name="ArrayOfclsPatientHelp">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clsPatientHelp" nillable="true" type="tns:clsPatientHelp" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclsPatientHelp" nillable="true" type="tns:ArrayOfclsPatientHelp" />
+  <xs:complexType name="clsPatientHelp">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:clsPtnBasicInfo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AdharNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AdmSts" type="xs:int" />
+          <xs:element minOccurs="0" name="EMail" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MobileNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PanNO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="totalcnt" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="clsPatientHelp" nillable="true" type="tns:clsPatientHelp" />
+  <xs:complexType name="clsPtnBasicInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Age" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BillType" type="xs:int" />
+      <xs:element minOccurs="0" name="Gender" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PatientFirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PatientFullName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PatientLastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PatientMiddleName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PatientNo" type="xs:long" />
+      <xs:element minOccurs="0" name="PatientTitleCodeDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" type="ser:char" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="clsPtnBasicInfo" nillable="true" type="tns:clsPtnBasicInfo" />
+  <xs:complexType name="ArrayOfclsPaging">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clsPaging" nillable="true" type="tns:clsPaging" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclsPaging" nillable="true" type="tns:ArrayOfclsPaging" />
+  <xs:complexType name="clsPaging">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Enabled" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Text" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="clsPaging" nillable="true" type="tns:clsPaging" />
+  <xs:complexType name="PatientDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Age" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Agetypflg" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ArCd" type="xs:long" />
+      <xs:element minOccurs="0" name="ArEmpcd" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BillTyp" type="xs:int" />
+      <xs:element minOccurs="0" name="BirthDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CampCd" type="xs:int" />
+      <xs:element minOccurs="0" name="DctFullName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DctStatus" type="xs:int" />
+      <xs:element minOccurs="0" name="DepositBalance" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DoctorCode" type="xs:int" />
+      <xs:element minOccurs="0" name="EMPNO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EXPDT" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Gender" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsMember" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsPtnBlackListed" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MRNo" type="xs:int" />
+      <xs:element minOccurs="0" name="MapConcType" type="xs:int" />
+      <xs:element minOccurs="0" name="MembershipPerc" type="xs:double" />
+      <xs:element minOccurs="0" name="PatientClass" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PatientFirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PatientFullName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PatientLastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PatientMiddleName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PatientNo" type="xs:long" />
+      <xs:element minOccurs="0" name="PatientTitleCodeDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Photo" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="PrmntPtnno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PtnBlackListedRsn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PtnCareModelDCd" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PtnCareModelRmrk" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PtnRefByTyp" type="xs:int" />
+      <xs:element minOccurs="0" name="PtnRefBycd" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PtnRmrk" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PtnType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" type="xs:boolean" />
+      <xs:element minOccurs="0" name="TYPFLG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="istranblocked" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PatientDetails" nillable="true" type="tns:PatientDetails" />
+  <xs:complexType name="ArrayOfClsPtnDtlsSetup">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ClsPtnDtlsSetup" nillable="true" type="tns:ClsPtnDtlsSetup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfClsPtnDtlsSetup" nillable="true" type="tns:ArrayOfClsPtnDtlsSetup" />
+  <xs:complexType name="ClsPtnDtlsSetup">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Tooltip" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WaterMark" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ClsPtnDtlsSetup" nillable="true" type="tns:ClsPtnDtlsSetup" />
+  <xs:complexType name="ArrayOfclsConvertOpToIp">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clsConvertOpToIp" nillable="true" type="tns:clsConvertOpToIp" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclsConvertOpToIp" nillable="true" type="tns:ArrayOfclsConvertOpToIp" />
+  <xs:complexType name="clsConvertOpToIp">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DocCd" type="xs:int" />
+      <xs:element minOccurs="0" name="DocFullNm" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExpectedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IpNo" type="xs:long" />
+      <xs:element minOccurs="0" name="PtnFullNm" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PtnNo" type="xs:long" />
+      <xs:element minOccurs="0" name="TrnNo" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="clsConvertOpToIp" nillable="true" type="tns:clsConvertOpToIp" />
+  <xs:complexType name="ArrayOfclsPtnBasicInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clsPtnBasicInfo" nillable="true" type="tns:clsPtnBasicInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclsPtnBasicInfo" nillable="true" type="tns:ArrayOfclsPtnBasicInfo" />
+  <xs:complexType name="ArrayOfStateMaster">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StateMaster" nillable="true" type="tns:StateMaster" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStateMaster" nillable="true" type="tns:ArrayOfStateMaster" />
+</xs:schema>

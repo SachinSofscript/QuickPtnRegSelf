@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv.ChargeMaster" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv.ChargeMaster" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfclsChargeMaster">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clsChargeMaster" nillable="true" type="tns:clsChargeMaster" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclsChargeMaster" nillable="true" type="tns:ArrayOfclsChargeMaster" />
+  <xs:complexType name="clsChargeMaster">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CompanyCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeptCd" type="xs:int" />
+      <xs:element minOccurs="0" name="DeptRoomNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeptType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DivisionCode" type="xs:int" />
+      <xs:element minOccurs="0" name="Donor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IpOpFlg" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsIpConc" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsIpPostVch" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsNurseStationOrdAllow" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsOpConc" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsOpPostVch" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsProcedure" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsRadiology" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsSurgery" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LocationCode" type="xs:int" />
+      <xs:element minOccurs="0" name="Negativepostflg" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="armanpstflg" type="xs:boolean" />
+      <xs:element minOccurs="0" name="arpstmt" type="xs:int" />
+      <xs:element minOccurs="0" name="autoref" type="xs:boolean" />
+      <xs:element minOccurs="0" name="autovch" type="xs:boolean" />
+      <xs:element minOccurs="0" name="autovchdt" type="xs:boolean" />
+      <xs:element minOccurs="0" name="billinggroup" type="xs:int" />
+      <xs:element minOccurs="0" name="chrgcd" type="xs:int" />
+      <xs:element minOccurs="0" name="chrgdcd" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="chrgstlflg" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="chrgstscd" type="xs:int" />
+      <xs:element minOccurs="0" name="crtdt" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="crttm" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="crtusrid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="docacpstflg" type="xs:boolean" />
+      <xs:element minOccurs="0" name="docmanpstflg" type="xs:boolean" />
+      <xs:element minOccurs="0" name="isrdocscflg" type="xs:boolean" />
+      <xs:element minOccurs="0" name="isrempscflg" type="xs:boolean" />
+      <xs:element minOccurs="0" name="isrothscflg" type="xs:boolean" />
+      <xs:element minOccurs="0" name="issdocscflg" type="xs:boolean" />
+      <xs:element minOccurs="0" name="issempscflg" type="xs:boolean" />
+      <xs:element minOccurs="0" name="issothscflg" type="xs:boolean" />
+      <xs:element minOccurs="0" name="labchrgflg" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="manpstflg" type="xs:boolean" />
+      <xs:element minOccurs="0" name="misgrp" type="xs:int" />
+      <xs:element minOccurs="0" name="mispstflg" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="negrefno" type="xs:int" />
+      <xs:element minOccurs="0" name="op_neg__ref__no" type="xs:int" />
+      <xs:element minOccurs="0" name="op_neg_ref_no" type="xs:int" />
+      <xs:element minOccurs="0" name="opautoref" type="xs:int" />
+      <xs:element minOccurs="0" name="oprefno" type="xs:int" />
+      <xs:element minOccurs="0" name="opwingcd" type="xs:int" />
+      <xs:element minOccurs="0" name="phyLoc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pyblflg" type="xs:boolean" />
+      <xs:element minOccurs="0" name="refno" type="xs:int" />
+      <xs:element minOccurs="0" name="rtchngflg" type="xs:boolean" />
+      <xs:element minOccurs="0" name="srchrgflg" type="xs:boolean" />
+      <xs:element minOccurs="0" name="updtdt" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="updttm" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="updttrncd" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="updtusrid" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="clsChargeMaster" nillable="true" type="tns:clsChargeMaster" />
+  <xs:complexType name="ArrayOfclsChargeMasterHelp">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clsChargeMasterHelp" nillable="true" type="tns:clsChargeMasterHelp" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclsChargeMasterHelp" nillable="true" type="tns:ArrayOfclsChargeMasterHelp" />
+  <xs:complexType name="clsChargeMasterHelp">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="chrgcd" type="xs:int" />
+      <xs:element minOccurs="0" name="chrgdcd" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="clsChargeMasterHelp" nillable="true" type="tns:clsChargeMasterHelp" />
+  <xs:complexType name="ArrayOfclsChargeMasterDtl">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clsChargeMasterDtl" nillable="true" type="tns:clsChargeMasterDtl" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclsChargeMasterDtl" nillable="true" type="tns:ArrayOfclsChargeMasterDtl" />
+  <xs:complexType name="clsChargeMasterDtl">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:clsChargeMasterHelp">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DeptCd" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="clsChargeMasterDtl" nillable="true" type="tns:clsChargeMasterDtl" />
+</xs:schema>

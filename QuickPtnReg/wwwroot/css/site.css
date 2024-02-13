@@ -1,0 +1,24 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    margin-top:20px;
+    margin-bottom: 60px;
+    background: rgb(174,238,179);
+    background: radial-gradient(circle, rgba(174,238,179,1) 0%, rgba(148,205,233,1) 100%);
+}
+ 
+
+  

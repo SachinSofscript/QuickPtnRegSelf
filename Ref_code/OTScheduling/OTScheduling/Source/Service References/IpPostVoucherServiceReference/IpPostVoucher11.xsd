@@ -1,0 +1,1708 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:50875/IpPostVoucher.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://localhost:50875/IpPostVoucher.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://localhost:50875/IpPostVoucher.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv" />
+  <xs:import schemaLocation="http://localhost:50875/IpPostVoucher.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv.IpTransactions" />
+  <xs:import schemaLocation="http://localhost:50875/IpPostVoucher.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv.PostVoucher" />
+  <xs:import schemaLocation="http://localhost:50875/IpPostVoucher.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv.CommonModule" />
+  <xs:import schemaLocation="http://localhost:50875/IpPostVoucher.svc?xsd=xsd10" namespace="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv.ChargeMaster" />
+  <xs:import schemaLocation="http://localhost:50875/IpPostVoucher.svc?xsd=xsd11" namespace="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv.PatientVisitAndBilInsTrn" />
+  <xs:element name="GetIpICUEquipLinkPostList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q1:ArrayOfstring" />
+        <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q2:char" />
+        <xs:element minOccurs="0" name="Cocd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="div" type="xs:int" />
+        <xs:element minOccurs="0" name="loc" type="xs:int" />
+        <xs:element minOccurs="0" name="IpNo" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIpICUEquipLinkPostListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv" minOccurs="0" name="GetIpICUEquipLinkPostListResult" nillable="true" type="q3:ArrayOfclsIpICUEquipLinkPostList" />
+        <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q4:ArrayOfstring" />
+        <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q5:char" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveAttachEquipment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q6:ArrayOfstring" />
+        <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q7:char" />
+        <xs:element minOccurs="0" name="SessionState" type="xs:int" />
+        <xs:element minOccurs="0" name="Cocd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Div" type="xs:int" />
+        <xs:element minOccurs="0" name="Loc" type="xs:int" />
+        <xs:element minOccurs="0" name="Modcd" type="xs:int" />
+        <xs:element minOccurs="0" name="submodcd" type="xs:int" />
+        <xs:element minOccurs="0" name="sessionid" type="xs:long" />
+        <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv" minOccurs="0" name="obj" nillable="true" type="q8:ArrayOfclsIpICUEquipLink" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveAttachEquipmentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveAttachEquipmentResult" type="xs:boolean" />
+        <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q9:ArrayOfstring" />
+        <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q10:char" />
+        <xs:element minOccurs="0" name="SessionState" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelAttachEquipment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q11:ArrayOfstring" />
+        <xs:element xmlns:q12="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q12:char" />
+        <xs:element minOccurs="0" name="SessionState" type="xs:int" />
+        <xs:element minOccurs="0" name="Cocd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Div" type="xs:int" />
+        <xs:element minOccurs="0" name="Loc" type="xs:int" />
+        <xs:element minOccurs="0" name="Modcd" type="xs:int" />
+        <xs:element minOccurs="0" name="submodcd" type="xs:int" />
+        <xs:element minOccurs="0" name="sessionid" type="xs:long" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv" minOccurs="0" name="obj" nillable="true" type="q13:ArrayOfclsIpICUEquipLink" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelAttachEquipmentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CancelAttachEquipmentResult" type="xs:boolean" />
+        <xs:element xmlns:q14="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q14:ArrayOfstring" />
+        <xs:element xmlns:q15="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q15:char" />
+        <xs:element minOccurs="0" name="SessionState" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTechSrvList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q16:ArrayOfstring" />
+        <xs:element xmlns:q17="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q17:char" />
+        <xs:element minOccurs="0" name="Cocd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="div" type="xs:int" />
+        <xs:element minOccurs="0" name="loc" type="xs:int" />
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv" minOccurs="0" name="ObjTechShrSrvMst" nillable="true" type="q18:clsSharerServiceMain" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTechSrvListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv.IpTransactions" minOccurs="0" name="GetTechSrvListResult" nillable="true" type="q19:ArrayOfclsMultiTechShrSrvList" />
+        <xs:element xmlns:q20="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q20:ArrayOfstring" />
+        <xs:element xmlns:q21="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q21:char" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Fn_GetDocDeductionPerc">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q22:ArrayOfstring" />
+        <xs:element xmlns:q23="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q23:char" />
+        <xs:element minOccurs="0" name="CoCd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Div" type="xs:int" />
+        <xs:element minOccurs="0" name="Loc" type="xs:int" />
+        <xs:element minOccurs="0" name="doc_cd" type="xs:int" />
+        <xs:element xmlns:q24="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="ip_op" type="q24:char" />
+        <xs:element minOccurs="0" name="ptn_typ_cd" type="xs:int" />
+        <xs:element minOccurs="0" name="ptn_cls_cd" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Fn_GetDocDeductionPercResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Fn_GetDocDeductionPercResult" type="xs:decimal" />
+        <xs:element xmlns:q25="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q25:ArrayOfstring" />
+        <xs:element xmlns:q26="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q26:char" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Fn_IsArMstNoEmgSrv">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q27:ArrayOfstring" />
+        <xs:element xmlns:q28="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q28:char" />
+        <xs:element minOccurs="0" name="CoCd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Div" type="xs:int" />
+        <xs:element minOccurs="0" name="Loc" type="xs:int" />
+        <xs:element minOccurs="0" name="ArCd" type="xs:int" />
+        <xs:element minOccurs="0" name="ChrgCd" type="xs:int" />
+        <xs:element minOccurs="0" name="SrvCd" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Fn_IsArMstNoEmgSrvResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Fn_IsArMstNoEmgSrvResult" type="xs:boolean" />
+        <xs:element xmlns:q29="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q29:ArrayOfstring" />
+        <xs:element xmlns:q30="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q30:char" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PostIPServiceFromLIS">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q31:ArrayOfstring" />
+        <xs:element xmlns:q32="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q32:char" />
+        <xs:element minOccurs="0" name="Cocd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="div" type="xs:int" />
+        <xs:element minOccurs="0" name="loc" type="xs:int" />
+        <xs:element minOccurs="0" name="IpNo" type="xs:long" />
+        <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="SessionId" type="xs:long" />
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv.IpTransactions" minOccurs="0" name="ArrObjLISScheduleSampleCollect" nillable="true" type="q33:ArrayOfclsLISScheduleSampleCollect" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PostIPServiceFromLISResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv.IpTransactions" minOccurs="0" name="PostIPServiceFromLISResult" nillable="true" type="q34:ArrayOfclsPostIPServiceFromLIS" />
+        <xs:element xmlns:q35="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q35:ArrayOfstring" />
+        <xs:element xmlns:q36="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q36:char" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveDbReqForCreateIpVch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q37:ArrayOfstring" />
+        <xs:element xmlns:q38="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q38:char" />
+        <xs:element minOccurs="0" name="cocd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="div" type="xs:int" />
+        <xs:element minOccurs="0" name="loc" type="xs:int" />
+        <xs:element minOccurs="0" name="USERID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="MAINMODCODE" type="xs:int" />
+        <xs:element minOccurs="0" name="SUBMODCD" type="xs:int" />
+        <xs:element minOccurs="0" name="SessionId" type="xs:long" />
+        <xs:element minOccurs="0" name="SHIFT" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="IPNO" type="xs:long" />
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv" minOccurs="0" name="ObjTransferVchLst" nillable="true" type="q39:ArrayOfclsOpVch" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveDbReqForCreateIpVchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv.PostVoucher" minOccurs="0" name="SaveDbReqForCreateIpVchResult" nillable="true" type="q40:ArrayOfclsRefdbrequest" />
+        <xs:element xmlns:q41="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q41:ArrayOfstring" />
+        <xs:element xmlns:q42="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q42:char" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FnGetReferralDocNm">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q43="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q43:ArrayOfstring" />
+        <xs:element xmlns:q44="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q44:char" />
+        <xs:element minOccurs="0" name="CoCd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Div" type="xs:int" />
+        <xs:element minOccurs="0" name="Loc" type="xs:int" />
+        <xs:element minOccurs="0" name="ReferralDocCd" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FnGetReferralDocNmResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FnGetReferralDocNmResult" nillable="true" type="xs:string" />
+        <xs:element xmlns:q45="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q45:ArrayOfstring" />
+        <xs:element xmlns:q46="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q46:char" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReferralDocLstMst">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q47="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q47:ArrayOfstring" />
+        <xs:element xmlns:q48="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q48:char" />
+        <xs:element minOccurs="0" name="companycode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="div" type="xs:int" />
+        <xs:element minOccurs="0" name="loc" type="xs:int" />
+        <xs:element minOccurs="0" name="ruledcd" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReferralDocLstMstResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv" minOccurs="0" name="GetReferralDocLstMstResult" nillable="true" type="q49:ArrayOfclsRefDocHelp" />
+        <xs:element xmlns:q50="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q50:ArrayOfstring" />
+        <xs:element xmlns:q51="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q51:char" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReferralDocLst">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q52="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q52:ArrayOfstring" />
+        <xs:element xmlns:q53="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q53:char" />
+        <xs:element minOccurs="0" name="companycode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="div" type="xs:int" />
+        <xs:element minOccurs="0" name="loc" type="xs:int" />
+        <xs:element minOccurs="0" name="ruledcd" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReferralDocLstResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv" minOccurs="0" name="GetReferralDocLstResult" nillable="true" type="q54:ArrayOfclsRefDocHelp" />
+        <xs:element xmlns:q55="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q55:ArrayOfstring" />
+        <xs:element xmlns:q56="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q56:char" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListOfNstTstOrdReqDtl">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q57="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q57:ArrayOfstring" />
+        <xs:element xmlns:q58="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q58:char" />
+        <xs:element minOccurs="0" name="CoCd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Div" type="xs:int" />
+        <xs:element minOccurs="0" name="Loc" type="xs:int" />
+        <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ChrgCd" type="xs:int" />
+        <xs:element minOccurs="0" name="pipopno" type="xs:long" />
+        <xs:element minOccurs="0" name="TodaysDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="PtnClsCd" type="xs:int" />
+        <xs:element minOccurs="0" name="VchDt" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="PageIndex" type="xs:int" />
+        <xs:element minOccurs="0" name="PageSize" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListOfNstTstOrdReqDtlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv.PostVoucher" minOccurs="0" name="GetListOfNstTstOrdReqDtlResult" nillable="true" type="q59:ArrayOfclsNstTstOrdReqDtl" />
+        <xs:element xmlns:q60="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q60:ArrayOfstring" />
+        <xs:element xmlns:q61="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q61:char" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCalRate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q62="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q62:ArrayOfstring" />
+        <xs:element xmlns:q63="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q63:char" />
+        <xs:element minOccurs="0" name="pcompanycode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pdiv" type="xs:int" />
+        <xs:element minOccurs="0" name="ploc" type="xs:int" />
+        <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv.CommonModule" minOccurs="0" name="objcalRate" nillable="true" type="q64:clsCalRate" />
+        <xs:element minOccurs="0" name="EmergencyFlg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCalRateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q65="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv.CommonModule" minOccurs="0" name="GetCalRateResult" nillable="true" type="q65:clsCalRate" />
+        <xs:element xmlns:q66="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q66:ArrayOfstring" />
+        <xs:element xmlns:q67="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q67:char" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSharerServiceList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q68="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q68:ArrayOfstring" />
+        <xs:element xmlns:q69="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q69:char" />
+        <xs:element minOccurs="0" name="pcompanycode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pdiv" type="xs:int" />
+        <xs:element minOccurs="0" name="ploc" type="xs:int" />
+        <xs:element xmlns:q70="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv" minOccurs="0" name="objSharerSrv" nillable="true" type="q70:clsSharerServiceMain" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSharerServiceListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q71="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv" minOccurs="0" name="GetSharerServiceListResult" nillable="true" type="q71:ArrayOfclsSharerServiceDetails" />
+        <xs:element xmlns:q72="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q72:ArrayOfstring" />
+        <xs:element xmlns:q73="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q73:char" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCalShare">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q74="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q74:ArrayOfstring" />
+        <xs:element xmlns:q75="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q75:char" />
+        <xs:element minOccurs="0" name="pcompanycode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pdiv" type="xs:int" />
+        <xs:element minOccurs="0" name="ploc" type="xs:int" />
+        <xs:element xmlns:q76="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv.CommonModule" minOccurs="0" name="objCalShare" nillable="true" type="q76:clsCalShare" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCalShareResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q77="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv.CommonModule" minOccurs="0" name="GetCalShareResult" nillable="true" type="q77:clsCalShare" />
+        <xs:element xmlns:q78="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q78:ArrayOfstring" />
+        <xs:element xmlns:q79="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q79:char" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveRecord">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q80="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q80:ArrayOfstring" />
+        <xs:element xmlns:q81="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q81:char" />
+        <xs:element minOccurs="0" name="SessionState" type="xs:int" />
+        <xs:element minOccurs="0" name="VoucherNo" type="xs:int" />
+        <xs:element minOccurs="0" name="Cocd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Div" type="xs:int" />
+        <xs:element minOccurs="0" name="Loc" type="xs:int" />
+        <xs:element minOccurs="0" name="Modcd" type="xs:int" />
+        <xs:element minOccurs="0" name="submodcd" type="xs:int" />
+        <xs:element minOccurs="0" name="sessionid" type="xs:long" />
+        <xs:element xmlns:q82="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv" minOccurs="0" name="objIpTrnRmks" nillable="true" type="q82:clsIPTRNRMRK" />
+        <xs:element xmlns:q83="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv" minOccurs="0" name="obj" nillable="true" type="q83:ArrayOfclsIpPostVoucher" />
+        <xs:element minOccurs="0" name="IsReturnDbReq" type="xs:boolean" />
+        <xs:element xmlns:q84="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv.PostVoucher" minOccurs="0" name="ClsLstOfDbReq" nillable="true" type="q84:ArrayOfclsRefdbrequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveRecordResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveRecordResult" type="xs:boolean" />
+        <xs:element xmlns:q85="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q85:ArrayOfstring" />
+        <xs:element xmlns:q86="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q86:char" />
+        <xs:element minOccurs="0" name="SessionState" type="xs:int" />
+        <xs:element minOccurs="0" name="VoucherNo" type="xs:int" />
+        <xs:element xmlns:q87="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv.PostVoucher" minOccurs="0" name="ClsLstOfDbReq" nillable="true" type="q87:ArrayOfclsRefdbrequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Validate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q88="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q88:ArrayOfstring" />
+        <xs:element xmlns:q89="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q89:char" />
+        <xs:element minOccurs="0" name="Cocd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Div" type="xs:int" />
+        <xs:element minOccurs="0" name="Loc" type="xs:int" />
+        <xs:element minOccurs="0" name="IpNo" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ValidateResult" type="xs:boolean" />
+        <xs:element xmlns:q90="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q90:ArrayOfstring" />
+        <xs:element xmlns:q91="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q91:char" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInpatientDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q92="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q92:ArrayOfstring" />
+        <xs:element xmlns:q93="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q93:char" />
+        <xs:element minOccurs="0" name="cocd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="div" type="xs:int" />
+        <xs:element minOccurs="0" name="loc" type="xs:int" />
+        <xs:element minOccurs="0" name="IpNo" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInpatientDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q94="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv" minOccurs="0" name="GetInpatientDetailsResult" nillable="true" type="q94:clsInPatient" />
+        <xs:element xmlns:q95="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q95:ArrayOfstring" />
+        <xs:element xmlns:q96="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q96:char" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetChrgMst">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q97="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q97:ArrayOfstring" />
+        <xs:element xmlns:q98="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q98:char" />
+        <xs:element minOccurs="0" name="CoCd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Div" type="xs:int" />
+        <xs:element minOccurs="0" name="Loc" type="xs:int" />
+        <xs:element minOccurs="0" name="ChrgCd" type="xs:int" />
+        <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetChrgMstResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q99="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv.ChargeMaster" minOccurs="0" name="GetChrgMstResult" nillable="true" type="q99:ArrayOfclsChargeMaster" />
+        <xs:element xmlns:q100="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q100:ArrayOfstring" />
+        <xs:element xmlns:q101="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q101:char" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSrvMstDtl">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q102="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q102:ArrayOfstring" />
+        <xs:element xmlns:q103="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q103:char" />
+        <xs:element minOccurs="0" name="Cocd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="div" type="xs:int" />
+        <xs:element minOccurs="0" name="loc" type="xs:int" />
+        <xs:element minOccurs="0" name="srvcd" type="xs:int" />
+        <xs:element minOccurs="0" name="chrgcd" type="xs:int" />
+        <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSrvMstDtlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q104="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv" minOccurs="0" name="GetSrvMstDtlResult" nillable="true" type="q104:clsServiceMaster" />
+        <xs:element xmlns:q105="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q105:ArrayOfstring" />
+        <xs:element xmlns:q106="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q106:char" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetServiceList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q107="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q107:ArrayOfstring" />
+        <xs:element xmlns:q108="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q108:char" />
+        <xs:element minOccurs="0" name="cocd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="div" type="xs:int" />
+        <xs:element minOccurs="0" name="loc" type="xs:int" />
+        <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="chrgcd" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetServiceListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q109="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv" minOccurs="0" name="GetServiceListResult" nillable="true" type="q109:ArrayOfClsServiceMasterHelp" />
+        <xs:element xmlns:q110="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q110:ArrayOfstring" />
+        <xs:element xmlns:q111="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q111:char" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListChrgMStForUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q112="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q112:ArrayOfstring" />
+        <xs:element xmlns:q113="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q113:char" />
+        <xs:element minOccurs="0" name="cocd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="div" type="xs:int" />
+        <xs:element minOccurs="0" name="loc" type="xs:int" />
+        <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListChrgMStForUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q114="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv.ChargeMaster" minOccurs="0" name="GetListChrgMStForUserResult" nillable="true" type="q114:ArrayOfclsChargeMasterHelp" />
+        <xs:element xmlns:q115="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q115:ArrayOfstring" />
+        <xs:element xmlns:q116="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q116:char" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInPtnListByNameDocWard">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q117="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q117:ArrayOfstring" />
+        <xs:element xmlns:q118="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q118:char" />
+        <xs:element minOccurs="0" name="Cocd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Div" type="xs:int" />
+        <xs:element minOccurs="0" name="Loc" type="xs:int" />
+        <xs:element minOccurs="0" name="FrstNm" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="MidNm" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="LstNm" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DocCd" type="xs:int" />
+        <xs:element minOccurs="0" name="WardCd" type="xs:int" />
+        <xs:element minOccurs="0" name="AdmSts" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInPtnListByNameDocWardResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q119="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv" minOccurs="0" name="GetInPtnListByNameDocWardResult" nillable="true" type="q119:ArrayOfclsInPatientHelp" />
+        <xs:element xmlns:q120="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q120:ArrayOfstring" />
+        <xs:element xmlns:q121="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q121:char" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WardDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q122="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q122:ArrayOfstring" />
+        <xs:element xmlns:q123="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q123:char" />
+        <xs:element minOccurs="0" name="cocd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="div" type="xs:int" />
+        <xs:element minOccurs="0" name="loc" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WardDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q124="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv" minOccurs="0" name="WardDetailsResult" nillable="true" type="q124:ArrayOfclsCodeDecode" />
+        <xs:element xmlns:q125="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q125:ArrayOfstring" />
+        <xs:element xmlns:q126="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q126:char" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDoctorList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q127="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q127:ArrayOfstring" />
+        <xs:element xmlns:q128="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q128:char" />
+        <xs:element minOccurs="0" name="companycode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="div" type="xs:int" />
+        <xs:element minOccurs="0" name="loc" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDoctorListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q129="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv" minOccurs="0" name="GetDoctorListResult" nillable="true" type="q129:ArrayOfclsDoctor" />
+        <xs:element xmlns:q130="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q130:ArrayOfstring" />
+        <xs:element xmlns:q131="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q131:char" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DoctorSpeciality">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q132="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q132:ArrayOfstring" />
+        <xs:element xmlns:q133="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q133:char" />
+        <xs:element minOccurs="0" name="pcompanycode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pdiv" type="xs:int" />
+        <xs:element minOccurs="0" name="ploc" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DoctorSpecialityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q134="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv" minOccurs="0" name="DoctorSpecialityResult" nillable="true" type="q134:ArrayOfclsCodeDecode" />
+        <xs:element xmlns:q135="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q135:ArrayOfstring" />
+        <xs:element xmlns:q136="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q136:char" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDoctor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q137="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q137:ArrayOfstring" />
+        <xs:element xmlns:q138="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q138:char" />
+        <xs:element minOccurs="0" name="companycode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="div" type="xs:int" />
+        <xs:element minOccurs="0" name="loc" type="xs:int" />
+        <xs:element minOccurs="0" name="doctorcode" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDoctorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q139="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv" minOccurs="0" name="GetDoctorResult" nillable="true" type="q139:clsDoctor" />
+        <xs:element xmlns:q140="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q140:ArrayOfstring" />
+        <xs:element xmlns:q141="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q141:char" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPtnClsDtlByCd">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q142="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q142:ArrayOfstring" />
+        <xs:element xmlns:q143="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q143:char" />
+        <xs:element minOccurs="0" name="cocd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="div" type="xs:int" />
+        <xs:element minOccurs="0" name="loc" type="xs:int" />
+        <xs:element minOccurs="0" name="PtnClsCd" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPtnClsDtlByCdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q144="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv" minOccurs="0" name="GetPtnClsDtlByCdResult" nillable="true" type="q144:clsPatientClassMaster" />
+        <xs:element xmlns:q145="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q145:ArrayOfstring" />
+        <xs:element xmlns:q146="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q146:char" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCmpntShrDtl">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q147="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q147:ArrayOfstring" />
+        <xs:element xmlns:q148="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q148:char" />
+        <xs:element minOccurs="0" name="cocd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="div" type="xs:int" />
+        <xs:element minOccurs="0" name="loc" type="xs:int" />
+        <xs:element minOccurs="0" name="Arcd" type="xs:int" />
+        <xs:element minOccurs="0" name="PtnClsCd" type="xs:int" />
+        <xs:element minOccurs="0" name="ChrgCd" type="xs:int" />
+        <xs:element minOccurs="0" name="SrvCd" type="xs:int" />
+        <xs:element minOccurs="0" name="SchemeCd" type="xs:int" />
+        <xs:element minOccurs="0" name="AdmissionDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="IpNo" type="xs:long" />
+        <xs:element minOccurs="0" name="EmerGencyFlg" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCmpntShrDtlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q149="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv" minOccurs="0" name="GetCmpntShrDtlResult" nillable="true" type="q149:ArrayOfclsCmpntTrnShrInfo" />
+        <xs:element xmlns:q150="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q150:ArrayOfstring" />
+        <xs:element xmlns:q151="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q151:char" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIpBilInsTrnByIpNo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q152="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q152:ArrayOfstring" />
+        <xs:element xmlns:q153="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q153:char" />
+        <xs:element minOccurs="0" name="cocd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="div" type="xs:int" />
+        <xs:element minOccurs="0" name="loc" type="xs:int" />
+        <xs:element minOccurs="0" name="IpNo" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIpBilInsTrnByIpNoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q154="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv.PatientVisitAndBilInsTrn" minOccurs="0" name="GetIpBilInsTrnByIpNoResult" nillable="true" type="q154:clsIpBilInsTrn" />
+        <xs:element xmlns:q155="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q155:ArrayOfstring" />
+        <xs:element xmlns:q156="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q156:char" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSrvLstBySrvTypSexFlgUserNstTstOrdAllow">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q157="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q157:ArrayOfstring" />
+        <xs:element xmlns:q158="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q158:char" />
+        <xs:element minOccurs="0" name="cocd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="div" type="xs:int" />
+        <xs:element minOccurs="0" name="loc" type="xs:int" />
+        <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="srvtype" type="xs:int" />
+        <xs:element xmlns:q159="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="IpOpFlg" type="q159:char" />
+        <xs:element minOccurs="0" name="IsNstTestOrdAllowed" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSrvLstBySrvTypSexFlgUserNstTstOrdAllowResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q160="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv" minOccurs="0" name="GetSrvLstBySrvTypSexFlgUserNstTstOrdAllowResult" nillable="true" type="q160:ArrayOfClsServiceMasterHelp" />
+        <xs:element xmlns:q161="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q161:ArrayOfstring" />
+        <xs:element xmlns:q162="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q162:char" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSrvLstByModSubModCdPrefix">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q163="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q163:ArrayOfstring" />
+        <xs:element xmlns:q164="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q164:char" />
+        <xs:element minOccurs="0" name="cocd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="div" type="xs:int" />
+        <xs:element minOccurs="0" name="loc" type="xs:int" />
+        <xs:element minOccurs="0" name="ModCd" type="xs:int" />
+        <xs:element minOccurs="0" name="SubModCd" type="xs:int" />
+        <xs:element xmlns:q165="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="IpOpFlg" type="q165:char" />
+        <xs:element minOccurs="0" name="Prefix" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="srvtype" type="xs:int" />
+        <xs:element minOccurs="0" name="IsNstTestOrdAllowed" type="xs:boolean" />
+        <xs:element minOccurs="0" name="chrgcd" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSrvLstByModSubModCdPrefixResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q166="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv" minOccurs="0" name="GetSrvLstByModSubModCdPrefixResult" nillable="true" type="q166:ArrayOfClsSrvMstMainHelp" />
+        <xs:element xmlns:q167="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q167:ArrayOfstring" />
+        <xs:element xmlns:q168="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q168:char" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetChrgMstListByUserIdModSubModCd">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q169="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q169:ArrayOfstring" />
+        <xs:element xmlns:q170="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q170:char" />
+        <xs:element minOccurs="0" name="cocd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="div" type="xs:int" />
+        <xs:element minOccurs="0" name="loc" type="xs:int" />
+        <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ModCd" type="xs:int" />
+        <xs:element minOccurs="0" name="SubModCd" type="xs:int" />
+        <xs:element xmlns:q171="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="IpOpFlg" type="q171:char" />
+        <xs:element minOccurs="0" name="srvtype" type="xs:int" />
+        <xs:element minOccurs="0" name="IsNstTestOrdAllowed" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetChrgMstListByUserIdModSubModCdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q172="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv.ChargeMaster" minOccurs="0" name="GetChrgMstListByUserIdModSubModCdResult" nillable="true" type="q172:ArrayOfclsChargeMasterHelp" />
+        <xs:element xmlns:q173="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q173:ArrayOfstring" />
+        <xs:element xmlns:q174="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q174:char" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSrvLstByUserIdModSubModCd">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q175="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q175:ArrayOfstring" />
+        <xs:element xmlns:q176="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q176:char" />
+        <xs:element minOccurs="0" name="cocd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="div" type="xs:int" />
+        <xs:element minOccurs="0" name="loc" type="xs:int" />
+        <xs:element minOccurs="0" name="ModCd" type="xs:int" />
+        <xs:element minOccurs="0" name="SubModCd" type="xs:int" />
+        <xs:element xmlns:q177="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="IpOpFlg" type="q177:char" />
+        <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="srvtype" type="xs:int" />
+        <xs:element minOccurs="0" name="IsNstTestOrdAllowed" type="xs:boolean" />
+        <xs:element xmlns:q178="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="Sex" type="q178:char" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSrvLstByUserIdModSubModCdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q179="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv" minOccurs="0" name="GetSrvLstByUserIdModSubModCdResult" nillable="true" type="q179:ArrayOfClsSrvMstMainHelp" />
+        <xs:element xmlns:q180="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q180:ArrayOfstring" />
+        <xs:element xmlns:q181="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q181:char" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSrvMstDtlByUserIdModSubmodcd">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q182="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q182:ArrayOfstring" />
+        <xs:element xmlns:q183="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q183:char" />
+        <xs:element minOccurs="0" name="pcompanycode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pdiv" type="xs:int" />
+        <xs:element minOccurs="0" name="ploc" type="xs:int" />
+        <xs:element minOccurs="0" name="srvcd" type="xs:int" />
+        <xs:element minOccurs="0" name="chrgcd" type="xs:int" />
+        <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ModCd" type="xs:int" />
+        <xs:element minOccurs="0" name="SubModCd" type="xs:int" />
+        <xs:element xmlns:q184="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="IpOpFlg" type="q184:char" />
+        <xs:element minOccurs="0" name="srvtype" type="xs:int" />
+        <xs:element minOccurs="0" name="IsNstTestOrdAllowed" type="xs:boolean" />
+        <xs:element xmlns:q185="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="Sex" type="q185:char" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSrvMstDtlByUserIdModSubmodcdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q186="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv" minOccurs="0" name="GetSrvMstDtlByUserIdModSubmodcdResult" nillable="true" type="q186:ClsServiceMasterDtl" />
+        <xs:element xmlns:q187="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q187:ArrayOfstring" />
+        <xs:element xmlns:q188="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q188:char" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetChrgMstDtlByUserIdModSubModCd">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q189="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q189:ArrayOfstring" />
+        <xs:element xmlns:q190="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q190:char" />
+        <xs:element minOccurs="0" name="Cocd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Div" type="xs:int" />
+        <xs:element minOccurs="0" name="Loc" type="xs:int" />
+        <xs:element minOccurs="0" name="ChrgCd" type="xs:int" />
+        <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ModCd" type="xs:int" />
+        <xs:element minOccurs="0" name="SubModCd" type="xs:int" />
+        <xs:element xmlns:q191="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="IpOpFlg" type="q191:char" />
+        <xs:element minOccurs="0" name="srvtype" type="xs:int" />
+        <xs:element minOccurs="0" name="IsNstTestOrdAllowed" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetChrgMstDtlByUserIdModSubModCdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q192="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv.ChargeMaster" minOccurs="0" name="GetChrgMstDtlByUserIdModSubModCdResult" nillable="true" type="q192:ArrayOfclsChargeMasterDtl" />
+        <xs:element xmlns:q193="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q193:ArrayOfstring" />
+        <xs:element xmlns:q194="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q194:char" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserBasicDtl">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q195="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q195:ArrayOfstring" />
+        <xs:element xmlns:q196="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q196:char" />
+        <xs:element minOccurs="0" name="COCd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Div" type="xs:int" />
+        <xs:element minOccurs="0" name="Loc" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserBasicDtlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q197="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv" minOccurs="0" name="GetUserBasicDtlResult" nillable="true" type="q197:ArrayOfclsUserBasicDtl" />
+        <xs:element xmlns:q198="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q198:ArrayOfstring" />
+        <xs:element xmlns:q199="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q199:char" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetChargeMstWithchrgstlflg">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q200="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q200:ArrayOfstring" />
+        <xs:element xmlns:q201="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q201:char" />
+        <xs:element minOccurs="0" name="cocd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="div" type="xs:int" />
+        <xs:element minOccurs="0" name="loc" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetChargeMstWithchrgstlflgResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q202="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv.ChargeMaster" minOccurs="0" name="GetChargeMstWithchrgstlflgResult" nillable="true" type="q202:ArrayOfclsChargeMasterHelp" />
+        <xs:element xmlns:q203="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q203:ArrayOfstring" />
+        <xs:element xmlns:q204="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q204:char" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSrvCdWithDesc">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q205="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q205:ArrayOfstring" />
+        <xs:element xmlns:q206="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q206:char" />
+        <xs:element minOccurs="0" name="cocd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="div" type="xs:int" />
+        <xs:element minOccurs="0" name="loc" type="xs:int" />
+        <xs:element minOccurs="0" name="ChrgCd" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSrvCdWithDescResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q207="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv" minOccurs="0" name="GetSrvCdWithDescResult" nillable="true" type="q207:ArrayOfclsSrvMst" />
+        <xs:element xmlns:q208="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q208:ArrayOfstring" />
+        <xs:element xmlns:q209="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q209:char" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocListWithTypWithDocStsCd">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q210="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q210:ArrayOfstring" />
+        <xs:element xmlns:q211="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q211:char" />
+        <xs:element minOccurs="0" name="cocd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="div" type="xs:int" />
+        <xs:element minOccurs="0" name="loc" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocListWithTypWithDocStsCdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q212="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv" minOccurs="0" name="GetDocListWithTypWithDocStsCdResult" nillable="true" type="q212:ArrayOfclsDoctorHelp" />
+        <xs:element xmlns:q213="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q213:ArrayOfstring" />
+        <xs:element xmlns:q214="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q214:char" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPtnClassDtl">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q215="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q215:ArrayOfstring" />
+        <xs:element xmlns:q216="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q216:char" />
+        <xs:element minOccurs="0" name="companycode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="div" type="xs:int" />
+        <xs:element minOccurs="0" name="loc" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPtnClassDtlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q217="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv" minOccurs="0" name="GetPtnClassDtlResult" nillable="true" type="q217:ArrayOfClsPtnClsHelp" />
+        <xs:element xmlns:q218="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q218:ArrayOfstring" />
+        <xs:element xmlns:q219="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q219:char" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEmpIDList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q220="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q220:ArrayOfstring" />
+        <xs:element xmlns:q221="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q221:char" />
+        <xs:element minOccurs="0" name="companycode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="div" type="xs:int" />
+        <xs:element minOccurs="0" name="loc" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEmpIDListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q222="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv" minOccurs="0" name="GetEmpIDListResult" nillable="true" type="q222:ArrayOfclsAttPayDbEmpId" />
+        <xs:element xmlns:q223="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q223:ArrayOfstring" />
+        <xs:element xmlns:q224="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q224:char" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNetIdParamDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q225="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q225:ArrayOfstring" />
+        <xs:element xmlns:q226="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q226:char" />
+        <xs:element minOccurs="0" name="companycode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="div" type="xs:int" />
+        <xs:element minOccurs="0" name="loc" type="xs:int" />
+        <xs:element minOccurs="0" name="ModCd" type="xs:int" />
+        <xs:element minOccurs="0" name="SubModCd" type="xs:int" />
+        <xs:element minOccurs="0" name="NetId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNetIdParamDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q227="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv" minOccurs="0" name="GetNetIdParamDetailsResult" nillable="true" type="q227:ArrayOfclsNetIDParam" />
+        <xs:element xmlns:q228="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q228:ArrayOfstring" />
+        <xs:element xmlns:q229="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q229:char" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIpPatientHelpMst">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q230="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q230:ArrayOfstring" />
+        <xs:element xmlns:q231="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q231:char" />
+        <xs:element minOccurs="0" name="Cocd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Div" type="xs:int" />
+        <xs:element minOccurs="0" name="Loc" type="xs:int" />
+        <xs:element minOccurs="0" name="FrstNm" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="MidNm" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="LstNm" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DocCd" type="xs:int" />
+        <xs:element minOccurs="0" name="WardCd" type="xs:int" />
+        <xs:element minOccurs="0" name="AdmSts" type="xs:int" />
+        <xs:element minOccurs="0" name="Pageindex" type="xs:int" />
+        <xs:element minOccurs="0" name="PageSize" type="xs:int" />
+        <xs:element minOccurs="0" name="ArCd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="PtnTypCd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="PtnfullNm" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="PtnNo" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIpPatientHelpMstResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q232="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv" minOccurs="0" name="GetIpPatientHelpMstResult" nillable="true" type="q232:ArrayOfclsInPatientHelp" />
+        <xs:element xmlns:q233="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q233:ArrayOfstring" />
+        <xs:element xmlns:q234="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q234:char" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PopulatePager">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q235="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q235:ArrayOfstring" />
+        <xs:element xmlns:q236="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q236:char" />
+        <xs:element minOccurs="0" name="recordCount" type="xs:int" />
+        <xs:element minOccurs="0" name="currentPage" type="xs:int" />
+        <xs:element minOccurs="0" name="DispNum" type="xs:int" />
+        <xs:element xmlns:q237="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="GridType" type="q237:char" />
+        <xs:element xmlns:q238="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv" minOccurs="0" name="Repeater" nillable="true" type="q238:ArrayOfclsPaging" />
+        <xs:element minOccurs="0" name="ItemCd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ReturnPageIndex" type="xs:int" />
+        <xs:element minOccurs="0" name="PageSize" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PopulatePagerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q239="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv" minOccurs="0" name="PopulatePagerResult" nillable="true" type="q239:ArrayOfclsPaging" />
+        <xs:element xmlns:q240="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q240:ArrayOfstring" />
+        <xs:element xmlns:q241="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q241:char" />
+        <xs:element minOccurs="0" name="ReturnPageIndex" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPrntRptViewerRule8013">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q242="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q242:ArrayOfstring" />
+        <xs:element xmlns:q243="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q243:char" />
+        <xs:element minOccurs="0" name="cocd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="div" type="xs:int" />
+        <xs:element minOccurs="0" name="loc" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPrntRptViewerRule8013Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetPrntRptViewerRule8013Result" type="xs:boolean" />
+        <xs:element xmlns:q244="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q244:ArrayOfstring" />
+        <xs:element xmlns:q245="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q245:char" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPrntRptViewerRule8013OnlyPdfPrint">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q246="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q246:ArrayOfstring" />
+        <xs:element xmlns:q247="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q247:char" />
+        <xs:element minOccurs="0" name="cocd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="div" type="xs:int" />
+        <xs:element minOccurs="0" name="loc" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPrntRptViewerRule8013OnlyPdfPrintResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetPrntRptViewerRule8013OnlyPdfPrintResult" type="xs:boolean" />
+        <xs:element xmlns:q248="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q248:ArrayOfstring" />
+        <xs:element xmlns:q249="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q249:char" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInpatientDetailsForPrint">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q250="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q250:ArrayOfstring" />
+        <xs:element xmlns:q251="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q251:char" />
+        <xs:element minOccurs="0" name="cocd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="div" type="xs:int" />
+        <xs:element minOccurs="0" name="loc" type="xs:int" />
+        <xs:element minOccurs="0" name="IpNo" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInpatientDetailsForPrintResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q252="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv" minOccurs="0" name="GetInpatientDetailsForPrintResult" nillable="true" type="q252:clsInPatient" />
+        <xs:element xmlns:q253="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q253:ArrayOfstring" />
+        <xs:element xmlns:q254="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q254:char" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FnIsChkSrvHrs">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q255="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q255:ArrayOfstring" />
+        <xs:element xmlns:q256="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q256:char" />
+        <xs:element minOccurs="0" name="CoCd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Div" type="xs:int" />
+        <xs:element minOccurs="0" name="Loc" type="xs:int" />
+        <xs:element minOccurs="0" name="ChrgCd" type="xs:int" />
+        <xs:element minOccurs="0" name="SrvCd" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FnIsChkSrvHrsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FnIsChkSrvHrsResult" type="xs:boolean" />
+        <xs:element xmlns:q257="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q257:ArrayOfstring" />
+        <xs:element xmlns:q258="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q258:char" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRuleMstDtls">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q259="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q259:ArrayOfstring" />
+        <xs:element xmlns:q260="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q260:char" />
+        <xs:element minOccurs="0" name="CoCd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Div" type="xs:int" />
+        <xs:element minOccurs="0" name="Loc" type="xs:int" />
+        <xs:element minOccurs="0" name="RuleId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRuleMstDtlsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q261="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv" minOccurs="0" name="GetRuleMstDtlsResult" nillable="true" type="q261:clsRuleMaster" />
+        <xs:element xmlns:q262="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q262:ArrayOfstring" />
+        <xs:element xmlns:q263="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q263:char" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRuleMstDtlsList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q264="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q264:ArrayOfstring" />
+        <xs:element xmlns:q265="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q265:char" />
+        <xs:element minOccurs="0" name="companycode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="div" type="xs:int" />
+        <xs:element minOccurs="0" name="loc" type="xs:int" />
+        <xs:element minOccurs="0" name="RuleId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRuleMstDtlsListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q266="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv" minOccurs="0" name="GetRuleMstDtlsListResult" nillable="true" type="q266:ArrayOfclsRuleMaster" />
+        <xs:element xmlns:q267="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q267:ArrayOfstring" />
+        <xs:element xmlns:q268="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q268:char" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRuleMstDtlsModuleWs">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q269="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q269:ArrayOfstring" />
+        <xs:element xmlns:q270="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q270:char" />
+        <xs:element minOccurs="0" name="CoCd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Div" type="xs:int" />
+        <xs:element minOccurs="0" name="Loc" type="xs:int" />
+        <xs:element minOccurs="0" name="RuleId" type="xs:int" />
+        <xs:element minOccurs="0" name="MODCD" type="xs:int" />
+        <xs:element minOccurs="0" name="SUBMODCD" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRuleMstDtlsModuleWsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q271="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv" minOccurs="0" name="GetRuleMstDtlsModuleWsResult" nillable="true" type="q271:clsRuleMaster" />
+        <xs:element xmlns:q272="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q272:ArrayOfstring" />
+        <xs:element xmlns:q273="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q273:char" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FILLSEPSRV">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q274="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q274:ArrayOfstring" />
+        <xs:element xmlns:q275="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q275:char" />
+        <xs:element minOccurs="0" name="pcompanycode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pdiv" type="xs:int" />
+        <xs:element minOccurs="0" name="ploc" type="xs:int" />
+        <xs:element minOccurs="0" name="pdepartmentcode" type="xs:int" />
+        <xs:element minOccurs="0" name="pchargecode" type="xs:int" />
+        <xs:element xmlns:q276="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv.PostVoucher" minOccurs="0" name="pPTNLSTUSE" type="q276:ServiceType" />
+        <xs:element minOccurs="0" name="srvtyp" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FILLSEPSRVResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q277="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv" minOccurs="0" name="FILLSEPSRVResult" nillable="true" type="q277:ArrayOfClsSrvMstByType" />
+        <xs:element xmlns:q278="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q278:ArrayOfstring" />
+        <xs:element xmlns:q279="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q279:char" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getOpServiceBlock">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getOpServiceBlockResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q280="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv" minOccurs="0" name="getOpServiceBlockResult" nillable="true" type="q280:clsOpServicesBlock" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getBalanceDtls">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q281="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q281:ArrayOfstring" />
+        <xs:element xmlns:q282="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q282:char" />
+        <xs:element minOccurs="0" name="pcompanycode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pdiv" type="xs:int" />
+        <xs:element minOccurs="0" name="ploc" type="xs:int" />
+        <xs:element minOccurs="0" name="IpNo" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getBalanceDtlsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q283="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv" minOccurs="0" name="getBalanceDtlsResult" nillable="true" type="q283:ArrayOfclsIpDepRcpt" />
+        <xs:element xmlns:q284="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q284:ArrayOfstring" />
+        <xs:element xmlns:q285="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q285:char" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEmergencyDyDtFlg">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q286="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q286:ArrayOfstring" />
+        <xs:element xmlns:q287="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q287:char" />
+        <xs:element minOccurs="0" name="pcompanycode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pdiv" type="xs:int" />
+        <xs:element minOccurs="0" name="ploc" type="xs:int" />
+        <xs:element minOccurs="0" name="DtTm" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="ChrgCd" type="xs:int" />
+        <xs:element minOccurs="0" name="ipop" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEmergencyDyDtFlgResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetEmergencyDyDtFlgResult" nillable="true" type="xs:string" />
+        <xs:element xmlns:q288="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q288:ArrayOfstring" />
+        <xs:element xmlns:q289="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q289:char" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckBedTransReq">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q290="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q290:ArrayOfstring" />
+        <xs:element xmlns:q291="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q291:char" />
+        <xs:element minOccurs="0" name="pcompanycode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pdiv" type="xs:int" />
+        <xs:element minOccurs="0" name="ploc" type="xs:int" />
+        <xs:element minOccurs="0" name="pIpNo" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckBedTransReqResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q292="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv" minOccurs="0" name="CheckBedTransReqResult" nillable="true" type="q292:clsBedTransReq" />
+        <xs:element xmlns:q293="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q293:ArrayOfstring" />
+        <xs:element xmlns:q294="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q294:char" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetArCdContractDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q295="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q295:ArrayOfstring" />
+        <xs:element xmlns:q296="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q296:char" />
+        <xs:element minOccurs="0" name="companycode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="div" type="xs:int" />
+        <xs:element minOccurs="0" name="loc" type="xs:int" />
+        <xs:element minOccurs="0" name="ArCd" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetArCdContractDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q297="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv" minOccurs="0" name="GetArCdContractDetailsResult" nillable="true" type="q297:clsArSchemeContractMst" />
+        <xs:element xmlns:q298="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q298:ArrayOfstring" />
+        <xs:element xmlns:q299="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q299:char" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAreEmpMstData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q300="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q300:ArrayOfstring" />
+        <xs:element xmlns:q301="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q301:char" />
+        <xs:element minOccurs="0" name="companycode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="div" type="xs:int" />
+        <xs:element minOccurs="0" name="loc" type="xs:int" />
+        <xs:element minOccurs="0" name="EmplCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAreEmpMstDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q302="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv" minOccurs="0" name="GetAreEmpMstDataResult" nillable="true" type="q302:clsAREMPMST" />
+        <xs:element xmlns:q303="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q303:ArrayOfstring" />
+        <xs:element xmlns:q304="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q304:char" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInPatientCompDlt">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q305="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q305:ArrayOfstring" />
+        <xs:element xmlns:q306="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q306:char" />
+        <xs:element minOccurs="0" name="cocd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="div" type="xs:int" />
+        <xs:element minOccurs="0" name="loc" type="xs:int" />
+        <xs:element minOccurs="0" name="IpNo" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInPatientCompDltResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q307="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv" minOccurs="0" name="GetInPatientCompDltResult" nillable="true" type="q307:clsInPatient" />
+        <xs:element xmlns:q308="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q308:ArrayOfstring" />
+        <xs:element xmlns:q309="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q309:char" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getInPtnlstforPrnt">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q310="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q310:ArrayOfstring" />
+        <xs:element xmlns:q311="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q311:char" />
+        <xs:element minOccurs="0" name="cocd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="div" type="xs:int" />
+        <xs:element minOccurs="0" name="loc" type="xs:int" />
+        <xs:element minOccurs="0" name="IpNo" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getInPtnlstforPrntResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q312="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv.IpTransactions" minOccurs="0" name="getInPtnlstforPrntResult" nillable="true" type="q312:ArrayOfclsIpTrn" />
+        <xs:element xmlns:q313="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q313:ArrayOfstring" />
+        <xs:element xmlns:q314="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q314:char" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSrvLstByModSubModCdPrefixWithRt">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q315="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q315:ArrayOfstring" />
+        <xs:element xmlns:q316="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q316:char" />
+        <xs:element minOccurs="0" name="cocd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="div" type="xs:int" />
+        <xs:element minOccurs="0" name="loc" type="xs:int" />
+        <xs:element minOccurs="0" name="ModCd" type="xs:int" />
+        <xs:element minOccurs="0" name="SubModCd" type="xs:int" />
+        <xs:element xmlns:q317="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="IpOpFlg" type="q317:char" />
+        <xs:element minOccurs="0" name="Prefix" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="srvtype" type="xs:int" />
+        <xs:element minOccurs="0" name="IsNstTestOrdAllowed" type="xs:boolean" />
+        <xs:element minOccurs="0" name="chrcd" type="xs:int" />
+        <xs:element minOccurs="0" name="Arcd" type="xs:int" />
+        <xs:element minOccurs="0" name="PtnClsCd" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSrvLstByModSubModCdPrefixWithRtResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q318="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv" minOccurs="0" name="GetSrvLstByModSubModCdPrefixWithRtResult" nillable="true" type="q318:ArrayOfClsSrvMstMainHelp" />
+        <xs:element xmlns:q319="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q319:ArrayOfstring" />
+        <xs:element xmlns:q320="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q320:char" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListOfOutsdTstNstTstOrdReqDtl">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q321="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q321:ArrayOfstring" />
+        <xs:element xmlns:q322="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q322:char" />
+        <xs:element minOccurs="0" name="CoCd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Div" type="xs:int" />
+        <xs:element minOccurs="0" name="Loc" type="xs:int" />
+        <xs:element minOccurs="0" name="pipopno" type="xs:long" />
+        <xs:element minOccurs="0" name="TodaysDate" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListOfOutsdTstNstTstOrdReqDtlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q323="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv.PostVoucher" minOccurs="0" name="GetListOfOutsdTstNstTstOrdReqDtlResult" nillable="true" type="q323:ArrayOfclsNstTstOrdReqDtl" />
+        <xs:element xmlns:q324="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q324:ArrayOfstring" />
+        <xs:element xmlns:q325="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q325:char" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIpVchDtlForSameSrv">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q326="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q326:ArrayOfstring" />
+        <xs:element xmlns:q327="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q327:char" />
+        <xs:element minOccurs="0" name="Cocd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Div" type="xs:int" />
+        <xs:element minOccurs="0" name="Loc" type="xs:int" />
+        <xs:element minOccurs="0" name="IpNo" type="xs:long" />
+        <xs:element minOccurs="0" name="ChrgCd" type="xs:int" />
+        <xs:element minOccurs="0" name="SrvCd" type="xs:int" />
+        <xs:element minOccurs="0" name="Revdt" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="VchDt" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIpVchDtlForSameSrvResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetIpVchDtlForSameSrvResult" type="xs:boolean" />
+        <xs:element xmlns:q328="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q328:ArrayOfstring" />
+        <xs:element xmlns:q329="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q329:char" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetExPtnIPList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q330="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q330:ArrayOfstring" />
+        <xs:element xmlns:q331="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q331:char" />
+        <xs:element minOccurs="0" name="Cocd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Div" type="xs:int" />
+        <xs:element minOccurs="0" name="Loc" type="xs:int" />
+        <xs:element minOccurs="0" name="PtnNo" type="xs:long" />
+        <xs:element minOccurs="0" name="IpNo" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetExPtnIPListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q332="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv.PatientVisitAndBilInsTrn" minOccurs="0" name="GetExPtnIPListResult" nillable="true" type="q332:ArrayOfclsIpPatientVisit" />
+        <xs:element xmlns:q333="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q333:ArrayOfstring" />
+        <xs:element xmlns:q334="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q334:char" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserWsModFnList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q335="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q335:ArrayOfstring" />
+        <xs:element xmlns:q336="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q336:char" />
+        <xs:element minOccurs="0" name="CoCd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Div" type="xs:int" />
+        <xs:element minOccurs="0" name="Loc" type="xs:int" />
+        <xs:element minOccurs="0" name="ModCd" type="xs:int" />
+        <xs:element minOccurs="0" name="SubModCd" type="xs:int" />
+        <xs:element minOccurs="0" name="FuncID" type="xs:int" />
+        <xs:element minOccurs="0" name="UserID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserWsModFnListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q337="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv" minOccurs="0" name="GetUserWsModFnListResult" nillable="true" type="q337:ArrayOfclsUserModuleFunction" />
+        <xs:element xmlns:q338="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q338:ArrayOfstring" />
+        <xs:element xmlns:q339="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q339:char" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIPInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q340="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q340:ArrayOfstring" />
+        <xs:element xmlns:q341="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q341:char" />
+        <xs:element minOccurs="0" name="CoCd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Div" type="xs:int" />
+        <xs:element minOccurs="0" name="Loc" type="xs:int" />
+        <xs:element minOccurs="0" name="IpNo" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIPInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q342="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv" minOccurs="0" name="GetIPInfoResult" nillable="true" type="q342:clsIPInfo" />
+        <xs:element xmlns:q343="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q343:ArrayOfstring" />
+        <xs:element xmlns:q344="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q344:char" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetArMstForAutoHelp">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q345="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q345:ArrayOfstring" />
+        <xs:element xmlns:q346="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q346:char" />
+        <xs:element minOccurs="0" name="CoCd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Div" type="xs:int" />
+        <xs:element minOccurs="0" name="Loc" type="xs:int" />
+        <xs:element minOccurs="0" name="Prefix" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetArMstForAutoHelpResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q347="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv" minOccurs="0" name="GetArMstForAutoHelpResult" nillable="true" type="q347:ArrayOfclsArMst" />
+        <xs:element xmlns:q348="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q348:ArrayOfstring" />
+        <xs:element xmlns:q349="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q349:char" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FnChkIsSeniorCitizen">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q350="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q350:ArrayOfstring" />
+        <xs:element xmlns:q351="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q351:char" />
+        <xs:element minOccurs="0" name="Birthdate" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FnChkIsSeniorCitizenResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FnChkIsSeniorCitizenResult" type="xs:int" />
+        <xs:element xmlns:q352="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q352:ArrayOfstring" />
+        <xs:element xmlns:q353="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q353:char" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPtnTypeMst">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q354="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q354:ArrayOfstring" />
+        <xs:element xmlns:q355="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q355:char" />
+        <xs:element minOccurs="0" name="companycode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="div" type="xs:int" />
+        <xs:element minOccurs="0" name="loc" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPtnTypeMstResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q356="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv" minOccurs="0" name="GetPtnTypeMstResult" nillable="true" type="q356:ArrayOfclsPtnTypMst" />
+        <xs:element xmlns:q357="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q357:ArrayOfstring" />
+        <xs:element xmlns:q358="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q358:char" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPtnTypeMstByTypCd">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q359="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q359:ArrayOfstring" />
+        <xs:element xmlns:q360="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q360:char" />
+        <xs:element minOccurs="0" name="companycode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="div" type="xs:int" />
+        <xs:element minOccurs="0" name="loc" type="xs:int" />
+        <xs:element minOccurs="0" name="PtnTypCd" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPtnTypeMstByTypCdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q361="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv" minOccurs="0" name="GetPtnTypeMstByTypCdResult" nillable="true" type="q361:clsPtnTypMst" />
+        <xs:element xmlns:q362="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q362:ArrayOfstring" />
+        <xs:element xmlns:q363="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q363:char" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSrvBlockSts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q364="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q364:ArrayOfstring" />
+        <xs:element xmlns:q365="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q365:char" />
+        <xs:element minOccurs="0" name="companycode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="div" type="xs:int" />
+        <xs:element minOccurs="0" name="loc" type="xs:int" />
+        <xs:element minOccurs="0" name="srvcd" type="xs:int" />
+        <xs:element minOccurs="0" name="chrgcd" type="xs:int" />
+        <xs:element minOccurs="0" name="IpNo" type="xs:long" />
+        <xs:element minOccurs="0" name="PtnNo" type="xs:long" />
+        <xs:element minOccurs="0" name="BlockingOrder" type="xs:boolean" />
+        <xs:element minOccurs="0" name="BlockingBilling" type="xs:boolean" />
+        <xs:element xmlns:q366="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="IpOpFlag" type="q366:char" />
+        <xs:element minOccurs="0" name="RevDt" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSrvBlockStsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q367="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv" minOccurs="0" name="GetSrvBlockStsResult" nillable="true" type="q367:clsBlockSrvOrdPost" />
+        <xs:element xmlns:q368="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q368:ArrayOfstring" />
+        <xs:element xmlns:q369="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q369:char" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIpICUEquipMstList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q370="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q370:ArrayOfstring" />
+        <xs:element xmlns:q371="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q371:char" />
+        <xs:element minOccurs="0" name="Cocd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="div" type="xs:int" />
+        <xs:element minOccurs="0" name="loc" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIpICUEquipMstListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q372="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv" minOccurs="0" name="GetIpICUEquipMstListResult" nillable="true" type="q372:ArrayOfclsIpICUEquipMst" />
+        <xs:element xmlns:q373="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q373:ArrayOfstring" />
+        <xs:element xmlns:q374="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q374:char" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIpICUEquipMstDtl">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q375="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q375:ArrayOfstring" />
+        <xs:element xmlns:q376="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q376:char" />
+        <xs:element minOccurs="0" name="Cocd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="div" type="xs:int" />
+        <xs:element minOccurs="0" name="loc" type="xs:int" />
+        <xs:element minOccurs="0" name="EqpCd" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIpICUEquipMstDtlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q377="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv" minOccurs="0" name="GetIpICUEquipMstDtlResult" nillable="true" type="q377:clsIpICUEquipMst" />
+        <xs:element xmlns:q378="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q378:ArrayOfstring" />
+        <xs:element xmlns:q379="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q379:char" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIpICUEquipLinkViewHistory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q380="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q380:ArrayOfstring" />
+        <xs:element xmlns:q381="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q381:char" />
+        <xs:element minOccurs="0" name="Cocd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="div" type="xs:int" />
+        <xs:element minOccurs="0" name="loc" type="xs:int" />
+        <xs:element minOccurs="0" name="IpNo" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIpICUEquipLinkViewHistoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q382="http://schemas.datacontract.org/2004/07/IpPostVoucherSrv" minOccurs="0" name="GetIpICUEquipLinkViewHistoryResult" nillable="true" type="q382:ArrayOfclsIpICUEquipLinkViewHistory" />
+        <xs:element xmlns:q383="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="strErrMsg" nillable="true" type="q383:ArrayOfstring" />
+        <xs:element xmlns:q384="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="chrErrFlg" type="q384:char" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
