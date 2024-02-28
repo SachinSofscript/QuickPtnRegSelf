@@ -3,7 +3,96 @@
 
 @section scripts {
     <script>
-        $('#fullName').focus(); // Set focus to Full Name textbox
+
+        function disableSubmitButton() {
+            var submitButton = document.getElementById("submitButton");
+            submitButton.disabled = true; // Disable the button
+            // Optionally, display a loading indicator
+        }
+
+        function validateDownload() {
+
+            var departmentCode = $('#patientsource2').val();
+            if (!departmentCode > 0) {
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Select patient source!",
+                });
+                return true;
+            }
+            else {
+
+                return false;
+            }
+        }
+
+
+        $(document).ready(function () {
+            $('#fullName').focus(); // Set focus to Full Name textbox
+
+            $('#btnDownload').click(function () {
+
+                var selectedValue = document.getElementById("patientsource2").value;
+                if (!selectedValue) {
+                    //  alert("Please select a patient source ");
+                    return false;
+                }
+                else {
+
+                    downloadData();
+
+                }
+
+
+            });
+        });
+
+        function downloadData() {
+
+
+            // Method to save data
+            var departmentCode = $('#patientsource2').val();
+
+            console.log('downloadData called...');
+
+            // Perform AJAX request to save data
+            // Example AJAX request using jQuery:
+            $.ajax({
+                url: "/Register?handler=DownloadData", // Change the URL to match your controller and action method
+                type: 'POST',
+                // method: 'OnPostDownloadData',
+                data: { departmentCode: departmentCode },
+                success: function (response) {
+                    // Handle success
+                    console.log(response);
+                },
+                error: function (xhr, status, error) {
+                    // Handle error
+                    console.error(xhr.responseText);
+                }
+            });
+        }
+
+
+        // document.getElementById('downloadDataBtn').addEventListener('click', function () {
+
+        //     var departmentCode = $('#patientsource2').val();
+
+        //     $.ajax({
+        //         url: "/Register/DownloadData",
+        //         method: 'POST',
+        //         data: { departmentCode: departmentCode },
+        //         success: function () {
+        //             window.location.href="/Register"
+        //         }
+
+        //     })
+
+        //    });
+
+
+
 
         $(function () {
             $('#clearForm').click(function () {
@@ -18,10 +107,20 @@
 
 
         $(function () {
-            $('form').submit(function (e) {
+
+            // $('#btnSubmit').click(function (e) {
+            $('#regForm').submit(function (e) {
+                //debugger;
+
+
+
                 e.preventDefault();
+
+                // Disable the submit button
+                $("#btnSubmit").prop("disabled", true);
+
                 //------------------------------------------
- 
+
                 $.ajax({
                     url: $(this).attr('action'),
                     type: 'POST',
@@ -45,27 +144,32 @@
 
                             }
                         })
-                    ;
 
-                    //             else {
+                            ;
 
-                    //                 alert('hi');
-                    //     // Handle invalid response
-                    //     Swal.fire({
-                    //         icon: 'error',
-                    //         title: 'Error',
-                    //         text: 'Invalid response received.'
-                    //     });
-                    // }
+                        //             else {
+
+                        //                 alert('hi');
+                        //     // Handle invalid response
+                        //     Swal.fire({
+                        //         icon: 'error',
+                        //         title: 'Error',
+                        //         text: 'Invalid response received.'
+                        //     });
+                        // }
 
 
 
                     },
                     error: function (xhr, status, error) {
                         // Handle error
-                        
 
 
+
+                    },
+                    complete: function () {
+                        // Re-enable the submit button
+                        $("#btnSubmit").prop("disabled", false);
                     }
 
                 });
@@ -104,7 +208,9 @@
 
 <br />
 
-<form method="post">
+<form asp-controller="Register" asp-action="OnPostSave" method="post" id="regForm">
+
+    @Html.AntiForgeryToken()
 
     <div class="card">
         <div class="card-header">
@@ -112,7 +218,7 @@
         </div>
         <div class="card-body">
             <div class="form-group">
-                <span class="text-danger">*</span> 
+                <span class="text-danger">*</span>
                 <label for="fullName">Full Name/ಪೂರ್ಣ ಹೆಸರು (ಆಧಾರ್ ಕಾರ್ಡ್ ನಲ್ಲಿರುವಂತೆ):</label>
                 <input type="text" id="fullName" class="form-control" asp-for="Patient.PatientFullName" />
                 <small id="emailHelp" class="form-text text-muted">Enter patient's full name.'</small>
@@ -150,10 +256,16 @@
                 <label for="department">Department:</label>
                 <select id="department" class="form-control" asp-for="Patient.Department">
                     <option value="">Select Department</option>
-                    @foreach (var department in Model.Departments)
+
+                    @if (Model.Departments != null)
                     {
-                        <option value="@department.Code">@department.Name</option>
+                        @foreach (var department in Model.Departments)
+                        {
+                            <option value="@department.Code">@department.Name</option>
+                        }
+
                     }
+
                 </select>
             </div>
             <br />
@@ -163,9 +275,13 @@
                 <label for="patientsource">Patient Source ರೋಗಿಯ ಮೂಲ:</label>
                 <select id="patientsource" class="form-control" asp-for="Patient.PatientSourceCode">
                     <option value="">Select Source</option>
-                    @foreach (var patientsource in Model.PatientSources)
+                    @if (Model.PatientSources != null)
                     {
-                        <option value="@patientsource.Code">@patientsource.Name</option>
+                        @foreach (var patientsource in Model.PatientSources)
+                        {
+                            <option value="@patientsource.Code">@patientsource.Name</option>
+                        }
+
                     }
                 </select>
             </div>
@@ -179,28 +295,68 @@
 
             <br />
 
-            <button type="submit" accesskey="S" class="btn btn-success btn-lg">Save</button>
+            <button type="submit" name="btnSubmit" value="btnSave" asp-page-handler="Save" accesskey="S" class="btn btn-success btn-lg">Save</button>
             <button type="button" accesskey="C" class="btn btn-secondary btn-lg" id="clearForm">Clear</button>
+
+
+
+            <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                Download Data
+            </button>
+
+
         </div>
     </div>
 
 
 
+</form>
 
-    @*<div class="form-group">
-    <label>Department:</label><br />
-    @foreach (var department in Model.Departments)
-    {
-    <input type="radio" id="@department.Code" name="department" value="@department.Code" />
-    <label>@department.Name</label>
+<form asp-controller="Register" asp-action="OnPostDownloadData" method="post" id="downloadForm">
 
-    <br />
-    }
+
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Download Patient Registration Data </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <label for="patientsource2">Patient Source ರೋಗಿಯ ಮೂಲ:</label>
+                    <select id="patientsource2" class="form-control" asp-for="Patient.PatientSourceCode">
+                        <option value="">Select Source</option>
+                        @if (Model.PatientSources != null)
+                        {
+                            @foreach (var patientsource in Model.PatientSources)
+                            {
+                                <option value="@patientsource.Code">@patientsource.Name</option>
+                            }
+
+                        }
+                    </select>
+
+                </div>
+                <div class="modal-footer">
+
+                    @*                     <button class="btn btn-primary" value="btnDownload" asp-page-handler="DownloadData">
+                    Download
+                    </button>
+                    *@
+
+                    <button class="btn btn-primary" value="btnDownload" id="btnDownload" onclick="validateDownload()" asp-page-handler="DownloadData">
+                        Download
+                    </button>
+
+
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+                </div>
+            </div>
+        </div>
     </div>
-    *@
-
-
-
 
 
 </form>
+
+

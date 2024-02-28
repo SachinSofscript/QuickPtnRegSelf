@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-
+using OfficeOpenXml;
+using QuickPtnReg.Models;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -36,7 +37,7 @@ namespace QuickPtnReg.Pages
         }
 
 
-       
+         
         public IActionResult OnPost()
         {
             if (!ModelState.IsValid)
@@ -74,6 +75,87 @@ namespace QuickPtnReg.Pages
 
            
         }
+
+        public IActionResult OnPostDownloadData()
+        {
+            int departmentCode;
+            departmentCode = Patient.PatientSourceCode;
+
+
+            if (departmentCode==0)
+            {
+
+            }
+
+            // Call stored procedure and retrieve data
+            DataTable dataTable = spGetPtnMStData(departmentCode);
+
+            //// Generate your Excel file data based on the departmentCode
+            //byte[] fileContents = GenerateExcelFile(departmentCode);
+
+            // Create Excel package
+            using (var excelPackage = new ExcelPackage())
+            {
+                // Add a new worksheet to the empty workbook
+                var worksheet = excelPackage.Workbook.Worksheets.Add("PatientData");
+
+                // Add headers
+                for (int i = 0; i < dataTable.Columns.Count; i++)
+                {
+                    worksheet.Cells[1, i + 1].Value = dataTable.Columns[i].ColumnName;
+                    worksheet.Cells[1, i + 1].Style.Font.Bold = true;
+
+                }
+
+                // Add data
+                for (int i = 0; i < dataTable.Rows.Count; i++)
+                {
+                    for (int j = 0; j < dataTable.Columns.Count; j++)
+                    {
+                        worksheet.Cells[i + 2, j + 1].Value = dataTable.Rows[i][j];
+                    }
+                }
+
+                // Write the Excel package to a memory stream
+                using (var memoryStream = new MemoryStream())
+                {
+                    excelPackage.SaveAs(memoryStream);
+
+                    // Return the Excel file as a downloadable file
+                    return File(memoryStream.ToArray(), "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "filename.xlsx");
+                }
+            }
+
+
+            // Return the file as a download
+          //  return File(fileContents, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "data.xlsx");
+        }
+
+        private DataTable spGetPtnMStData(int patientSourceCode)
+        {
+            DataTable dataTable = new DataTable();
+            using (var connection = new SqlConnection(_configuration.GetConnectionString("HospitalDatabase")))
+
+            {
+                connection.Open();
+
+                using (SqlCommand command = new SqlCommand("spGetPtnMStData", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    // Add parameters if needed
+                    command.Parameters.AddWithValue("@pCocd", "1");
+                    command.Parameters.AddWithValue("@pDivCd", 1);
+                    command.Parameters.AddWithValue("@pLocCd", 1);
+                    command.Parameters.AddWithValue("@pPtnSrcCd", patientSourceCode);
+                  
+                    SqlDataAdapter adapter = new SqlDataAdapter(command);
+                    adapter.Fill(dataTable);
+                }
+            }
+            return dataTable;
+        }
+
+
 
         private void LoadDepartments()
         {
@@ -176,18 +258,23 @@ namespace QuickPtnReg.Pages
             }
 
         }
+
+         
+      
+
+        private byte[] GenerateExcelFile(string departmentCode)
+        {
+            // Your code to generate the Excel file data based on departmentCode
+            // Example:
+            MemoryStream stream = new MemoryStream();
+            // Write Excel data to the stream
+            return stream.ToArray();
+        }
+
+
+
     }
-    public class PatientModel
-    {
-        public long PatientNo { get; set; }
-        public string PatientFullName { get; set; }
-        public string PatientMiddleName { get; set; }
-        public int Age { get; set; }
-        public string sex { get; set; }
-        public string Department { get; set; }
-        public string MobileNumber { get; set; }
-        public int PatientSourceCode { get; set; }
-    }
+  
 
     //public class PatientModel
     //{
@@ -361,16 +448,8 @@ namespace QuickPtnReg.Pages
     //    public char RegTypFlg { get; set; }
     //}
 
-    public class DepartmentModel
-    {
-        public string Code { get; set; }
-        public string Name { get; set; }
-    }
+  
 
-    public class PatientSourceModel
-    {
-        public string Code { get; set; }
-        public string Name { get; set; }
-    }
+
 
 }

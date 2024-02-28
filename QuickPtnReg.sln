@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickPtnReg", "QuickPtnReg\QuickPtnReg.csproj", "{61C9A4AF-720C-4989-8E7B-4B0BDBE8FBA2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuickPtnReg", "QuickPtnReg\QuickPtnReg.csproj", "{61C9A4AF-720C-4989-8E7B-4B0BDBE8FBA2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
