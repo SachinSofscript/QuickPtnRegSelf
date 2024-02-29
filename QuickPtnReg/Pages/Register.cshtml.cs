@@ -182,7 +182,7 @@ namespace QuickPtnReg.Pages
             }
         }
 
-        private void LoadPatientSourceCodes()
+        private void LoadPatientSourceCodes(bool hideInactive=false)
         {
             PatientSources = new List<PatientSourceModel>();
 
@@ -196,11 +196,15 @@ namespace QuickPtnReg.Pages
                     {
                         while (reader.Read())
                         {
-                            PatientSources.Add(new PatientSourceModel
-                            {
-                                Code = reader["cd"].ToString(),
-                                Name = reader["dcd"].ToString()
-                            });
+                           
+                                PatientSources.Add(new PatientSourceModel
+                                {
+                                    Code = reader["cd"].ToString(),
+                                    Name = reader["dcd"].ToString(),
+                                    add_info_1= reader["add_info_1"].ToString()
+                                });
+
+                            
                         }
                     }
                 }

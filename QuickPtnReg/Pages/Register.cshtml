@@ -279,7 +279,11 @@
                     {
                         @foreach (var patientsource in Model.PatientSources)
                         {
-                            <option value="@patientsource.Code">@patientsource.Name</option>
+                            if (patientsource.add_info_1!="1")
+                            {
+                                <option value="@patientsource.Code">@patientsource.Name</option>
+
+                            }
                         }
 
                     }

@@ -10,6 +10,7 @@
     {
         public string Code { get; set; }
         public string Name { get; set; }
+        public string add_info_1 { get; set; }
     }
 
     public class PatientModel
