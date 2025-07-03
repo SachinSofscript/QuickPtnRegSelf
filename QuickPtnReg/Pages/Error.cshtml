@@ -1,9 +1,12 @@
 ﻿@page
 @model ErrorModel
-@{
-    ViewData["Title"] = "Error";
-}
 
+@* @{
+    ViewData["Title"] = "Error";
+} *@
+
+
+@* 
 <h1 class="text-danger">Error.</h1>
 <h2 class="text-danger">An error occurred while processing your request.</h2>
 
@@ -24,3 +27,55 @@
     For local debugging, enable the <strong>Development</strong> environment by setting the <strong>ASPNETCORE_ENVIRONMENT</strong> environment variable to <strong>Development</strong>
     and restarting the app.
 </p>
+ *@
+
+ @{
+    ViewData["Title"] = "Something Went Wrong";
+    
+}
+
+<style>
+    .error-container {
+        max-width: 600px;
+        margin: 80px auto;
+        padding: 30px;
+        text-align: center;
+        background-color: #f8f9fa;
+        border-radius: 12px;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    .error-container h1 {
+        font-size: 48px;
+        color: #dc3545;
+        margin-bottom: 10px;
+    }
+
+    .error-container p {
+        font-size: 18px;
+        color: #6c757d;
+    }
+
+    .error-container a {
+        margin-top: 20px;
+        display: inline-block;
+        text-decoration: none;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border-radius: 6px;
+        transition: background-color 0.3s;
+    }
+
+    .error-container a:hover {
+        background-color: #0056b3;
+    }
+</style>
+
+<div class="error-container">
+    <h1>Oops!</h1>
+    <p>Something went wrong. We're working to fix it.</p>
+    <p>If the problem persists, please contact support.</p>
+   @*  <a asp-controller="Index" asp-action="Index">Go to Home Page</a> *@
+</div>
