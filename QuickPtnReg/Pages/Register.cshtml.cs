@@ -21,10 +21,18 @@ namespace QuickPtnReg.Pages
 
         private readonly IConfiguration _configuration;
 
+
+
+        public string errorMessage = "";
+        public string successMessage = "";
+
+
         public RegisterModel(IConfiguration configuration)
         {
             _configuration = configuration;
         }
+
+
 
 
         public IActionResult OnGet()
@@ -42,11 +50,18 @@ namespace QuickPtnReg.Pages
         {
             if (!ModelState.IsValid)
             {
+                errorMessage = "Please correct the errors in the form.";
+
+
+
+
+
                 LoadDepartments();
                 LoadPatientSourceCodes();
                 return Page();
-                //return BadRequest(ModelState);
+
             }
+
 
 
             using (var connection = new SqlConnection(_configuration.GetConnectionString("HospitalDatabase")))
@@ -60,7 +75,9 @@ namespace QuickPtnReg.Pages
                         Patient.PatientNo = GenerateNextPatientNo(connection,  transaction);
                         InsertPatient(connection, transaction);
                         transaction.Commit();
+                        successMessage = "Data Saved Successfully.";
 
+                        // Optionally, you can redirect to another page or return a success message
                         return new JsonResult(new { success = true, message = "Patient registered successfully!", Patient.PatientNo, Patient.PatientFullName });
 
                         //return RedirectToPage("/Index");
