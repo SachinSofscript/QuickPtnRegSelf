@@ -10,11 +10,18 @@ namespace QuickPtnReg.Pages
         public IndexModel(ILogger<IndexModel> logger)
         {
             _logger = logger;
+          
         }
 
-        public void OnGet()
+
+        public IActionResult OnGet()
         {
-
+            return RedirectToPage("/Register");
         }
+
+        //public void OnGet()
+        //{
+        //      RedirectToPage("/Register");
+        //}
     }
 }
