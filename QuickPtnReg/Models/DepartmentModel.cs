@@ -50,5 +50,22 @@ namespace QuickPtnReg.Models
         [Required(ErrorMessage = "Patient source is required.")]
 
         public int PatientSourceCode { get; set; }
+
+
+        [MaxLength(150)]
+        public string? PatientAddressLine1 { get; set; }
+
+
+        [MaxLength(150)]
+        public string? PatientAddressLine2 { get; set; }
+
+
+
+
+        [MaxLength(150)]
+        public string? PatientAddressLine3 { get; set; }
+
+
+
     }
 }

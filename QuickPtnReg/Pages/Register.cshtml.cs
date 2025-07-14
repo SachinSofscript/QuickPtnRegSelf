@@ -275,6 +275,11 @@ namespace QuickPtnReg.Pages
                 command.Parameters.AddWithValue("@DocSpltyCd", Patient.Department);
                 command.Parameters.AddWithValue("@MobileNo", Patient.MobileNumber);
                 command.Parameters.AddWithValue("@patientSourceCode", Patient.PatientSourceCode);
+
+                command.Parameters.AddWithValue("@PatientAddressLine1", Patient.PatientAddressLine1);
+                command.Parameters.AddWithValue("@PatientAddressLine2", Patient.PatientAddressLine2);
+                command.Parameters.AddWithValue("@PatientAddressLine3", Patient.PatientAddressLine3);
+
                 command.ExecuteNonQuery();
             }
 
