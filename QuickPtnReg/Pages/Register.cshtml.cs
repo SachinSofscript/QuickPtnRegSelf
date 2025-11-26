@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using OfficeOpenXml;
+using QuickPtnReg.DataAccess;
 using QuickPtnReg.Models;
 using System.Collections.Generic;
 using System.Data;
@@ -17,11 +18,13 @@ namespace QuickPtnReg.Pages
         public PatientModel Patient { get; set; }
 
         public List<DepartmentModel> Departments { get; set; }
+
+        public List<DepartmentUnitsModel> DepartmentUnits { get; set; }
         public List<PatientSourceModel> PatientSources { get; set; }
 
         private readonly IConfiguration _configuration;
 
-
+        
 
         public string errorMessage = "";
         public string successMessage = "";
@@ -33,6 +36,17 @@ namespace QuickPtnReg.Pages
         }
 
 
+       
+
+        // Handler to return department units as JSON
+        public IActionResult OnGetDepartmentUnits(string spltycd)
+        {
+            if (string.IsNullOrWhiteSpace(spltycd))
+                return new JsonResult(new List<object>());
+
+            var units = GetDepartmentUnits(spltycd);
+            return new JsonResult(units);
+        }
 
 
         public IActionResult OnGet()
@@ -199,6 +213,42 @@ namespace QuickPtnReg.Pages
             }
         }
 
+        public List<DepartmentUnitsModel> GetDepartmentUnits(string SpltyCd)
+        {
+
+
+            var DepartmentUnits = new List<DepartmentUnitsModel>();
+
+            using (var connection = new SqlConnection(_configuration.GetConnectionString("HospitalDatabase")))
+            {
+                connection.Open();
+                using (var command = new SqlCommand("spGetDocUnitsBySpecialityCd", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@SpltyCd", SpltyCd);
+
+                    using (var sqlDataReader = command.ExecuteReader())
+                    {
+                        while (sqlDataReader.Read())
+                        {
+                            var unitCdObj = sqlDataReader["UnitCd"];
+                            int unitCd = unitCdObj != null && unitCdObj != DBNull.Value
+                                ? int.Parse(unitCdObj.ToString()!)
+                                : 0;
+
+                            DepartmentUnits.Add(new DepartmentUnitsModel
+                            {
+                                UnitCd = unitCd,
+                                UnitName = sqlDataReader["UnitName"]?.ToString() ?? string.Empty
+                            });
+                        }
+                    }
+                }
+            }
+
+            return DepartmentUnits;
+        }
+
         private void LoadPatientSourceCodes(bool hideInactive=false)
         {
             PatientSources = new List<PatientSourceModel>();
@@ -279,6 +329,8 @@ namespace QuickPtnReg.Pages
                 command.Parameters.AddWithValue("@PatientAddressLine1", Patient.PatientAddressLine1);
                 command.Parameters.AddWithValue("@PatientAddressLine2", Patient.PatientAddressLine2);
                 command.Parameters.AddWithValue("@PatientAddressLine3", Patient.PatientAddressLine3);
+
+                command.Parameters.AddWithValue("@DocUnitCd", Patient.DepartmentUnit);
 
                 command.ExecuteNonQuery();
             }

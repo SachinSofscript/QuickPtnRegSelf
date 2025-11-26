@@ -214,6 +214,47 @@
         });
 
     </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const deptSelect = document.getElementById('department');
+            const unitSelect = document.getElementById('departmentUnit');
+
+            if (!deptSelect || !unitSelect) return;
+
+            deptSelect.addEventListener('change', async function () {
+                const spltycd = this.value;
+                // Clear existing options
+                unitSelect.innerHTML = '<option value="">Select Unit</option>';
+
+                if (!spltycd) return;
+
+                try {
+                    // call current page handler: ?handler=DepartmentUnits&spltycd=xyz
+                    const url = `${window.location.pathname}?handler=DepartmentUnits&spltycd=${encodeURIComponent(spltycd)}`;
+                    const resp = await fetch(url, { method: 'GET', headers: { 'Accept': 'application/json' }});
+                    if (!resp.ok) throw new Error('Network response was not ok');
+
+                    const units = await resp.json(); // units expected: [{ UnitCd: 1, UnitName: '...' }, ...]
+                    if (Array.isArray(units)) {
+                        units.forEach(u => {
+                            const opt = document.createElement('option');
+                            opt.value = u.unitCd ?? u.UnitCd ?? '';
+                            opt.text = u.unitName ?? u.UnitName ?? '';
+                            unitSelect.appendChild(opt);
+                        });
+                    }
+                } catch (err) {
+                    console.error('Failed to load department units:', err);
+                    // optionally show user-friendly message
+                }
+            });
+        });
+    </script>
+
+
+
+
 }
 
 
@@ -306,6 +347,30 @@
             <span asp-validation-for="Patient.Department" class="text-danger small"></span>
 
             <br />
+
+
+            <div class="form-group">
+                <span class="text-danger">*</span>
+                <label for="departmentUnit">Unit / ವೈದ್ಯರ ಘಟಕ: </label>
+                <select id="departmentUnit" class="form-control" asp-for="Patient.DepartmentUnit">
+                    <option value=0>Select Department Unit</option>
+
+                  @*   @if (Model.DepartmentUnits != null)
+                    {
+                        @foreach (var departmentUnit in Model.DepartmentUnits)
+                        {
+                            <option value="@departmentUnit.UnitCd">@departmentUnit.UnitName</option>
+                        }
+
+                    } *@
+
+                </select>
+            </div>
+            <span asp-validation-for="Patient.DepartmentUnit" class="text-danger small"></span>
+
+            <br />
+
+
            
             <div class="form-group">
                 <span class="text-danger">*</span>

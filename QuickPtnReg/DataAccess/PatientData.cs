@@ -1,5 +1,4 @@
-﻿
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Extensions.Configuration;
 using OfficeOpenXml;
 using QuickPtnReg.Models;
 using QuickPtnReg.Pages;
@@ -11,7 +10,7 @@ using System.Data.SqlClient;
 namespace QuickPtnReg.DataAccess
 {
     public class PatientData
-    {
+    {   
         private readonly IConfiguration _configuration;
 
         public PatientData(IConfiguration configuration)
@@ -45,6 +44,9 @@ namespace QuickPtnReg.DataAccess
 
             return Departments;
         }
+
+     
+
 
     }
 }

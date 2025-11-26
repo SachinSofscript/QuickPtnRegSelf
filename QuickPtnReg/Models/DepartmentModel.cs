@@ -9,6 +9,13 @@ namespace QuickPtnReg.Models
         public string Name { get; set; }
     }
 
+    public class DepartmentUnitsModel
+    {
+        public int UnitCd { get; set; }
+        public string UnitName { get; set; }
+    }
+
+
     public class PatientSourceModel
     {
         public string Code { get; set; }
@@ -65,7 +72,10 @@ namespace QuickPtnReg.Models
         [MaxLength(150)]
         public string? PatientAddressLine3 { get; set; }
 
-
+        
+        [Required(ErrorMessage = "Patient department Unit is required.")]
+        [Range(1, int.MaxValue, ErrorMessage = "Please select a valid department unit.")]
+        public int DepartmentUnit { get; set; }
 
     }
 }
