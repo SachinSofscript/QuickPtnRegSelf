@@ -19,6 +19,62 @@ body {
     background: rgb(174,238,179);
     background: radial-gradient(circle, rgba(174,238,179,1) 0%, rgba(148,205,233,1) 100%);
 }
- 
 
-  
+
+.app-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* logos pinned left/right, text centered */
+    padding: 12px 20px;
+    background: #fff;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+/* Left & Right logos */
+.header-left img,
+.header-right img {
+    height: 70px; /* adjust as needed */
+    width: auto;
+}
+
+/* Center text stays inline */
+.header-center {
+    flex: 1; /* take available space */
+    display: flex;
+    flex-direction: column; /* title above subtitle */
+    align-items: center; /* center horizontally */
+    text-align: center;
+}
+
+    .header-center .title {
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 4px;
+    }
+
+    .header-center .subtitle {
+        font-size: 14px;
+        color: #555;
+    }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .app-header {
+        flex-direction: column; /* stack vertically on small screens */
+        text-align: center;
+    }
+
+    .header-left img,
+    .header-right img {
+        height: 50px;
+        margin: 8px 0;
+    }
+
+    .header-center .title {
+        font-size: 16px;
+    }
+
+    .header-center .subtitle {
+        font-size: 12px;
+    }
+}

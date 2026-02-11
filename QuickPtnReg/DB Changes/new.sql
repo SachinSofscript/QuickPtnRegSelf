@@ -1,26 +1,18 @@
-﻿USE [SOFCWHMIS]
-GO
-/****** Object:  StoredProcedure [dbo].[SpInsPtnQuickReg]    Script Date: 09/02/2026 4:11:05 PM ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-      
-ALTER procedure [dbo].[SpInsPtnQuickRegSelf]        
+﻿ALTER procedure [dbo].[SpInsPtnQuickRegSelf]        
 (        
 @PatientNo bigint ,        
 @FullName varchar(500),        
 @FatherName varchar(500),        
 @Age int,        
 @Sex varchar(1),        
-@DocSpltyCd int ,        
+@DocSpltyCd int =0 ,        
 @MobileNo varchar(20),        
-@patientSourceCode int,
+@patientSourceCode int =0,
 @PatientAddressLine1 varchar(150),
 @PatientAddressLine2 varchar(150),
-@PatientAddressLine3 varchar(150)
-,    
-@DocUnitCd int    =0
+@PatientAddressLine3 varchar(150),    
+@DocUnitCd int    =0,
+@PatientMrtlStsCd   INT = 0
 )        
 as        
 /*        
@@ -76,16 +68,17 @@ begin
  @ptnsrccd =@patientSourceCode ,
  @prmnt_addrs1 = @PatientAddressLine1, 
  @prmnt_addrs2 = @PatientAddressLine2 ,
- @prmnt_addrs3 = @PatientAddressLine3
- , @pDocSpltyCd = @DocSpltyCd,
+ @prmnt_addrs3 = @PatientAddressLine3,
+ --, @pDocSpltyCd = @DocSpltyCd,
  @Mobile = @MobileNo,
  @pmobile2 = @MobileNo 
  ;        
         
 IF @@ROWCOUNT > 0         
-BEGIN         
+BEGIN       
 exec [SP2]         
- @ptn_no=@PatientNo,        
+ @ptn_no=@PatientNo,
+ @mrtl_sts_cd = @PatientMrtlStsCd,     --#Payal 20260210           
  @crt_dt=@crtDt,        
  @crt_tm=@crttm,        
  @crt_usr_id=N'WEBPORTALSelf',        

@@ -27,14 +27,12 @@ namespace QuickPtnReg.Models
     {
         public long PatientNo { get; set; }
 
-
        
         [Required (ErrorMessage ="Patient name is required.")]
         public string PatientFullName { get; set; }
 
 
         public string PatientMiddleName { get; set; }
-
 
 
         [Required(ErrorMessage = "Patient age is required.")]
@@ -44,38 +42,28 @@ namespace QuickPtnReg.Models
         [Required(ErrorMessage = "Patient Gender is required.")]
         public string sex { get; set; }
 
-
-        [Required(ErrorMessage = "Patient department is required.")]
-
-        public string Department { get; set; }
+        public string? Department { get; set; }
 
 
         [Required(ErrorMessage = "Patient contact number is required.")]
         public string MobileNumber { get; set; }
 
-
-        [Required(ErrorMessage = "Patient source is required.")]
-
         public int PatientSourceCode { get; set; }
 
 
         [MaxLength(150)]
-        public string? PatientAddressLine1 { get; set; }
+        public string? PatientAddressLine1 { get; set; } = string.Empty;
 
 
         [MaxLength(150)]
-        public string? PatientAddressLine2 { get; set; }
-
-
+        public string? PatientAddressLine2 { get; set; } = string.Empty;
 
 
         [MaxLength(150)]
-        public string? PatientAddressLine3 { get; set; }
+        public string? PatientAddressLine3 { get; set; } = string.Empty;
 
-        
-        [Required(ErrorMessage = "Patient department Unit is required.")]
-        [Range(1, int.MaxValue, ErrorMessage = "Please select a valid department unit.")]
         public int DepartmentUnit { get; set; }
+        public int MaritalStatus { get; set; }
 
     }
 }

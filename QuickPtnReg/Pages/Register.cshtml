@@ -3,7 +3,7 @@
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 @{
-    ViewData["Title"] = "MEGA CAMP";
+    ViewData["Title"] = "SELF REGISTRATION";
 }
 
 @section scripts {
@@ -80,25 +80,6 @@
         }
 
 
-        // document.getElementById('downloadDataBtn').addEventListener('click', function () {
-
-        //     var departmentCode = $('#patientsource2').val();
-
-        //     $.ajax({
-        //         url: "/Register/DownloadData",
-        //         method: 'POST',
-        //         data: { departmentCode: departmentCode },
-        //         success: function () {
-        //             window.location.href="/Register"
-        //         }
-
-        //     })
-
-        //    });
-
-
-
-
         $(function () {
             $('#clearForm').click(function () {
                 $('form').trigger('reset');
@@ -107,35 +88,13 @@
 
         });
 
-
-
-
-
         $(function () {
 
             // $('#btnSubmit').click(function (e) {
             $('#regForm').submit(function (e) {
                 //debugger;
-
-
-
                 e.preventDefault();
 
-
-    //                       // Check if the form is valid using HTML5 validation
-    //             if (!this.checkValidity()) {
-    //                 this.reportValidity(); // Triggers HTML5 validation messages
-    //                 return; // Stop form submission
-    //             }
-				// else {
-				// 	// If the form is valid, proceed with AJAX submission
-				// 	alert("ok");
-
-    //                 console.log('Form is valid. Proceeding with AJAX submission.');
-				// }
-
-
-                        // Trigger validation manually
                 var form = $(this);
                 if (!form.valid()) {
                 return false; // Stop AJAX if client-side validation fails
@@ -149,20 +108,20 @@
                 //------------------------------------------
 
                 $.ajax({
-                    url: $(this).attr('action'),
+                    url: form.attr('action'),
                     type: 'POST',
                     data: $(this).serialize(),
                     success: function (response) {
                         // Extract department description from selected option
-                        var departmentDescription = $('#department option:selected').text();
+                        //var departmentDescription = $('#department option:selected').text();
 
                         Swal.fire({
                             icon: 'success',
                             title: response.message,
                             //text: 'Patient No: ' + response.patientNo
                             html: 'Patient No: ' + response.patientNo + '<br>' +
-                                'Patient Name: ' + response.patientFullName + '<br>' +
-                                'Department Description: ' + departmentDescription
+                                 'Patient Name: ' + response.patientFullName 
+                                // 'Department Description: ' + departmentDescription
                         }).then((result) => {
                             if (result.value) {
                                 //  window.location.href = '/Register'; // Redirect to index page
@@ -172,26 +131,8 @@
                             }
                         })
 
-                            ;
-
-                        //             else {
-
-                        //                 alert('hi');
-                        //     // Handle invalid response
-                        //     Swal.fire({
-                        //         icon: 'error',
-                        //         title: 'Error',
-                        //         text: 'Invalid response received.'
-                        //     });
-                        // }
-
-
-
                     },
                     error: function (xhr, status, error) {
-                        // Handle error
-
-
 
                     },
                     complete: function () {
@@ -201,55 +142,46 @@
 
                 });
                 //--------------------------------------
-
-
-
-
-
-
-
-
-
             });
         });
 
     </script>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const deptSelect = document.getElementById('department');
-            const unitSelect = document.getElementById('departmentUnit');
+        // document.addEventListener('DOMContentLoaded', function () {
+        //     const deptSelect = document.getElementById('department');
+        //     const unitSelect = document.getElementById('departmentUnit');
 
-            if (!deptSelect || !unitSelect) return;
+        //     if (!deptSelect || !unitSelect) return;
 
-            deptSelect.addEventListener('change', async function () {
-                const spltycd = this.value;
-                // Clear existing options
-                unitSelect.innerHTML = '<option value="">Select Unit</option>';
+        //     deptSelect.addEventListener('change', async function () {
+        //         const spltycd = this.value;
+        //         // Clear existing options
+        //         unitSelect.innerHTML = '<option value="">Select Unit</option>';
 
-                if (!spltycd) return;
+        //         if (!spltycd) return;
 
-                try {
-                    // call current page handler: ?handler=DepartmentUnits&spltycd=xyz
-                    const url = `${window.location.pathname}?handler=DepartmentUnits&spltycd=${encodeURIComponent(spltycd)}`;
-                    const resp = await fetch(url, { method: 'GET', headers: { 'Accept': 'application/json' }});
-                    if (!resp.ok) throw new Error('Network response was not ok');
+        //         try {
+        //             // call current page handler: ?handler=DepartmentUnits&spltycd=xyz
+        //             const url = `${window.location.pathname}?handler=DepartmentUnits&spltycd=${encodeURIComponent(spltycd)}`;
+        //             const resp = await fetch(url, { method: 'GET', headers: { 'Accept': 'application/json' }});
+        //             if (!resp.ok) throw new Error('Network response was not ok');
 
-                    const units = await resp.json(); // units expected: [{ UnitCd: 1, UnitName: '...' }, ...]
-                    if (Array.isArray(units)) {
-                        units.forEach(u => {
-                            const opt = document.createElement('option');
-                            opt.value = u.unitCd ?? u.UnitCd ?? '';
-                            opt.text = u.unitName ?? u.UnitName ?? '';
-                            unitSelect.appendChild(opt);
-                        });
-                    }
-                } catch (err) {
-                    console.error('Failed to load department units:', err);
-                    // optionally show user-friendly message
-                }
-            });
-        });
+        //             const units = await resp.json(); // units expected: [{ UnitCd: 1, UnitName: '...' }, ...]
+        //             if (Array.isArray(units)) {
+        //                 units.forEach(u => {
+        //                     const opt = document.createElement('option');
+        //                     opt.value = u.unitCd ?? u.UnitCd ?? '';
+        //                     opt.text = u.unitName ?? u.UnitName ?? '';
+        //                     unitSelect.appendChild(opt);
+        //                 });
+        //             }
+        //         } catch (err) {
+        //             console.error('Failed to load department units:', err);
+        //             // optionally show user-friendly message
+        //         }
+        //     });
+        // });
     </script>
 
 
@@ -276,7 +208,7 @@
 
 <br />
 
-<form asp-controller="Register" asp-action="OnPostSave" method="post" id="regForm">
+<form  method="post" id="regForm">
 
     @Html.AntiForgeryToken()
 
@@ -325,73 +257,71 @@
             <span asp-validation-for="Patient.sex" class="text-danger small"></span>
 
             <br />
-            <br />
-
             <div class="form-group">
+@*                 <span class="text-danger">*</span> *@
+                <label for="MaritalStatus">Marital Status / ವೈವಾಹಿಕ ಸ್ಥಿತಿ:</label><br />
+                <input type="radio" id="Married" name="Patient.MaritalStatus" value="2" asp-for="Patient.MaritalStatus" /> Married
+                <input type="radio" id="Unmarried" name="Patient.MaritalStatus" value="3" asp-for="Patient.MaritalStatus" /> Unmarried
+                <input type="radio" id="Widowed" name="Patient.MaritalStatus" value="4" asp-for="Patient.MaritalStatus" /> Widowed
+                <input type="radio" id="Divorced" name="Patient.MaritalStatus" value="1" asp-for="Patient.MaritalStatus" /> Divorced
+            </div>
+           @*  <span asp-validation-for="Patient.MaritalStatus" class="text-danger small"></span> *@
+
+           @*  <br /> *@
+           @if (Model.Departments != null)
+                    {
+            <div class="form-group" style="display:none">
                 <span class="text-danger">*</span>
                 <label for="department">Department / ಇಲಾಖೆ: </label>
                 <select id="department" class="form-control" asp-for="Patient.Department">
                     <option value="">Select Department</option>
 
-                    @if (Model.Departments != null)
-                    {
+                    
                         @foreach (var department in Model.Departments)
                         {
                             <option value="@department.Code">@department.Name</option>
                         }
-
-                    }
-
                 </select>
+               @*  <span asp-validation-for="Patient.Department" class="text-danger small"></span> *@
             </div>
-            <span asp-validation-for="Patient.Department" class="text-danger small"></span>
+            
 
-            <br />
+            @* <br />*@
 
-
-            <div class="form-group">
+            <div class="form-group" style="display:none">
                 <span class="text-danger">*</span>
                 <label for="departmentUnit">Unit / ವೈದ್ಯರ ಘಟಕ: </label>
                 <select id="departmentUnit" class="form-control" asp-for="Patient.DepartmentUnit">
                     <option value=0>Select Department Unit</option>
 
-                  @*   @if (Model.DepartmentUnits != null)
-                    {
-                        @foreach (var departmentUnit in Model.DepartmentUnits)
-                        {
-                            <option value="@departmentUnit.UnitCd">@departmentUnit.UnitName</option>
-                        }
-
-                    } *@
-
                 </select>
+              @*   <span asp-validation-for="Patient.DepartmentUnit" class="text-danger small"></span> *@
             </div>
-            <span asp-validation-for="Patient.DepartmentUnit" class="text-danger small"></span>
+            }
 
-            <br />
+           @*  <br /> *@
+            @if (Model.PatientSources != null)
+            {
+                <div class="form-group" style="display:none">
+                    <span class="text-danger">*</span>
+                    <label for="patientsource">Patient Source ರೋಗಿಯ ಮೂಲ:</label>
+                    <select id="patientsource" class="form-control" asp-for="Patient.PatientSourceCode">
+                        <option value="">Select Source</option>
+                    
+                                @foreach (var patientsource in Model.PatientSources)
+                                {
+                                   if (patientsource.add_info_1!="1")
+                                    {
+                                        <option value="@patientsource.Code">@patientsource.Name</option>
 
+                                    }
+                                }
 
-           
-            <div class="form-group">
-                <span class="text-danger">*</span>
-                <label for="patientsource">Patient Source ರೋಗಿಯ ಮೂಲ:</label>
-                <select id="patientsource" class="form-control" asp-for="Patient.PatientSourceCode">
-                    <option value="">Select Source</option>
-                    @if (Model.PatientSources != null)
-                    {
-                        @foreach (var patientsource in Model.PatientSources)
-                        {
-                            if (patientsource.add_info_1!="1")
-                            {
-                                <option value="@patientsource.Code">@patientsource.Name</option>
-
-                            }
-                        }
-
-                    }
-                </select>
-            </div>
-            <span asp-validation-for="Patient.PatientSourceCode" class="text-danger small"></span>
+                    
+                    </select>
+                   @*  <span asp-validation-for="Patient.PatientSourceCode" class="text-danger small"></span> *@
+                </div>
+           }
 
             <br />  
 
@@ -446,52 +376,56 @@
 
 
 </form>
+@if (Model.PatientSources != null)
+{
+    <form method="post" id="downloadForm">
 
-<form asp-controller="Register" asp-action="OnPostDownloadData" method="post" id="downloadForm">
+
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Download Patient Registration Data </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                        <div class="modal-body">
+                            <label for="patientsource2">Patient Source ರೋಗಿಯ ಮೂಲ:</label>
+                            <select id="patientsource2" class="form-control" asp-for="Patient.PatientSourceCode">
+                                <option value="">Select Source</option>
+
+                                @foreach (var patientsource in Model.PatientSources)
+                                {
+                                    <option value="@patientsource.Code">@patientsource.Name</option>
+                                }
 
 
-    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Download Patient Registration Data </h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <label for="patientsource2">Patient Source ರೋಗಿಯ ಮೂಲ:</label>
-                    <select id="patientsource2" class="form-control" asp-for="Patient.PatientSourceCode">
-                        <option value="">Select Source</option>
-                        @if (Model.PatientSources != null)
-                        {
-                            @foreach (var patientsource in Model.PatientSources)
-                            {
-                                <option value="@patientsource.Code">@patientsource.Name</option>
-                            }
+                            </select>
 
-                        }
-                    </select>
+                        </div>
 
-                </div>
-                <div class="modal-footer">
+                    <div class="modal-footer">
 
-                    @*                     <button class="btn btn-primary" value="btnDownload" asp-page-handler="DownloadData">
+                        @*                     <button class="btn btn-primary" value="btnDownload" asp-page-handler="DownloadData">
                     Download
                     </button>
                     *@
 
-                    <button class="btn btn-primary" value="btnDownload" id="btnDownload" onclick="validateDownload()" asp-page-handler="DownloadData">
-                        Download
-                    </button>
+                        <button class="btn btn-primary" value="btnDownload" id="btnDownload" onclick="validateDownload()" asp-page-handler="DownloadData">
+                            Download
+                        </button>
 
 
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
 
-</form>
+    </form>
+}
+
 
 

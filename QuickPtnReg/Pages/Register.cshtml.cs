@@ -53,8 +53,8 @@ namespace QuickPtnReg.Pages
         {
             Patient= new PatientModel();
 
-            LoadDepartments();
-            LoadPatientSourceCodes();
+           // LoadDepartments();
+           // LoadPatientSourceCodes();
             return Page();
         }
 
@@ -66,12 +66,8 @@ namespace QuickPtnReg.Pages
             {
                 errorMessage = "Please correct the errors in the form.";
 
-
-
-
-
-                LoadDepartments();
-                LoadPatientSourceCodes();
+               // LoadDepartments();
+               // LoadPatientSourceCodes();
                 return Page();
 
             }
@@ -313,7 +309,7 @@ namespace QuickPtnReg.Pages
 
 
 
-            using (var command = new SqlCommand("SpInsPtnQuickReg", connection, transaction))
+            using (var command = new SqlCommand("SpInsPtnQuickRegSelf", connection, transaction))
             {
                 //command.Transaction = transaction;
                 command.CommandType = CommandType.StoredProcedure;
@@ -322,16 +318,16 @@ namespace QuickPtnReg.Pages
                 command.Parameters.AddWithValue("@FatherName", Patient.PatientMiddleName);
                 command.Parameters.AddWithValue("@Age", Patient.Age);
                 command.Parameters.AddWithValue("@Sex", Patient.sex);
-                command.Parameters.AddWithValue("@DocSpltyCd", Patient.Department);
+                command.Parameters.AddWithValue("@DocSpltyCd", 0);
                 command.Parameters.AddWithValue("@MobileNo", Patient.MobileNumber);
-                command.Parameters.AddWithValue("@patientSourceCode", Patient.PatientSourceCode);
+                command.Parameters.AddWithValue("@patientSourceCode", 0);
 
-                command.Parameters.AddWithValue("@PatientAddressLine1", Patient.PatientAddressLine1);
-                command.Parameters.AddWithValue("@PatientAddressLine2", Patient.PatientAddressLine2);
-                command.Parameters.AddWithValue("@PatientAddressLine3", Patient.PatientAddressLine3);
+                command.Parameters.AddWithValue("@PatientAddressLine1", Patient.PatientAddressLine1 == null ? "" : Patient.PatientAddressLine1);
+                command.Parameters.AddWithValue("@PatientAddressLine2", Patient.PatientAddressLine2 == null ? "" : Patient.PatientAddressLine2);
+                command.Parameters.AddWithValue("@PatientAddressLine3", Patient.PatientAddressLine3 == null ? "" : Patient.PatientAddressLine3);
 
-                command.Parameters.AddWithValue("@DocUnitCd", Patient.DepartmentUnit);
-
+                command.Parameters.AddWithValue("@DocUnitCd", 0);
+                command.Parameters.AddWithValue("@PatientMrtlStsCd", Patient.MaritalStatus); 
                 command.ExecuteNonQuery();
             }
 
