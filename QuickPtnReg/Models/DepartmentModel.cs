@@ -31,7 +31,7 @@ namespace QuickPtnReg.Models
         [Required (ErrorMessage ="Patient name is required.")]
         public string PatientFullName { get; set; }
 
-
+        [Required(ErrorMessage = "Patient father name is required.")]
         public string PatientMiddleName { get; set; }
 
 
@@ -46,6 +46,7 @@ namespace QuickPtnReg.Models
 
 
         [Required(ErrorMessage = "Patient contact number is required.")]
+        [RegularExpression(@"^\d{10,12}$", ErrorMessage = "Mobile number must be 10 to 12 digits.")]
         public string MobileNumber { get; set; }
 
         public int PatientSourceCode { get; set; }
@@ -64,6 +65,7 @@ namespace QuickPtnReg.Models
 
         public int DepartmentUnit { get; set; }
         public int MaritalStatus { get; set; }
+
 
     }
 }

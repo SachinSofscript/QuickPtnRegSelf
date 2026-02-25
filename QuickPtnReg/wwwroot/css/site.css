@@ -46,15 +46,19 @@ body {
     text-align: center;
 }
 
-    .header-center .title {
+    .header-center .Hosptitle {
         font-size: 20px;
         font-weight: 700;
         margin-bottom: 4px;
     }
 
     .header-center .subtitle {
-        font-size: 14px;
+        font-size: 15px;
         color: #555;
+        margin-bottom: 4px;
+    }
+    .header-center .title {
+        font-weight: 700;
     }
 
 /* Responsive adjustments */
@@ -77,4 +81,28 @@ body {
     .header-center .subtitle {
         font-size: 12px;
     }
+}
+
+    /* Remove bootstrap column behaviour */
+    #captchaContainer .input-group.col-md-4 {
+        width: 200px !important;
+        flex: 0 0 auto;
+        margin: 0;
+    }
+
+    /* Adjust image height */
+    #captchaContainer img {
+        height: 50px;
+    }
+
+/* Adjust textbox */
+#DNTCaptchaInputText {
+    height: 45px;
+    width: 180px !important; /* 50px was too small */
+}
+
+/* Hide empty addon span */
+#captchaContainer .input-group-addon,
+#captchaContainer .input-group-text {
+    display: none !important;
 }

@@ -1,5 +1,7 @@
+using DNTCaptcha.Core;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.Extensions.Configuration;
 using OfficeOpenXml;
 using QuickPtnReg.DataAccess;
 using QuickPtnReg.Models;
@@ -14,9 +16,13 @@ namespace QuickPtnReg.Pages
 
     public class RegisterModel : PageModel
     {
+        
+
         [BindProperty]
         public PatientModel Patient { get; set; }
 
+        [BindProperty]
+        public string DNTCaptchaInputText { get; set; }
         public List<DepartmentModel> Departments { get; set; }
 
         public List<DepartmentUnitsModel> DepartmentUnits { get; set; }
@@ -24,15 +30,16 @@ namespace QuickPtnReg.Pages
 
         private readonly IConfiguration _configuration;
 
-        
+        private readonly IDNTCaptchaValidatorService _captchaValidator;
 
         public string errorMessage = "";
         public string successMessage = "";
 
 
-        public RegisterModel(IConfiguration configuration)
+        public RegisterModel(IDNTCaptchaValidatorService captchaValidator,IConfiguration configuration)
         {
             _configuration = configuration;
+            _captchaValidator = captchaValidator;
         }
 
 
@@ -62,17 +69,29 @@ namespace QuickPtnReg.Pages
          
         public IActionResult OnPost()
         {
+            
+
             if (!ModelState.IsValid)
             {
                 errorMessage = "Please correct the errors in the form.";
 
-               // LoadDepartments();
-               // LoadPatientSourceCodes();
-                return Page();
+                // LoadDepartments();
+                // LoadPatientSourceCodes();
+                return new JsonResult(new { success = false, message = errorMessage });
 
             }
+            Console.WriteLine($"Posted CaptchaInputText: {DNTCaptchaInputText}");
 
+            var isCaptchaValid = _captchaValidator.HasRequestValidCaptchaEntry();
 
+            if (!isCaptchaValid)
+            {
+                return new JsonResult(new
+                {
+                    success = false,
+                    message = "Captcha is not valid."
+                });
+            }
 
             using (var connection = new SqlConnection(_configuration.GetConnectionString("HospitalDatabase")))
             {
@@ -85,22 +104,25 @@ namespace QuickPtnReg.Pages
                         Patient.PatientNo = GenerateNextPatientNo(connection,  transaction);
                         InsertPatient(connection, transaction);
                         transaction.Commit();
-                        successMessage = "Data Saved Successfully.";
 
                         // Optionally, you can redirect to another page or return a success message
                         return new JsonResult(new { success = true, message = "Patient registered successfully!", Patient.PatientNo, Patient.PatientFullName });
 
                         //return RedirectToPage("/Index");
                     }
-                    catch (Exception)
+                    catch (Exception ex)
                     {
                         transaction.Rollback();
-                        throw;
+                        return new JsonResult(new
+                        {
+                            success = false,
+                            message = "Error occurred while saving patient.",
+                            error = ex.Message
+                        });
                     }
                 }
             }
 
-           
         }
 
         public IActionResult OnPostDownloadData()
@@ -276,30 +298,42 @@ namespace QuickPtnReg.Pages
 
         private long GenerateNextPatientNo( SqlConnection connection,  SqlTransaction transaction)
         {
-            long _result = 0;
 
-            using (var command = new SqlCommand("SpSelUpdAdtDcNos", connection,transaction))
-            {
-                command.CommandType = CommandType.StoredProcedure;
-                //command.Transaction = transaction;
-                command.Parameters.AddWithValue("@cocd", '1');
-                command.Parameters.AddWithValue("@divcd", 1);
-                command.Parameters.AddWithValue("@loccd", 1);
-                command.Parameters.AddWithValue("@DocTypeID", 11);
-                command.Parameters.AddWithValue("@crtdttm",DateTime.Now );
-                command.Parameters.AddWithValue("@crtusrid", "WEBPORTAL");
-                //command.ExecuteReader();
-                using (var reader = command.ExecuteReader())
-                {
-                    while (reader.Read())
-                    {
-                        _result = long.Parse(reader["srno"].ToString());
+            //using (var command = new SqlCommand("SpSelUpdAdtDcNos", connection,transaction))
+            //{
+            //    command.CommandType = CommandType.StoredProcedure;
+            //    //command.Transaction = transaction;
+            //    command.Parameters.AddWithValue("@cocd", '1');
+            //    command.Parameters.AddWithValue("@divcd", 1);
+            //    command.Parameters.AddWithValue("@loccd", 1);
+            //    command.Parameters.AddWithValue("@DocTypeID", 11);
+            //    command.Parameters.AddWithValue("@crtdttm",DateTime.Now );
+            //    command.Parameters.AddWithValue("@crtusrid", "WEBPORTALSelf");
+            //    //command.ExecuteReader();
+            //    using (var reader = command.ExecuteReader())
+            //    {
+            //        while (reader.Read())
+            //        {
+            //            _result = long.Parse(reader["srno"].ToString());
 
                        
-                    }
-                }
+            //        }
+            //    }
+            //}
+            using (var command = new SqlCommand("SpSelUpdAdtDcNos", connection, transaction))
+            {
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add("@cocd", SqlDbType.Char, 1).Value = "1";
+                command.Parameters.Add("@divcd", SqlDbType.Int).Value = 1;
+                command.Parameters.Add("@loccd", SqlDbType.Int).Value = 1;
+                command.Parameters.Add("@DocTypeID", SqlDbType.Int).Value = 11;
+                command.Parameters.Add("@crtdttm", SqlDbType.DateTime).Value = DateTime.Now;
+                command.Parameters.Add("@crtusrid", SqlDbType.VarChar, 50).Value = "WEBPORTAL";
+
+                var result = command.ExecuteScalar();
+                return (result != null && long.TryParse(result.ToString(), out long srno)) ? srno : 0;
             }
-            return _result;
+
         }
 
 

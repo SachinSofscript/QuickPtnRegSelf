@@ -4,67 +4,16 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - KLES</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ajax-unobtrusive/3.2.6/jquery.unobtrusive-ajax.min.js"></script>
     <link rel="stylesheet" href="~/css/sweetalert2.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
    @*  <link rel="stylesheet" href="~/QuickPtnReg.styles.css" asp-append-version="true" /> *@
 
     @section styles {
-        <style>
-            .banner-image {
-                display: block;
-                height: auto;
-                width: 200px;
-                margin-bottom: 20px; /* Adjust margin as needed */
-            }
-
-            .header {
-                display: flex;
-                justify-content: space-between; /* logo left, text center, logo right */
-                align-items: center;
-                padding: 10px;
-                flex-wrap: wrap; /* allows wrapping on smaller screens */
-            }
-
-                .header img {
-                    max-width: 100px; /* scale logos */
-                    height: auto;
-                }
-
-                .header h1 {
-                    flex: 1;
-                    text-align: center;
-                    font-size: 1.5rem; /* scalable font size */
-                    margin: 0;
-                }
-
-            @@media (max-width: 768px) {
-                .header h1
-
-            {
-                font-size: 1.2rem;
-            }
-
-            .header img {
-                max-width: 70px;
-            }
-
-            }
-
-            @@media (max-width: 480px) {
-                .header
-
-            {
-                flex-direction: column; /* stack vertically */
-                text-align: center;
-            }
-
-            .header h1 {
-                font-size: 1rem;
-            }
-
-            }
-        </style>
     }
 
 </head>
@@ -119,8 +68,9 @@
                     <!-- Center -->
                     <div class="header-center">
                         <div class="center-text">
-                            <div class="title">KLES Dr. Prabhakar Kore Hospital & Medical Research Centre</div>
-                            <div class="subtitle">SELF REGISTRATION / ದ ಯಂ ನ೦ದಣಿ / स्व-नोंदणी</div>
+                            <div class="Hosptitle">KLES Dr. Prabhakar Kore Hospital & Medical Research Centre</div>
+                            <div class="subtitle">Phone: 0831 247 3777 (16 line), 0831-3573777 (20 Channels), 8762473777</div>
+                            <div class="title">SELF REGISTRATION / ಸ್ವಯಂ ನೋಂದಣಿ / स्व-नोंदणी</div>
                         </div>
                     </div>
 
