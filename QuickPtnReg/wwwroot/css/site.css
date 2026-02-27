@@ -83,22 +83,24 @@ body {
     }
 }
 
-    /* Remove bootstrap column behaviour */
+    /* Remove bootstrap column behaviour - wider for larger captcha image */
     #captchaContainer .input-group.col-md-4 {
-        width: 200px !important;
+        width: 280px !important;
         flex: 0 0 auto;
         margin: 0;
     }
 
-    /* Adjust image height */
+    /* Captcha image - larger dimensions for better visibility */
     #captchaContainer img {
-        height: 50px;
+        width: 260px !important;
+        height: 80px !important;
+        object-fit: contain;
     }
 
 /* Adjust textbox */
 #DNTCaptchaInputText {
     height: 45px;
-    width: 180px !important; /* 50px was too small */
+    width: 220px !important;
 }
 
 /* Hide empty addon span */

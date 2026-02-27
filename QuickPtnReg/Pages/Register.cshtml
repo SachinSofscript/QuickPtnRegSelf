@@ -37,6 +37,19 @@
         $(document).ready(function () {
             $('input[name="Patient.PatientLastName"]').focus();
 
+            // Refresh captcha image when "Change Captcha" link is clicked
+            $(document).on('click', '#captchaContainer a[href="#refresh"]', function (e) {
+                e.preventDefault();
+                var $container = $('#captchaContainer');
+                var $img = $container.find('img');
+                if ($img.length && $img.attr('src')) {
+                    var src = $img.attr('src');
+                    var sep = src.indexOf('?') >= 0 ? '&' : '?';
+                    $img.attr('src', src + sep + '_=' + Date.now());
+                    $('#DNTCaptchaInputText').val('');
+                }
+            });
+
             $('#btnDownload').click(function () {
 
                 var selectedValue = document.getElementById("patientsource2").value;
