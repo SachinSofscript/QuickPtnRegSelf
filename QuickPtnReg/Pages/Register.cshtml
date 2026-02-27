@@ -135,29 +135,30 @@
 
                 //------------------------------------------
 
+              var submitSucceeded = false;
               $.ajax({
                    url: window.location.pathname,
                     type: 'POST',
                     data: form.serialize(),                 
                     success: function (response) {
                         if (response.success) {
+                            submitSucceeded = true;
                             Swal.fire({
                                 icon: 'success',
                                 title: response.message,
                                 html: 'Patient No: ' + response.patientNo + '<br>' +
                                       'Patient Name: ' + response.patientFullName
                             }).then(() => {
-                                form.trigger('reset');
-                                refreshCaptcha();
-                                $('input[name="Patient.PatientLastName"]').focus();
-                                $("#btnSubmit").text("Register");
+                                window.location.reload();
                             });
                         } else {
                             Swal.fire({ icon: 'warning', title: 'Alert', text: response.message,width: '24em' });
                         }
                     },
                     complete: function () {
-                        refreshCaptcha();
+                        if (!submitSucceeded) {
+                            refreshCaptcha();
+                        }
                         $("#btnSubmit").prop("disabled", false);
                     }
                 });
