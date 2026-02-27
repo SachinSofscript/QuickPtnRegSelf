@@ -231,27 +231,28 @@
                 <label>Name / ಹೆಸರು:</label>
                 <div class="row">
                     <div class="col-md-4">
-                       @*  <label for="patientLastName" class="small">Last name</label> *@
-                        <input type="text" id="patientLastName" class="form-control" maxlength="100" asp-for="Patient.PatientLastName"   />
+                          <label for="patientLastName" class="small">First Name</label> 
+                        <input type="text" id="patientLastName" class="form-control" maxlength="100" asp-for="Patient.PatientLastName"  placeholder="Enter patient's first name"  />
                         <span asp-validation-for="Patient.PatientLastName" class="text-danger small"></span>
                     </div>
+                    
                     <div class="col-md-4">
-@*                         <label for="patientFirstName" class="small">First name</label> *@
-                        <input type="text" id="patientFirstName" class="form-control" maxlength="100" asp-for="Patient.PatientFirstName"   />
-                        <span asp-validation-for="Patient.PatientFirstName" class="text-danger small"></span>
+                          <label for="patientFirstName" class="small">Middle Name</label>  
+                        <input type="text" id="patientFirstName" class="form-control" maxlength="100" asp-for="Patient.PatientFirstName"  placeholder="Enter patient's middle name"  />
+                        <!-- <span asp-validation-for="Patient.PatientFirstName" class="text-danger small"></span> -->
                     </div>
+
                     <div class="col-md-4">
-@*                         <label for="patientMiddleNamePart" class="small">Middle name</label>
- *@                        <input type="text" id="patientMiddleNamePart" class="form-control" maxlength="100" asp-for="Patient.PatientMiddleNamePart"   />
+                          <label for="patientMiddleNamePart" class="small">Last Name</label>
+                          <input type="text" id="patientMiddleNamePart" class="form-control" maxlength="100" asp-for="Patient.PatientMiddleNamePart"  placeholder="Enter patient's last name"  />
                         <span asp-validation-for="Patient.PatientMiddleNamePart" class="text-danger small"></span>
                     </div>
                 </div>
             </div>
 
-            <div class="form-group">
-                <span class="text-danger">*</span>
+            <div class="form-group" style="display:none">
                 <label for="fatherName">Father's name / ತಂದೆಯ ಹೆಸರು:</label>
-                <input type="text" id="fatherName" class="form-control" asp-for="Patient.PatientMiddleName" placeholder="Enter patient's father name" />
+                <input type="text" id="fatherName" class="form-control" asp-for="Patient.PatientMiddleName" value="" placeholder="Enter patient's father name" />
                 <span asp-validation-for="Patient.PatientMiddleName" class="text-danger small" >  </span>
             </div>
 

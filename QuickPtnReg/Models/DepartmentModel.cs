@@ -29,19 +29,18 @@ namespace QuickPtnReg.Models
 
         public string? PatientFullName { get; set; }
 
-        [Required(ErrorMessage = "Last name is required.")]
+        [Required(ErrorMessage = "first name is required.")]
         [MaxLength(100)]
         public string PatientLastName { get; set; } = string.Empty;
 
-        [Required(ErrorMessage = "First name is required.")]
         [MaxLength(100)]
         public string PatientFirstName { get; set; } = string.Empty;
 
+        [Required(ErrorMessage = "last name is required.")]
         [MaxLength(100)]
         public string? PatientMiddleNamePart { get; set; }
 
-        [Required(ErrorMessage = "Patient father name is required.")]
-        public string PatientMiddleName { get; set; }
+        public string? PatientMiddleName { get; set; }
 
 
         [Required(ErrorMessage = "Patient age is required.")]

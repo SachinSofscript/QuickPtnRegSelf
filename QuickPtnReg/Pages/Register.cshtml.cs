@@ -351,7 +351,7 @@ namespace QuickPtnReg.Pages
                 command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.AddWithValue("@PatientNo", Patient.PatientNo);
                 command.Parameters.AddWithValue("@FullName", "");
-                command.Parameters.AddWithValue("@FatherName", Patient.PatientMiddleName);
+                command.Parameters.AddWithValue("@FatherName", "");
                 command.Parameters.AddWithValue("@ptn_lst_nm", Patient.PatientLastName ?? "");
                 command.Parameters.AddWithValue("@ptn_frst_nm", Patient.PatientFirstName ?? "");
                 command.Parameters.AddWithValue("@ptn_mid_nm", Patient.PatientMiddleNamePart ?? "");
