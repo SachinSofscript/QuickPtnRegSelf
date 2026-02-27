@@ -1,4 +1,4 @@
-﻿@page
+@page
 @model RegisterModel
 @addTagHelper *, DNTCaptcha.Core
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
@@ -35,7 +35,7 @@
 
 
         $(document).ready(function () {
-            $('#fullName').focus(); // Set focus to Full Name textbox
+            $('input[name="Patient.PatientLastName"]').focus();
 
             $('#btnDownload').click(function () {
 
@@ -84,7 +84,7 @@
         $(function () {
             $('#clearForm').click(function () {
                 $('form').trigger('reset');
-                $('#fullName').focus();
+                $('input[name="Patient.PatientLastName"]').focus();
             });
 
         });
@@ -132,7 +132,7 @@
                                       'Patient Name: ' + response.patientFullName
                             }).then(() => {
                                 form.trigger('reset');
-                                $('#FullName').focus();
+                                $('input[name="Patient.PatientLastName"]').focus();
                                 $("#btnSubmit").text("Register");
                             });
                         } else {
@@ -219,11 +219,33 @@
             Register Patient
         </div>
         <div class="card-body">
-            <div class="form-group">
+            <div class="form-group" style="display:none">
                 <span class="text-danger">*</span>
                 <label for="fullName">Full Name / ಪೂರ್ಣ ಹೆಸರು (ಆಧಾರ್ ಕಾರ್ಡ್ ನಲ್ಲಿರುವಂತೆ):</label>
-                <input type="text" id="fullName" class="form-control" asp-for="Patient.PatientFullName" placeholder="Enter patient's full name" />
+                <input type="text" id="fullName" class="form-control" asp-for="Patient.PatientFullName" value="" placeholder="Enter patient's full name" />
                 <span asp-validation-for="Patient.PatientFullName" class="text-danger small" >  </span>
+            </div>
+
+            <div class="form-group">
+                <span class="text-danger">*</span>
+                <label>Name / ಹೆಸರು:</label>
+                <div class="row">
+                    <div class="col-md-4">
+                       @*  <label for="patientLastName" class="small">Last name</label> *@
+                        <input type="text" id="patientLastName" class="form-control" maxlength="100" asp-for="Patient.PatientLastName"   />
+                        <span asp-validation-for="Patient.PatientLastName" class="text-danger small"></span>
+                    </div>
+                    <div class="col-md-4">
+@*                         <label for="patientFirstName" class="small">First name</label> *@
+                        <input type="text" id="patientFirstName" class="form-control" maxlength="100" asp-for="Patient.PatientFirstName"   />
+                        <span asp-validation-for="Patient.PatientFirstName" class="text-danger small"></span>
+                    </div>
+                    <div class="col-md-4">
+@*                         <label for="patientMiddleNamePart" class="small">Middle name</label>
+ *@                        <input type="text" id="patientMiddleNamePart" class="form-control" maxlength="100" asp-for="Patient.PatientMiddleNamePart"   />
+                        <span asp-validation-for="Patient.PatientMiddleNamePart" class="text-danger small"></span>
+                    </div>
+                </div>
             </div>
 
             <div class="form-group">

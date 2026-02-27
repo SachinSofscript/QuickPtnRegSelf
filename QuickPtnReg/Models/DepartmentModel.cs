@@ -1,4 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Mvc;
 
 namespace QuickPtnReg.Models
@@ -27,9 +27,18 @@ namespace QuickPtnReg.Models
     {
         public long PatientNo { get; set; }
 
-       
-        [Required (ErrorMessage ="Patient name is required.")]
-        public string PatientFullName { get; set; }
+        public string? PatientFullName { get; set; }
+
+        [Required(ErrorMessage = "Last name is required.")]
+        [MaxLength(100)]
+        public string PatientLastName { get; set; } = string.Empty;
+
+        [Required(ErrorMessage = "First name is required.")]
+        [MaxLength(100)]
+        public string PatientFirstName { get; set; } = string.Empty;
+
+        [MaxLength(100)]
+        public string? PatientMiddleNamePart { get; set; }
 
         [Required(ErrorMessage = "Patient father name is required.")]
         public string PatientMiddleName { get; set; }

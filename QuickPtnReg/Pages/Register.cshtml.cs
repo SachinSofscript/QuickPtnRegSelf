@@ -7,6 +7,7 @@ using QuickPtnReg.DataAccess;
 using QuickPtnReg.Models;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 using System.Data.SqlClient;
 
 
@@ -106,7 +107,8 @@ namespace QuickPtnReg.Pages
                         transaction.Commit();
 
                         // Optionally, you can redirect to another page or return a success message
-                        return new JsonResult(new { success = true, message = "Patient registered successfully!", Patient.PatientNo, Patient.PatientFullName });
+                        var displayName = string.Join(" ", new[] { Patient.PatientLastName?.Trim(), Patient.PatientFirstName?.Trim(), Patient.PatientMiddleNamePart?.Trim() }.Where(s => !string.IsNullOrEmpty(s)));
+                        return new JsonResult(new { success = true, message = "Patient registered successfully!", Patient.PatientNo, patientFullName = displayName });
 
                         //return RedirectToPage("/Index");
                     }
@@ -348,8 +350,11 @@ namespace QuickPtnReg.Pages
                 //command.Transaction = transaction;
                 command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.AddWithValue("@PatientNo", Patient.PatientNo);
-                command.Parameters.AddWithValue("@FullName", Patient.PatientFullName);
+                command.Parameters.AddWithValue("@FullName", "");
                 command.Parameters.AddWithValue("@FatherName", Patient.PatientMiddleName);
+                command.Parameters.AddWithValue("@ptn_lst_nm", Patient.PatientLastName ?? "");
+                command.Parameters.AddWithValue("@ptn_frst_nm", Patient.PatientFirstName ?? "");
+                command.Parameters.AddWithValue("@ptn_mid_nm", Patient.PatientMiddleNamePart ?? "");
                 command.Parameters.AddWithValue("@Age", Patient.Age);
                 command.Parameters.AddWithValue("@Sex", Patient.sex);
                 command.Parameters.AddWithValue("@DocSpltyCd", 0);
