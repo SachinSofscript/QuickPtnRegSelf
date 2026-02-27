@@ -108,3 +108,19 @@ body {
 #captchaContainer .input-group-text {
     display: none !important;
 }
+
+/* Kiosk-friendly refresh captcha button - large, easy to tap and understand */
+#captchaContainer .captcha-refresh-btn {
+    min-height: 48px;
+    min-width: 200px;
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+#captchaContainer .captcha-refresh-icon {
+    display: inline-block;
+    font-size: 1.4rem;
+    margin-right: 8px;
+    line-height: 1;
+}

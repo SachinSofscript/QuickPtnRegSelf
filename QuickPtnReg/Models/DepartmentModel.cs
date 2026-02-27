@@ -33,8 +33,11 @@ namespace QuickPtnReg.Models
         [MaxLength(100)]
         public string PatientLastName { get; set; } = string.Empty;
 
+
         [MaxLength(100)]
-        public string PatientFirstName { get; set; } = string.Empty;
+        public string? PatientFirstName { get; set; }
+
+
 
         [Required(ErrorMessage = "last name is required.")]
         [MaxLength(100)]
@@ -72,6 +75,8 @@ namespace QuickPtnReg.Models
         public string? PatientAddressLine3 { get; set; } = string.Empty;
 
         public int DepartmentUnit { get; set; }
+
+        [Range(1, 6, ErrorMessage = "Please select marital status.")]
         public int MaritalStatus { get; set; }
 
 

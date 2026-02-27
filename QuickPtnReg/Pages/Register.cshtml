@@ -34,20 +34,23 @@
         }
 
 
+        function refreshCaptcha() {
+            var $img = $('#captchaContainer img');
+            if ($img.length && $img.attr('src')) {
+                var src = $img.attr('src');
+                var sep = src.indexOf('?') >= 0 ? '&' : '?';
+                $img.attr('src', src + sep + '_=' + Date.now());
+                $('#DNTCaptchaInputText').val('');
+            }
+        }
+
         $(document).ready(function () {
             $('input[name="Patient.PatientLastName"]').focus();
 
             // Refresh captcha image when "Change Captcha" link is clicked
             $(document).on('click', '#captchaContainer a[href="#refresh"]', function (e) {
                 e.preventDefault();
-                var $container = $('#captchaContainer');
-                var $img = $container.find('img');
-                if ($img.length && $img.attr('src')) {
-                    var src = $img.attr('src');
-                    var sep = src.indexOf('?') >= 0 ? '&' : '?';
-                    $img.attr('src', src + sep + '_=' + Date.now());
-                    $('#DNTCaptchaInputText').val('');
-                }
+                refreshCaptcha();
             });
 
             $('#btnDownload').click(function () {
@@ -145,6 +148,7 @@
                                       'Patient Name: ' + response.patientFullName
                             }).then(() => {
                                 form.trigger('reset');
+                                refreshCaptcha();
                                 $('input[name="Patient.PatientLastName"]').focus();
                                 $("#btnSubmit").text("Register");
                             });
@@ -153,6 +157,7 @@
                         }
                     },
                     complete: function () {
+                        refreshCaptcha();
                         $("#btnSubmit").prop("disabled", false);
                     }
                 });
@@ -289,14 +294,14 @@
             <span asp-validation-for="Patient.sex" class="text-danger small"></span>
 
             <div class="form-group">
-@*                 <span class="text-danger">*</span> *@
+                <span class="text-danger">*</span>
                 <label for="MaritalStatus">Marital Status / ವೈವಾಹಿಕ ಸ್ಥಿತಿ:</label><br />
                 <input type="radio" id="Married" name="Patient.MaritalStatus" value="1" asp-for="Patient.MaritalStatus" /> Married
                 <input type="radio" id="Unmarried" name="Patient.MaritalStatus" value="2" asp-for="Patient.MaritalStatus" /> Unmarried
                 <input type="radio" id="Widowed" name="Patient.MaritalStatus" value="4" asp-for="Patient.MaritalStatus" /> Widowed
                 <input type="radio" id="Divorced" name="Patient.MaritalStatus" value="6" asp-for="Patient.MaritalStatus" /> Divorced
+                <span asp-validation-for="Patient.MaritalStatus" class="text-danger small"></span>
             </div>
-           @*  <span asp-validation-for="Patient.MaritalStatus" class="text-danger small"></span> *@
 
            @*  <br /> *@
            @if (Model.Departments != null)
@@ -395,7 +400,7 @@
                              asp-fore-color="#000000"
                              asp-back-color="#ffffff"
                              asp-validation-message-class="text-danger"
-                             asp-refresh-button-template="&lt;a href='#refresh' class='btn btn-outline-secondary btn-sm ms-2'&gt;<i class='fa fa-sync'></i> Change Captcha&lt;/a&gt;">
+                             asp-refresh-button-template="&lt;a href='#refresh' class='btn btn-outline-primary btn-lg ms-2 captcha-refresh-btn' role='button'&gt;&lt;span class='captcha-refresh-icon' aria-hidden='true'&gt;&amp;#8635;&lt;/span&gt; Get New Captcha&lt;/a&gt;">
                 </dnt-captcha>
                
             </div>
